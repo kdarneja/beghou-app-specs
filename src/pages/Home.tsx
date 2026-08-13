@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
-import { routes } from '../routes';
+import { launcherRoutes } from '../routes';
 
 export default function Home() {
-  const launcherRoutes = routes.filter((r) => r.path !== '/');
-
   return (
     <div className="beghou-page beghou-home">
       <div className="beghou-launcher-grid">

@@ -85,3 +85,16 @@ export const routes: RouteDef[] = [
     component: EditProductRoles,
   },
 ];
+
+// Display order for nav + landing launcher: Home pinned first, everything else
+// sorted lexically by label. Sorting here (not by hand) keeps new pages in
+// alphabetical order automatically.
+export const navRoutes: RouteDef[] = [
+  ...routes.filter((r) => r.path === '/'),
+  ...routes
+    .filter((r) => r.path !== '/')
+    .sort((a, b) => a.label.localeCompare(b.label)),
+];
+
+// Landing launcher cards: same lexical order, minus Home.
+export const launcherRoutes: RouteDef[] = navRoutes.filter((r) => r.path !== '/');

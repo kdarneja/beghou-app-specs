@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { SvgIcon } from '@progress/kendo-react-common';
 import { gearIcon } from '@progress/kendo-svg-icons';
-import { routes, type RouteDef } from '../routes';
+import { navRoutes, type RouteDef } from '../routes';
 
 type DrawerProps = {
   open: boolean;
@@ -66,7 +66,7 @@ export function Drawer({ open, onClose }: DrawerProps) {
       {/* Collapsed rail — always visible behind everything */}
       <nav className="beghou-drawer-rail" aria-label="Primary navigation (collapsed)">
         <div className="beghou-drawer__nav">
-          {routes.map((r) => (
+          {navRoutes.map((r) => (
             <DrawerItem
               key={`rail-${r.path}`}
               route={r}
@@ -98,7 +98,7 @@ export function Drawer({ open, onClose }: DrawerProps) {
         aria-hidden={!open}
       >
         <div className="beghou-drawer__nav">
-          {routes.map((r) => (
+          {navRoutes.map((r) => (
             <DrawerItem
               key={`panel-${r.path}`}
               route={r}

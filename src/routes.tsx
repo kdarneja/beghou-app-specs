@@ -1,11 +1,10 @@
 import type { ComponentType } from 'react';
 import type { SVGIcon } from '@progress/kendo-svg-icons';
-import { homeIcon, windowIcon, toolbarFloatIcon, volumeUpIcon, gridLayoutIcon, calendarIcon, chartBarStackedIcon, dashboardIcon, chartColumnClusteredIcon, userIcon } from '@progress/kendo-svg-icons';
+import { homeIcon, windowIcon, toolbarFloatIcon, gridLayoutIcon, calendarIcon, chartBarStackedIcon, dashboardIcon, chartColumnClusteredIcon, userIcon } from '@progress/kendo-svg-icons';
 
 import Home from './pages/Home';
 import StackedWindows from './pages/StackedWindows';
 import MapToolbars from './pages/MapToolbars';
-import IconToggleButton from './pages/IconToggleButton';
 import AlignmentManageViews from './pages/AlignmentManageViews';
 import Calendar from './pages/Calendar';
 import LaunchPlanning from './pages/LaunchPlanning';
@@ -44,13 +43,6 @@ export const routes: RouteDef[] = [
     component: MapToolbars,
   },
   {
-    path: '/icon-togglebutton',
-    label: 'Alignment-Quick Align Toggle',
-    icon: volumeUpIcon,
-    description: 'Icon-only Kendo Button that swaps its icon between on/off states.',
-    component: IconToggleButton,
-  },
-  {
     path: '/alignment-manage-views',
     label: 'Alignment-Manage Views',
     icon: gridLayoutIcon,
@@ -59,7 +51,7 @@ export const routes: RouteDef[] = [
   },
   {
     path: '/calendar',
-    label: 'Calendar',
+    label: 'Portal-Calendar',
     icon: calendarIcon,
     description: 'Shared commercialization calendar for sales teams, built on the Kendo Scheduler.',
     component: Calendar,
@@ -73,21 +65,21 @@ export const routes: RouteDef[] = [
   },
   {
     path: '/small-calendar',
-    label: 'Small Calendar',
+    label: 'Portal-Small Calendar',
     icon: dashboardIcon,
     description: 'Portal dashboard with a compact calendar and an Events / Updates feed.',
     component: SmallCalendar,
   },
   {
     path: '/app-visualizations',
-    label: 'App Visualizations',
+    label: 'Portal-App Visualizations',
     icon: chartColumnClusteredIcon,
     description: 'Best-practice examples of Kendo charts rendered inside app pages.',
     component: AppVisualizations,
   },
   {
     path: '/edit-product-roles',
-    label: 'Edit Product Roles',
+    label: 'Portal-Admin-Edit Product Roles',
     icon: userIcon,
     description: 'Redesigned single-dialog flow for assigning roles and their inline properties.',
     component: EditProductRoles,

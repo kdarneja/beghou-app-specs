@@ -25,7 +25,7 @@ if (!rootEl) {
 }
 
 // `import.meta.env.BASE_URL` follows Vite's `base` config. In dev it's '/',
-// in build it's '/kendo-ux-playground/' — BrowserRouter strips the trailing
+// in build it's '/beghou-app-specs/' — BrowserRouter strips the trailing
 // slash itself, but Vite returns it with one. Trim so basename is canonical.
 const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
 

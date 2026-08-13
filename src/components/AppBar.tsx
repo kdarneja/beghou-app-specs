@@ -32,7 +32,7 @@ export function AppBar({
 }: AppBarProps) {
   const { pathname } = useLocation();
   const isHome = pathname === '/';
-  const pageLabel = isHome ? 'Kendo Playground' : findPageLabel(pathname);
+  const pageLabel = isHome ? 'Beghou App Specs' : findPageLabel(pathname);
 
   return (
     <header className="beghou-appbar" role="banner">
@@ -94,8 +94,8 @@ export function AppBar({
             <SvgIcon icon={gearIcon} size="large" />
           </button>
         </div>
-        <button type="button" className="beghou-appbar__avatar" aria-label="User: Kendo Playground">
-          KP
+        <button type="button" className="beghou-appbar__avatar" aria-label="User: KD">
+          KD
         </button>
       </div>
     </header>

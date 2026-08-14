@@ -19,7 +19,7 @@ import {
 import { DropDownList, type DropDownListChangeEvent } from '@progress/kendo-react-dropdowns';
 import { DatePicker } from '@progress/kendo-react-dateinputs';
 import { Button, ButtonGroup, SplitButton } from '@progress/kendo-react-buttons';
-import { Grid, GridColumn, type GridCellProps, type GridPageChangeEvent } from '@progress/kendo-react-grid';
+import { Grid, GridColumn, type GridCustomCellProps, type GridPageChangeEvent } from '@progress/kendo-react-grid';
 import { Circle, Group, Text, geometry } from '@progress/kendo-drawing';
 
 // Render each legend item as a plain filled circle + label in the series colour
@@ -282,10 +282,10 @@ function SalesTab({ surface }: { surface?: 'grey' }) {
   );
 }
 
-const QualityCell = (props: GridCellProps) => {
+const QualityCell = (props: GridCustomCellProps) => {
   const row = props.dataItem as QualityRow;
   return (
-    <td>
+    <td {...props.tdProps}>
       <PassFailBar pass={row.pass} fail={row.fail} />
     </td>
   );
@@ -337,7 +337,7 @@ function DataQualityTab() {
           >
             <GridColumn field="vendor" title="Vendor" width={110} />
             <GridColumn field="deliverable" title="Deliverable" width={120} />
-            <GridColumn title="Pass / Fail" cell={QualityCell} />
+            <GridColumn title="Pass / Fail" cells={{ data: QualityCell }} />
           </Grid>
         </div>
 

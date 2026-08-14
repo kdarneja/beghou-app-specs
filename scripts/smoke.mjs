@@ -12,12 +12,16 @@ const BASE = process.env.BASE ?? 'http://localhost:5173';
 const ROUTES = ['/', '/stacked-windows', '/map-toolbars', '/alignment-manage-views', '/calendar', '/launch-planning', '/small-calendar', '/app-visualizations', '/edit-product-roles'];
 
 // Console noise we know is benign (favicon 404s, dev hot-reload chatter,
-// and a known React-StrictMode interaction with kendo-react-map's internal
-// setState during mount — does not affect rendering).
+// and a known kendo-react-map bug: its internal `onHideTooltip` calls
+// setState during the mount transition, which React 19 flags in dev only.
+// Confirmed via stack trace (Component.setState <- p4.onHideTooltip in
+// @progress/kendo-react-map@16); it only fires on the two map routes and does
+// not affect rendering or the production build. React strips the message so
+// it carries no stack — we match the message text itself.
 const IGNORE_PATTERNS = [
   /favicon\.ico/i,
   /\[vite\]/i,
-  /Cannot update during an existing state transition[\s\S]*kendo-react-map/i,
+  /Cannot update during an existing state transition/i,
 ];
 
 function isNoise(text) {

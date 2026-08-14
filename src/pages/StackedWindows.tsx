@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { type ComponentRef, useEffect, useMemo, useRef, useState } from 'react';
 import { Window, type WindowActionsEvent } from '@progress/kendo-react-dialogs';
 import {
   Checkbox,
@@ -160,7 +160,7 @@ const ColumnMenu = (props: GridColumnMenuProps) => (
 
 export default function StackedWindows() {
   const mapWrapperRef = useRef<HTMLDivElement | null>(null);
-  const mapInstanceRef = useRef<KendoMap | null>(null);
+  const mapInstanceRef = useRef<ComponentRef<typeof KendoMap> | null>(null);
   const [rect, setRect] = useState<DOMRect | null>(null);
 
   const [showHcp, setShowHcp] = useState(false);

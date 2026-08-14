@@ -373,9 +373,9 @@ a {
 
 /* Kendo Map's React wrapper renders an outer div (sized by `style` prop)
    that contains an inner `.k-map` div whose default height is 600px and
-   does NOT inherit from the wrapper. The wrapper's `.resize()` method is a
-   no-op stub. Force the inner element and its scroll wrappers to fill so
-   the core Map measures the real container at mount. */
+   does NOT inherit from the wrapper. Still true as of kendo-react-map v15.
+   Force the inner element and its scroll wrappers to fill so the core Map
+   measures the real container at mount. */
 .map-container .k-map,
 .map-container .km-scroll-wrapper,
 .map-container .km-scroll-container {
@@ -855,17 +855,6 @@ a {
      border so every line matches the outer border. */
   --kendo-color-border: var(--beghou-border-alt);
 }
-/* kendo-theme-default v11 doesn't drive the month layout's flex fill for the
-   v9.5 Scheduler markup, so the week rows fall back to a fixed ~100px and
-   leave dead space below the grid. The body's week rows are already
-   `flex: 1 1 100%`, so giving the body a definite filled height (monthview
-   minus the 38px day-name header) lets them grow to fill the viewport. This
-   must be present at mount so Kendo measures the taller cells and computes
-   the "..." overflow against them. */
-.cal-scheduler-wrap .k-scheduler-monthview .k-scheduler-body {
-  height: calc(100% - 38px);
-}
-
 /* Scheduler toolbar buttons: medium outline. The selected view (Month) stays
    solid navy; everything else reads as a white outline button. */
 .cal-scheduler-wrap .k-scheduler-toolbar .k-button {

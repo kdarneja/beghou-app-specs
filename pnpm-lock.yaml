@@ -35,82 +35,91 @@ importers:
       '@progress/kendo-licensing':
         specifier: ^1.5.0
         version: 1.11.1
+      '@progress/kendo-react-animation':
+        specifier: 16.0.0
+        version: 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react-transition-group@4.4.5(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)
       '@progress/kendo-react-buttons':
-        specifier: ^9.4.0
-        version: 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 16.0.0
+        version: 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-smartpaste-common@1.0.0)(@progress/kendo-svg-icons@5.4.0)(@progress/kendo-webspeech-common@1.0.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@progress/kendo-react-charts':
-        specifier: 9.5.0
-        version: 9.5.0(@progress/kendo-drawing@1.25.2)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-intl@9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-layout@9.5.0(1c642dfca8269e1ff249fcd3b30e5cf3))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 16.0.0
+        version: 16.0.0(@progress/kendo-drawing@1.25.2)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-layout@16.0.0(adcb48a8b1e949790a8daea1104520e4))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@progress/kendo-react-common':
-        specifier: ^9.4.0
-        version: 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 16.0.0
+        version: 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-data-tools':
+        specifier: 16.0.0
+        version: 16.0.0(20ee837c8feeacbd8d7ae4c82358bffa)
       '@progress/kendo-react-dateinputs':
-        specifier: 9.5.0
-        version: 9.5.0(1b0060aa6bf76e012556cb0a3e595fe1)
+        specifier: 16.0.0
+        version: 16.0.0(ba1f07a627f1731daf6321400b583a56)
       '@progress/kendo-react-dialogs':
-        specifier: 9.5.0
-        version: 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-buttons@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 16.0.0
+        version: 16.0.0(7d6ed7715d28c0e237431ba16b17dc1c)
       '@progress/kendo-react-dropdowns':
-        specifier: 9.5.0
-        version: 9.5.0(4098be1db4bc86f90beaa679b3ea53e7)
+        specifier: 16.0.0
+        version: 16.0.0(e5d856828e7028b2ff9e6fd013d85a0e)
       '@progress/kendo-react-form':
-        specifier: 9.5.0
-        version: 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 16.0.0
+        version: 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@progress/kendo-react-gantt':
-        specifier: 9.5.0
-        version: 9.5.0(788c08d8d10b6f14466e9c7d101178eb)
+        specifier: 16.0.0
+        version: 16.0.0(da189c641cca45157a74ae9c3721a6eb)
       '@progress/kendo-react-grid':
-        specifier: ^9.4.0
-        version: 9.5.0(9501b0c293620df874213904dc0893cf)
+        specifier: 16.0.0
+        version: 16.0.0(116001f8d1a7c0afb54f4b42b80bf29b)
+      '@progress/kendo-react-indicators':
+        specifier: 16.0.0
+        version: 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@progress/kendo-react-inputs':
-        specifier: 9.5.0
-        version: 9.5.0(649fa4c09586ac1f0cb6528d7ec7a2af)
+        specifier: 16.0.0
+        version: 16.0.0(9d20b3a09e88142455bc19a33fe46ae9)
       '@progress/kendo-react-intl':
-        specifier: 9.5.0
-        version: 9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 16.0.0
+        version: 16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@progress/kendo-react-labels':
-        specifier: 9.5.0
-        version: 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-intl@9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 16.0.0
+        version: 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@progress/kendo-react-layout':
-        specifier: 9.5.0
-        version: 9.5.0(1c642dfca8269e1ff249fcd3b30e5cf3)
+        specifier: 16.0.0
+        version: 16.0.0(adcb48a8b1e949790a8daea1104520e4)
       '@progress/kendo-react-map':
-        specifier: 9.5.0
-        version: 9.5.0(@progress/kendo-drawing@1.25.2)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 16.0.0
+        version: 16.0.0(@progress/kendo-drawing@1.25.2)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@progress/kendo-react-notification':
-        specifier: ^9.5.0
-        version: 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 16.0.0
+        version: 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@progress/kendo-react-popup':
-        specifier: 9.5.0
-        version: 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 16.0.0
+        version: 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@progress/kendo-react-scheduler':
-        specifier: 9.5.0
-        version: 9.5.0(0fb583f11755a2e3ae1b163517fe47c1)
+        specifier: 16.0.0
+        version: 16.0.0(8bc9ccab34f06420456ccb9b6a2dad3f)
       '@progress/kendo-recurrence':
         specifier: ^1.0.5
         version: 1.0.5(@progress/kendo-date-math@1.5.17)
       '@progress/kendo-svg-icons':
-        specifier: ^4.0.0
-        version: 4.9.2
+        specifier: ^5.3.0
+        version: 5.4.0
       '@progress/kendo-theme-default':
-        specifier: ^11.0.0
-        version: 11.3.2
+        specifier: 14.5.0
+        version: 14.5.0
       react:
-        specifier: ^18.3.1
-        version: 18.3.1
+        specifier: ^19.2.0
+        version: 19.2.8
       react-dom:
-        specifier: ^18.3.1
-        version: 18.3.1(react@18.3.1)
+        specifier: ^19.2.0
+        version: 19.2.8(react@19.2.8)
       react-router-dom:
         specifier: ^6.30.0
-        version: 6.30.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 6.30.3(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
     devDependencies:
       '@types/react':
-        specifier: ^18.3.12
-        version: 18.3.29
+        specifier: ^19.2.0
+        version: 19.2.18
       '@types/react-dom':
-        specifier: ^18.3.1
-        version: 18.3.7(@types/react@18.3.29)
+        specifier: ^19.2.0
+        version: 19.2.4(@types/react@19.2.18)
       '@vitejs/plugin-react':
         specifier: ^4.3.4
         version: 4.7.0(vite@5.4.21)
@@ -375,13 +384,16 @@ packages:
     peerDependencies:
       '@progress/kendo-drawing': ^1.24.0
 
-  '@progress/kendo-charts@2.7.1':
-    resolution: {integrity: sha512-fIAfX3U0u5HUP+k4BSQX8yZz7t2arbUYi2meHJK6i3x6xL5qQQuaa3IAL9g9NpVKNycOTm/JVtf0FhLocxWWiA==}
+  '@progress/kendo-charts@2.13.0':
+    resolution: {integrity: sha512-cehd1KlwiPSjaROODsL7WvIb6ga6DNGqZuKYGte/sRj/NoHOUp7OYD9cQaUxkfTPwBn9EH/U/oz/1W9mcmptwQ==}
     peerDependencies:
-      '@progress/kendo-drawing': ^1.21.0
+      '@progress/kendo-drawing': ^1.24.0
 
   '@progress/kendo-common@1.0.2':
     resolution: {integrity: sha512-PHxnquetSmtmXiF4dmlQiypzXaFLUEPK3VAOHxmnRDrLxaPrcZfaW9FOOiyur8hv4QmXlohISMwMElZS8Xi1Ag==}
+
+  '@progress/kendo-csv@1.0.0':
+    resolution: {integrity: sha512-Z23QE0AbX9I5upvKzbDT71XQmQ9rEKIOBgWpTblBnjTtBd7n+gLOQ954drd+NHJ5xw8R+xAhtDTEBd8JtKzq7A==}
 
   '@progress/kendo-data-query@1.7.4':
     resolution: {integrity: sha512-naaQ2wJ8kj6e9C7OJerUxDK+dRC3A5z4bt52ZQmYmdJldlQL89zFKYQXHRFsPdfnok11bO82XCtj4PZ4jjp9AA==}
@@ -403,6 +415,9 @@ packages:
   '@progress/kendo-drawing@1.25.2':
     resolution: {integrity: sha512-jxN3z8Vh31EUB6O1hMPVSp9T722Lspi2JHpvt2iGUWrezGVds9gfnud0pqzInsWD846lSaRHZu4cZWnr/m3fmg==}
 
+  '@progress/kendo-file-saver@1.1.3':
+    resolution: {integrity: sha512-pQDPgEzIQJP2N9bqsoXtVWMizx0/1FEy0qCvRIWr3TzKxpHyab8mzayhKtNjKe9NLipzHjX+h2zztO+jMat9sw==}
+
   '@progress/kendo-inputs-common@3.1.3':
     resolution: {integrity: sha512-vBoECZN+JVjCGzQA9uIOT6rbdcD8+geiHiABNgfljN+nv+CgUu7hdf/y6QdIFGR2a0ioIawbaha4egG8I2P/fQ==}
     engines: {node: '>=20.0.0', npm: '>=10.0.0'}
@@ -420,317 +435,440 @@ packages:
   '@progress/kendo-popup-common@1.9.5':
     resolution: {integrity: sha512-HpUy0PLbS/bhhs/FxxFGaJxxbskQbAVMPWE5i6qxQ5G1krQHWApJ9B+43Rx5IQiWtoenjCGtYv0QSZlRQxDqsg==}
 
-  '@progress/kendo-react-animation@9.5.0':
-    resolution: {integrity: sha512-GipwrihFy4i5auWMbI6PZmtCGwoxULUw/kbgeT34aPH4eiLDjsI1nQ8eScF+lX/KsA/U39OSaGB+dSivyICSSA==}
+  '@progress/kendo-react-animation@16.0.0':
+    resolution: {integrity: sha512-2GXg+pzPrNE9LZ8RKJdiXBZTM65I8EG630tyYmz3OcMtVgMULlndTgO7Bo/ZqldRMAxWdbaqdZk1XbiQ5uL5Vw==}
     peerDependencies:
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
       react-transition-group: ^4.4.2
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
-  '@progress/kendo-react-buttons@9.5.0':
-    resolution: {integrity: sha512-3hmq/Bz+X4/ek7QHvaC/LfFGzs4byCtvmE6L1tgv+/suIPzsbFMAhBvSlqzu7QdJg+ZnlWShM9gGeyeA88WWcw==}
+  '@progress/kendo-react-buttons@16.0.0':
+    resolution: {integrity: sha512-+4AsBwZBH5yM/FFnhVtFhUjkIApg98kFAkQgCZ0ZW7OV9odetqP6k18mvOvt2W0oy0be3b0UEntGPTXs9YsUfg==}
     peerDependencies:
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-react-popup': 9.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-intl': 16.0.0
+      '@progress/kendo-react-popup': 16.0.0
+      '@progress/kendo-smartpaste-common': 1.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      '@progress/kendo-webspeech-common': ^1.0.1
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
-  '@progress/kendo-react-charts@9.5.0':
-    resolution: {integrity: sha512-QDhtYZm4dcmhPBws6Yv+81tp3tNc5oK5DaAVfpGIhWjqjn3PH125sxsoU4FnwIMSzGsFCbfjEweFDXW5wF6mGg==}
+  '@progress/kendo-react-charts@16.0.0':
+    resolution: {integrity: sha512-gj/R0ttWqBz+59utYicBODFWUPNJirn74z07221zGwQsZeqy/cdPTekKuQdtMnwlyr4bVfB1DiEW32vdTM+ghg==}
     peerDependencies:
       '@progress/kendo-drawing': ^1.21.2
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-react-intl': 9.5.0
-      '@progress/kendo-react-layout': 9.5.0
-      '@progress/kendo-react-popup': 9.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-intl': 16.0.0
+      '@progress/kendo-react-layout': 16.0.0
+      '@progress/kendo-react-popup': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
-  '@progress/kendo-react-common@9.5.0':
-    resolution: {integrity: sha512-EDS/VohkzOn6bLdB74CblP5qjXK9h6dN5RSUgO25LUizDVad26lupO+UcQM73jzubY1wBPlqtx5yzm2/XuF2Xg==}
+  '@progress/kendo-react-common@16.0.0':
+    resolution: {integrity: sha512-40Zwuj+CtRvNnyAy1tqBT9vEIjdw+zpI/auE12alaK3111Swo2PCNUXP7GZKjnHg0VhrYNUpm2aihfuITvHo6w==}
     peerDependencies:
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
-  '@progress/kendo-react-data-tools@9.5.0':
-    resolution: {integrity: sha512-FZdj+dxyylC7NxX9pdF5SmIss9fCg5YiD0/95kyV19xtZeAg68Y83h/fW2dvYJfw5GhFzA6VEya+Hrspr0PI6w==}
+  '@progress/kendo-react-conversational-ui@16.0.0':
+    resolution: {integrity: sha512-J0bOTv+5a+v/LwqGNpItDKIDTAdsi50SEsH6yeNWxi01mcJcXEkRxh788iYyQjVG0R9NI4jC/Aq7/ZZfO8KMBQ==}
     peerDependencies:
-      '@progress/kendo-data-query': ^1.0.0
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-animation': 16.0.0
+      '@progress/kendo-react-buttons': 16.0.0
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-indicators': 16.0.0
+      '@progress/kendo-react-inputs': 16.0.0
+      '@progress/kendo-react-intl': 16.0.0
+      '@progress/kendo-react-layout': 16.0.0
+      '@progress/kendo-react-notification': 16.0.0
+      '@progress/kendo-react-popup': 16.0.0
+      '@progress/kendo-react-tooltip': 16.0.0
+      '@progress/kendo-react-upload': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
+
+  '@progress/kendo-react-data-tools@16.0.0':
+    resolution: {integrity: sha512-Zqrkp8Tf/oGXXO13xDbOdaqi1yMYFsGYKm7b+hHKKmvFFSLkAFm1sPhBC44gbTgqm2M27f3B7lYZr2e3xVQiYQ==}
+    peerDependencies:
+      '@progress/kendo-data-query': ^1.7.2
       '@progress/kendo-drawing': ^1.21.2
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-animation': 9.5.0
-      '@progress/kendo-react-buttons': 9.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-react-dateinputs': 9.5.0
-      '@progress/kendo-react-dropdowns': 9.5.0
-      '@progress/kendo-react-inputs': 9.5.0
-      '@progress/kendo-react-intl': 9.5.0
-      '@progress/kendo-react-popup': 9.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-animation': 16.0.0
+      '@progress/kendo-react-buttons': 16.0.0
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-dateinputs': 16.0.0
+      '@progress/kendo-react-dropdowns': 16.0.0
+      '@progress/kendo-react-inputs': 16.0.0
+      '@progress/kendo-react-intl': 16.0.0
+      '@progress/kendo-react-popup': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
-  '@progress/kendo-react-dateinputs@9.5.0':
-    resolution: {integrity: sha512-q4a8FMClsvU4lVYkTq43cm9WN49j3Py5a+xCfbJYzbe6wDqip4FB1l6URD3b2Zz+2cm4musbPYXR3Mq9K9FydA==}
+  '@progress/kendo-react-dateinputs@16.0.0':
+    resolution: {integrity: sha512-M/D7VVERh9IuP6nXbuKz7gM13mSMlATzuZcte0QoFY5YZnkxYGOBHeX+hwcDvXdwxlw1gUlQkvfWeyZQiycZEg==}
     peerDependencies:
       '@progress/kendo-date-math': ^1.4.0
-      '@progress/kendo-dateinputs-common': ^0.4.0
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-buttons': 9.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-react-intl': 9.5.0
-      '@progress/kendo-react-labels': 9.5.0
-      '@progress/kendo-react-layout': 9.5.0
-      '@progress/kendo-react-popup': 9.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-dateinputs-common': ^0.4.11
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-buttons': 16.0.0
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-intl': 16.0.0
+      '@progress/kendo-react-labels': 16.0.0
+      '@progress/kendo-react-layout': 16.0.0
+      '@progress/kendo-react-popup': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
-  '@progress/kendo-react-dialogs@9.5.0':
-    resolution: {integrity: sha512-Zxp1NqflwZkWlXW0Suy88gCb5EOz/HPDwoRLt3BhO2NWiLNQ3LciurTIUxfcqaGvmYvpcztz90Zd/5etQyFv2A==}
+  '@progress/kendo-react-dialogs@16.0.0':
+    resolution: {integrity: sha512-epVNYJjHYKcLK7HRBrw8pSaKUZoOGSVNwL89/ceq+BcSmKkWx23NU02uZAKQLsS4nPhxlUHLp6Dk9xtvDCxyHg==}
     peerDependencies:
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-buttons': 9.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-buttons': 16.0.0
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-intl': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
-  '@progress/kendo-react-dropdowns@9.5.0':
-    resolution: {integrity: sha512-9AbpvU0SYj61gRxlSJvegfJNZIBw8yP8K8o7+i5jTkXoQ+nDsriYi7W8HkthJXB0p19KGpWb0FqJn8QmKjRkxw==}
+  '@progress/kendo-react-dropdowns@16.0.0':
+    resolution: {integrity: sha512-3gyhKekUMU9pKuI3nG+wM0YXaw0Ygnn+C25M4eAitPodlgaMPjWzdRKCeQNwSvqXCWinsA0Si7lPEPlOgORahg==}
     peerDependencies:
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-buttons': 9.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-react-inputs': 9.5.0
-      '@progress/kendo-react-intl': 9.5.0
-      '@progress/kendo-react-labels': 9.5.0
-      '@progress/kendo-react-layout': 9.5.0
-      '@progress/kendo-react-popup': 9.5.0
-      '@progress/kendo-react-treeview': 9.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-buttons': 16.0.0
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-inputs': 16.0.0
+      '@progress/kendo-react-intl': 16.0.0
+      '@progress/kendo-react-labels': 16.0.0
+      '@progress/kendo-react-layout': 16.0.0
+      '@progress/kendo-react-popup': 16.0.0
+      '@progress/kendo-react-treeview': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
-  '@progress/kendo-react-form@9.5.0':
-    resolution: {integrity: sha512-ueH2vQWENezg8gn6qTusidhaZ3YT0FFfV7ftjxf7zE+84hkH5LVV9N4nsjfcjo7lKYnE+ZdSDQ/EFiEd4Um76w==}
+  '@progress/kendo-react-form@16.0.0':
+    resolution: {integrity: sha512-BA9QHRHo6y6t0Uqz1YNxLqsvkkiGwaoGONmDI/fkSDrDqRR5VkTfu2ICpyPOJF2adJuID2f70pf6WyuywV4ZaA==}
     peerDependencies:
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-common': 9.5.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-common': 16.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
 
-  '@progress/kendo-react-gantt@9.5.0':
-    resolution: {integrity: sha512-mwVoA7cRIpPpMVfOZXLiO4LcU/GD79mPxN4x4HdpXvlaoO42Mc23IB9RDbQznwjACA2eNKNI9ss+siI/NYKD+Q==}
+  '@progress/kendo-react-gantt@16.0.0':
+    resolution: {integrity: sha512-F/coAQtm9QU9Vtb/uRDbiMbOFgSYQgPVjgA9hMgY2BrFdZcF//hu+bSabFT2b13uPVBsSV7U0Um8jsmWqYmZVQ==}
     peerDependencies:
-      '@progress/kendo-data-query': ^1.0.0
+      '@progress/kendo-data-query': ^1.7.2
       '@progress/kendo-date-math': ^1.4.1
       '@progress/kendo-drawing': ^1.21.2
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-buttons': 9.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-react-data-tools': 9.5.0
-      '@progress/kendo-react-dateinputs': 9.5.0
-      '@progress/kendo-react-dialogs': 9.5.0
-      '@progress/kendo-react-dropdowns': 9.5.0
-      '@progress/kendo-react-form': 9.5.0
-      '@progress/kendo-react-inputs': 9.5.0
-      '@progress/kendo-react-intl': 9.5.0
-      '@progress/kendo-react-labels': 9.5.0
-      '@progress/kendo-react-treelist': 9.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-buttons': 16.0.0
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-data-tools': 16.0.0
+      '@progress/kendo-react-dateinputs': 16.0.0
+      '@progress/kendo-react-dialogs': 16.0.0
+      '@progress/kendo-react-dropdowns': 16.0.0
+      '@progress/kendo-react-form': 16.0.0
+      '@progress/kendo-react-grid': 16.0.0
+      '@progress/kendo-react-inputs': 16.0.0
+      '@progress/kendo-react-intl': 16.0.0
+      '@progress/kendo-react-labels': 16.0.0
+      '@progress/kendo-react-treelist': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
-  '@progress/kendo-react-grid@9.5.0':
-    resolution: {integrity: sha512-9nyz9lC4dVI1778vie1xWo2IH0F/yMU9I4bP1e00C0S9OycWM4p7xJa03dsJNyyRjwx9bkBCTT2kOsEQ5c/YeA==}
+  '@progress/kendo-react-grid@16.0.0':
+    resolution: {integrity: sha512-Ek+MehU50VQzwJCSpli8G/fc/bVc2SPi2FoXL0D3NQneoc+Rgx0eS5zidwvgzQi0US3fukDXlTlDqFLGS/we6A==}
     peerDependencies:
-      '@progress/kendo-data-query': ^1.0.0
+      '@progress/kendo-csv': ^1.0.0
+      '@progress/kendo-data-query': ^1.7.2
       '@progress/kendo-drawing': ^1.21.2
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-animation': 9.5.0
-      '@progress/kendo-react-buttons': 9.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-react-data-tools': 9.5.0
-      '@progress/kendo-react-dateinputs': 9.5.0
-      '@progress/kendo-react-dropdowns': 9.5.0
-      '@progress/kendo-react-indicators': 9.5.0
-      '@progress/kendo-react-inputs': 9.5.0
-      '@progress/kendo-react-intl': 9.5.0
-      '@progress/kendo-react-layout': 9.5.0
-      '@progress/kendo-react-popup': 9.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-file-saver': ^1.1.1
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-animation': 16.0.0
+      '@progress/kendo-react-buttons': 16.0.0
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-conversational-ui': 16.0.0
+      '@progress/kendo-react-data-tools': 16.0.0
+      '@progress/kendo-react-dateinputs': 16.0.0
+      '@progress/kendo-react-dialogs': 16.0.0
+      '@progress/kendo-react-dropdowns': 16.0.0
+      '@progress/kendo-react-form': 16.0.0
+      '@progress/kendo-react-indicators': 16.0.0
+      '@progress/kendo-react-inputs': 16.0.0
+      '@progress/kendo-react-intl': 16.0.0
+      '@progress/kendo-react-labels': 16.0.0
+      '@progress/kendo-react-layout': 16.0.0
+      '@progress/kendo-react-popup': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
-  '@progress/kendo-react-indicators@9.5.0':
-    resolution: {integrity: sha512-ygCnyOQqPEc53Vf00Bed3W2zWNbJ5iFKzEq7C6e7CGRkkcPrQfHjoXgaHIzHfBEdB9hT1nUj0DcErLFyfMpCeg==}
+  '@progress/kendo-react-indicators@16.0.0':
+    resolution: {integrity: sha512-EE3noqQy9I5/Y6lsXyY0A30Rrc2UmGW1h//CFfG0WQeczxQirNj1m080FuFcAfFamfHAP5ld75TOpxi/DzspNw==}
     peerDependencies:
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-common': 9.5.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-common': 16.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
 
-  '@progress/kendo-react-inputs@9.5.0':
-    resolution: {integrity: sha512-wczT5PsfTeNLoD/THYd/iJL3AMVxzLeOcfpyuCt/ZsbXmHPDCOKmvwnIiIKmVXHLmKJ0velVB0pK6073HuLz2w==}
+  '@progress/kendo-react-inputs@16.0.0':
+    resolution: {integrity: sha512-1kfmLzf9LqE089qpB9HLrbTF/+saEHM02MKXp93mDKEXmKroIxKf51OeCj1gOhWEpiTWVZe4enpqXA/TsAkKLw==}
     peerDependencies:
       '@progress/kendo-drawing': ^1.21.2
       '@progress/kendo-inputs-common': ^3.1.0
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-animation': 9.5.0
-      '@progress/kendo-react-buttons': 9.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-react-dialogs': 9.5.0
-      '@progress/kendo-react-intl': 9.5.0
-      '@progress/kendo-react-labels': 9.5.0
-      '@progress/kendo-react-popup': 9.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-animation': 16.0.0
+      '@progress/kendo-react-buttons': 16.0.0
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-dialogs': 16.0.0
+      '@progress/kendo-react-intl': 16.0.0
+      '@progress/kendo-react-labels': 16.0.0
+      '@progress/kendo-react-layout': 16.0.0
+      '@progress/kendo-react-popup': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
-  '@progress/kendo-react-intl@9.5.0':
-    resolution: {integrity: sha512-AGrP9ex5FDRLN5QFIgfUttjcp9eWandpFbISZPL6i7oBvCxH2ycNA6Tsa8q07uYGfPODinZc5wo+iNNwsBIvoQ==}
+  '@progress/kendo-react-intl@16.0.0':
+    resolution: {integrity: sha512-bDRo8p/m1a+owrKOXeehUsf/mR397qmV2FcZq13TtiZmhLmTyzVgK9u5xqj4j5Z+yyMtHmrts6Wl5bHL1Vip7Q==}
     peerDependencies:
-      '@progress/kendo-intl': ^3.1.1
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-common': 9.5.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-intl': ^3.2.1
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-common': 16.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
 
-  '@progress/kendo-react-labels@9.5.0':
-    resolution: {integrity: sha512-n04eqRLHODCKH9DvhVfZhbzA1uOqx3J7XjbIk74VCYezGEL99u15cev7Dzg5s7eP982F/x/7ujpKc1EgB1Zb7w==}
+  '@progress/kendo-react-labels@16.0.0':
+    resolution: {integrity: sha512-5ODl7AdzsLqYcqBSpw0j64TOhGZfX1dru/Cn9oDUSOrTtt3Iant1upb8z5214ZGD+fCvFCXzjLWqQCck2oUu4w==}
     peerDependencies:
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-react-intl': 9.5.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-intl': 16.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
 
-  '@progress/kendo-react-layout@9.5.0':
-    resolution: {integrity: sha512-Z2JXAYrz6g/Rz9J17uQwQdfk4uWahd7x+ppG/Tag5lRWEB07NCN5+izGWTYQL8pSGZlOgFAU/SoYF5k1UsSxCA==}
+  '@progress/kendo-react-layout@16.0.0':
+    resolution: {integrity: sha512-l5z2USTYeGgP/ZKjYiNZchNGqxx+skRLDR4kSmle6GrisTpHM4YYufwCUxvtbfO+Ssz5cx5vymTcpVay2NOCGQ==}
     peerDependencies:
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-animation': 9.5.0
-      '@progress/kendo-react-buttons': 9.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-react-intl': 9.5.0
-      '@progress/kendo-react-popup': 9.5.0
-      '@progress/kendo-react-progressbars': 9.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-animation': 16.0.0
+      '@progress/kendo-react-buttons': 16.0.0
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-intl': 16.0.0
+      '@progress/kendo-react-popup': 16.0.0
+      '@progress/kendo-react-progressbars': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
-  '@progress/kendo-react-map@9.5.0':
-    resolution: {integrity: sha512-IVYlhlftSCV73jWSEVH8TxZdNhMCop6OZFd3pQXCpVOLXavtLAUrmhL1G35vf6r+AB2kqcOdGrWoJKIY+nEnpQ==}
+  '@progress/kendo-react-map@16.0.0':
+    resolution: {integrity: sha512-vqjIkhDk4KZ3lkgbRO1s8HIoiMBPDcczbUhBX1pkCb958YMbghcKcu+bSsOQCpzkI2ynCEwYdL6rtzzxP/MkNA==}
     peerDependencies:
       '@progress/kendo-drawing': ^1.21.2
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-react-popup': 9.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-popup': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
-  '@progress/kendo-react-notification@9.5.0':
-    resolution: {integrity: sha512-M4JF+HDYg9rjxI9N8Z/FPajkmlQyfSWPhD/2Vzbu8x1GZ+LePwgNdTDxKpVY42Y3uIYcTr93Mbs7J0nJxytZIA==}
+  '@progress/kendo-react-notification@16.0.0':
+    resolution: {integrity: sha512-d69pJcD9mGAyVhMNwF6eakiQqy8pWhY0QXAIKuyIVEZHZm5ygmj3DWPvi21XVdy4/08m9vcAqdg5vZFB8kFjiw==}
     peerDependencies:
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
-  '@progress/kendo-react-popup@9.5.0':
-    resolution: {integrity: sha512-CIll3rSCx5WeqqGcbjPNNNP8mRsOXxFZ34wqqLEAANmRKK7h/F+W9VetaYLgMkrEtv3QQJhIm1kQT8EJAfOfSQ==}
+  '@progress/kendo-react-popup@16.0.0':
+    resolution: {integrity: sha512-K01lUVA1XyAz/zHXJ2yYIxaXpjhlAyPj4aDPqUNNscSzXhEHh5m4qg2cp9zW3A5zTdbTNuzdwJJDrPcklyyuPw==}
     peerDependencies:
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-popup-common': ^1.9.0
-      '@progress/kendo-react-common': 9.5.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-popup-common': ^1.9.5
+      '@progress/kendo-react-common': 16.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
 
-  '@progress/kendo-react-progressbars@9.5.0':
-    resolution: {integrity: sha512-DxUNW4XuoV/1GVBK0GwtBNCVBwmD3D0GJ5D9RT6pI0timIiRctVquoaamD10EaXBxXEcy9WVfzGlQRpDHvHzhQ==}
+  '@progress/kendo-react-progressbars@16.0.0':
+    resolution: {integrity: sha512-PfzLor5b7uQhtuXN0N0FcCo9SuHUtgz+GljUkQqHvMPY0RcLeyzcBh0y2T8gBtWE7HZ84QtAfdXixj3pw7ueYg==}
     peerDependencies:
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-animation': 9.5.0
-      '@progress/kendo-react-common': 9.5.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-animation': 16.0.0
+      '@progress/kendo-react-common': 16.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
 
-  '@progress/kendo-react-scheduler@9.5.0':
-    resolution: {integrity: sha512-2LEwdgJ8DilATluO8jQy0bQGgMT9sQYk7M265SF2OMz+jMaN8lgLnnKpLdG/ZevYKrYYr07W9iwJhTstk/lghw==}
+  '@progress/kendo-react-scheduler@16.0.0':
+    resolution: {integrity: sha512-khrRw4TNEFHvVjn/fEvj4dHeEOA+uoy/Z75a1mMjN6vvqKOmYlH1aLMowBwNzPahqVLAOnHdDbp41XhzlRrc0A==}
     peerDependencies:
-      '@progress/kendo-data-query': ^1.5.1
+      '@progress/kendo-data-query': ^1.7.2
       '@progress/kendo-date-math': ^1.4.1
       '@progress/kendo-drawing': ^1.21.2
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-buttons': 9.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-react-dateinputs': 9.5.0
-      '@progress/kendo-react-dialogs': 9.5.0
-      '@progress/kendo-react-dropdowns': 9.5.0
-      '@progress/kendo-react-form': 9.5.0
-      '@progress/kendo-react-inputs': 9.5.0
-      '@progress/kendo-react-intl': 9.5.0
-      '@progress/kendo-react-popup': 9.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-buttons': 16.0.0
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-dateinputs': 16.0.0
+      '@progress/kendo-react-dialogs': 16.0.0
+      '@progress/kendo-react-dropdowns': 16.0.0
+      '@progress/kendo-react-form': 16.0.0
+      '@progress/kendo-react-inputs': 16.0.0
+      '@progress/kendo-react-intl': 16.0.0
+      '@progress/kendo-react-popup': 16.0.0
+      '@progress/kendo-react-tooltip': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
-  '@progress/kendo-react-treelist@9.5.0':
-    resolution: {integrity: sha512-6e/eUjyyLcjdKxSEp7+cPBlauyTwCeifOKFkbfAddatt+857f0uolS3ZYkq4djtp2b2Y4psUK4n/7kRf+x1XqA==}
+  '@progress/kendo-react-tooltip@16.0.0':
+    resolution: {integrity: sha512-G3Vfm/e6/LIkRXbUKiuajKCt2bhySGVwDfw+LPS7VXPlxmwq0UZCG/iIBdTipU1ojYoGgzuiy2tIv7fn7/eoLw==}
     peerDependencies:
-      '@progress/kendo-data-query': ^1.0.0
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-popup': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
+
+  '@progress/kendo-react-treelist@16.0.0':
+    resolution: {integrity: sha512-6/N3E9ymgab5SkzZ6QcK65MqOmP9kS1xBu/Y2HKp1CDmGRyq/9GI6r2iroDLB/tpJOyN5lJow1nO5p30Xd7zBA==}
+    peerDependencies:
+      '@progress/kendo-data-query': ^1.7.2
       '@progress/kendo-date-math': ^1.4.1
       '@progress/kendo-drawing': ^1.21.2
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-react-data-tools': 9.5.0
-      '@progress/kendo-react-dateinputs': 9.5.0
-      '@progress/kendo-react-dialogs': 9.5.0
-      '@progress/kendo-react-dropdowns': 9.5.0
-      '@progress/kendo-react-inputs': 9.5.0
-      '@progress/kendo-react-intl': 9.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-data-tools': 16.0.0
+      '@progress/kendo-react-dateinputs': 16.0.0
+      '@progress/kendo-react-dialogs': 16.0.0
+      '@progress/kendo-react-dropdowns': 16.0.0
+      '@progress/kendo-react-inputs': 16.0.0
+      '@progress/kendo-react-intl': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
-  '@progress/kendo-react-treeview@9.5.0':
-    resolution: {integrity: sha512-i0+ai48wmnnXb6k3Qsi/Qaj5sfY7+5Jb5yv+S+b75xkJgKWKU6o7Ktfz3hIcVUEjIlfNbU104paUGX7YBIYGuQ==}
+  '@progress/kendo-react-treeview@16.0.0':
+    resolution: {integrity: sha512-N4U4V2wgycPNtPNzTAvUi8lNQeE0oRoZBXNmLJb/sw+kYZAD9JL9cMKSicz1SBZy3uy+AoUhBE8xfUOgNmbMOA==}
     peerDependencies:
-      '@progress/kendo-licensing': ^1.5.0
-      '@progress/kendo-react-animation': 9.5.0
-      '@progress/kendo-react-common': 9.5.0
-      '@progress/kendo-svg-icons': ^4.0.0
-      react: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-animation': 16.0.0
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
+
+  '@progress/kendo-react-upload@16.0.0':
+    resolution: {integrity: sha512-+g/DwN1kCxjgtfyT4s0N1Rl3Ya8o2Yi59CbenvxForrkj72Nf+jh43lFaSqy4V/pz2jznA7DUN99o/WCTkgrSg==}
+    peerDependencies:
+      '@progress/kendo-licensing': ^1.7.2
+      '@progress/kendo-react-buttons': 16.0.0
+      '@progress/kendo-react-common': 16.0.0
+      '@progress/kendo-react-intl': 16.0.0
+      '@progress/kendo-react-progressbars': 16.0.0
+      '@progress/kendo-svg-icons': ^4.9.0 || ^5.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@progress/kendo-svg-icons':
+        optional: true
 
   '@progress/kendo-recurrence@1.0.5':
     resolution: {integrity: sha512-r6wGsBQg8Jx3MX3FxTIDfFfuaqjZ65owWfcOXWEXHUlPcIrhbiMVY6/PZYKH6G4D8ZV5QvuG3otdUj7nbvA5uQ==}
     peerDependencies:
       '@progress/kendo-date-math': ^1.5.16
 
-  '@progress/kendo-svg-icons@4.9.2':
-    resolution: {integrity: sha512-piY+szgKU4WvYonSXeiwh9GRondOk19kALo/J3IrdCcT2H0TKBJibS6gHRobjH7ezVpopft56rfXR19OggRBqQ==}
+  '@progress/kendo-smartpaste-common@1.0.0':
+    resolution: {integrity: sha512-XH27wyfkQ7ez/h8bUt1GGgBEA8iMICvqsvch8+pEwZR2SaWUkV0PjeLFXT1ZNSVolEfmzQCKZJbFeYTPkKLBWA==}
 
-  '@progress/kendo-theme-core@11.3.2':
-    resolution: {integrity: sha512-7UWyDZassUIWL/GftAsl3gfamuSQ4gyoiZipjECACOKWkeHqLF9SLvscgWIzwifSVJj4OwveJPJzOv6391BMSg==}
+  '@progress/kendo-svg-icons@4.11.0':
+    resolution: {integrity: sha512-hegIUc6ajq91AIGY0NSgGj7uteOSIA6SjSSUpblj2IG93dPf2DE0gtouf2kQH5z0aqdplzrLzdjMU2SucwcCZA==}
 
-  '@progress/kendo-theme-default@11.3.2':
-    resolution: {integrity: sha512-kuYioSdkigI5SCdmmyFlCibfRadFkpuA3bg7ptidqEqbAGe1tXKJO5dxhSYaD20dOJfwWug41NW9+yDf5eZ0ZA==}
+  '@progress/kendo-svg-icons@5.4.0':
+    resolution: {integrity: sha512-kjsUQ47vHg7mA3iKkG6sHnZf19or+gBe/B7ubFcBmIdhXoXZwN0sMNQLqph4pGPbu6S3n5cAuH8rbRCVTEVbCA==}
 
-  '@progress/kendo-theme-utils@11.3.2':
-    resolution: {integrity: sha512-yL7NEscYabDCfDOnabp1+bN0aSUWR5uv5fPhWs8mtkXB4xSJHk0lcci1o9EyMlYjxjFPo0huprxKRav3qnkRew==}
+  '@progress/kendo-theme-core@14.5.0':
+    resolution: {integrity: sha512-G+7WUeZBfuIL0vwPMrubYyshg2hqddVrYUMgRI+adDOMlehGeX4JNHQ1Mv12oHhXMYtFM49BBl0+JGMcYFUbpg==}
+
+  '@progress/kendo-theme-default@14.5.0':
+    resolution: {integrity: sha512-hi2DrprxaRWvbk0zdqXQuQq1O/K70sbpPYts1X8nxOJcKsC/YTQN84G7PWwSjZOyaRlt0T5QlDjwqU31A51sTg==}
+
+  '@progress/kendo-theme-utils@14.5.0':
+    resolution: {integrity: sha512-htBbq3jIM40AtUu1hrhx2Dvh5F6YZT4cFgAeC3GK+ePXGul5m472r5BQQHbDCkSgN9zVdE9wQCNQAsGmhiYm1g==}
+
+  '@progress/kendo-webspeech-common@1.0.1':
+    resolution: {integrity: sha512-c5IHS5vakAtxbaVfd26rM1dZnt9JfUOqWFq7gK8mU3HaZ9rqoH+DEIn72bbiRs+Ju5e81d7H1Q/nMx8u09pwRg==}
 
   '@progress/pako-esm@1.0.1':
     resolution: {integrity: sha512-O4A3b1EuE9Xe1pC3Xz9Tcn1M/CYrL71f4y/5TXeytOVTkmkzBgYW97fYP2f+54H0e0erWRaqV/kUUB/a8Uxfbw==}
@@ -895,16 +1033,13 @@ packages:
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
 
-  '@types/prop-types@15.7.15':
-    resolution: {integrity: sha512-F6bEyamV9jKGAFBEmlQnesRPGOQqS2+Uwi0Em15xenOxHaf2hv6L8YCVn3rPdPJOiJfPiCnLIRyvwVaqMY3MIw==}
-
-  '@types/react-dom@18.3.7':
-    resolution: {integrity: sha512-MEe3UeoENYVFXzoXEWsvcpg6ZvlrFNlOQ7EOsvhI3CfAXwzPfO8Qwuxd40nepsYKqyyVQnTdEfv68q91yLcKrQ==}
+  '@types/react-dom@19.2.4':
+    resolution: {integrity: sha512-Bsc+QHgp+P/F02XDzNCY9jnZNCUuLki36KT7VKrTXXLdHf+vHMNZnW1rVu5DNW/rCK+fya3DATySbLM4yhtKUw==}
     peerDependencies:
-      '@types/react': ^18.0.0
+      '@types/react': ^19.2.0
 
-  '@types/react@18.3.29':
-    resolution: {integrity: sha512-ch0qJdr2JY0r04NXSprbK6TXOgnaJ1Tz23fm5W+z0/CBah6BSBc3n96h7K9GOtwh0HrilNWHIBzE1Ko4Dcw/Wg==}
+  '@types/react@19.2.18':
+    resolution: {integrity: sha512-AnzbBERsrLKtk2XSfTbYRLjQPdy116Sty4q+T+Bp3IC4l6jNBvreVPAHmpq9qhXQM7CXZPjLVmGMw9sy+hxQ3w==}
 
   '@vitejs/plugin-react@4.7.0':
     resolution: {integrity: sha512-gUu9hwfWvvEDBBmgtAowQCojwZmJ5mcLn3aufeCsitijs3+f2NsrPtlAWIR6OPiqljl96GVCUbLe0HyqIpVaoA==}
@@ -1119,10 +1254,10 @@ packages:
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
 
-  react-dom@18.3.1:
-    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
+  react-dom@19.2.8:
+    resolution: {integrity: sha512-rVprimfGBG3DR+Tq0IQG2DT5PxKth1WIGDmj5yPmlzr4YBe7uyE+Du4oVqTDXZSHGGGXRtTJEGSSePyQCMBglQ==}
     peerDependencies:
-      react: ^18.3.1
+      react: ^19.2.8
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -1150,8 +1285,8 @@ packages:
       react: '>=16.6.0'
       react-dom: '>=16.6.0'
 
-  react@18.3.1:
-    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
+  react@19.2.8:
+    resolution: {integrity: sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw==}
     engines: {node: '>=0.10.0'}
 
   require-directory@2.1.1:
@@ -1166,8 +1301,8 @@ packages:
   safe-buffer@5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
 
-  scheduler@0.23.2:
-    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
+  scheduler@0.27.0:
+    resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
@@ -1467,13 +1602,15 @@ snapshots:
     dependencies:
       '@progress/kendo-drawing': 1.25.2
 
-  '@progress/kendo-charts@2.7.1(@progress/kendo-drawing@1.25.2)':
+  '@progress/kendo-charts@2.13.0(@progress/kendo-drawing@1.25.2)':
     dependencies:
       '@progress/kendo-drawing': 1.25.2
 
   '@progress/kendo-common@1.0.2':
     dependencies:
       tslib: 1.14.1
+
+  '@progress/kendo-csv@1.0.0': {}
 
   '@progress/kendo-data-query@1.7.4':
     dependencies:
@@ -1499,6 +1636,8 @@ snapshots:
       '@progress/kendo-common': 1.0.2
       '@progress/pako-esm': 1.0.1
 
+  '@progress/kendo-file-saver@1.1.3': {}
+
   '@progress/kendo-inputs-common@3.1.3(@progress/kendo-drawing@1.25.2)':
     dependencies:
       '@progress/kendo-drawing': 1.25.2
@@ -1514,324 +1653,404 @@ snapshots:
 
   '@progress/kendo-popup-common@1.9.5': {}
 
-  '@progress/kendo-react-animation@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
+  '@progress/kendo-react-animation@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react-transition-group@4.4.5(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-svg-icons': 4.9.2
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      react-transition-group: 4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+      react-transition-group: 4.4.5(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
-  '@progress/kendo-react-buttons@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@progress/kendo-react-buttons@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-smartpaste-common@1.0.0)(@progress/kendo-svg-icons@5.4.0)(@progress/kendo-webspeech-common@1.0.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-popup': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-svg-icons': 4.9.2
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-intl': 16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-popup': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-smartpaste-common': 1.0.0
+      '@progress/kendo-webspeech-common': 1.0.1
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
-  '@progress/kendo-react-charts@9.5.0(@progress/kendo-drawing@1.25.2)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-intl@9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-layout@9.5.0(1c642dfca8269e1ff249fcd3b30e5cf3))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@progress/kendo-react-charts@16.0.0(@progress/kendo-drawing@1.25.2)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-layout@16.0.0(adcb48a8b1e949790a8daea1104520e4))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
-      '@progress/kendo-charts': 2.7.1(@progress/kendo-drawing@1.25.2)
+      '@progress/kendo-charts': 2.13.0(@progress/kendo-drawing@1.25.2)
       '@progress/kendo-drawing': 1.25.2
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-intl': 9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-layout': 9.5.0(1c642dfca8269e1ff249fcd3b30e5cf3)
-      '@progress/kendo-react-popup': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-svg-icons': 4.9.2
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-intl': 16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-layout': 16.0.0(adcb48a8b1e949790a8daea1104520e4)
+      '@progress/kendo-react-popup': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
-  '@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@progress/kendo-draggable-common': 0.2.3
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-svg-icons': 4.9.2
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
-  '@progress/kendo-react-data-tools@9.5.0(f893c866c44f23e5e8870d9c96ed83f2)':
+  '@progress/kendo-react-conversational-ui@16.0.0(4c9121f99e9c5fcf45c1f61bdeb4d6e9)':
+    dependencies:
+      '@progress/kendo-licensing': 1.11.1
+      '@progress/kendo-react-animation': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react-transition-group@4.4.5(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-buttons': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-smartpaste-common@1.0.0)(@progress/kendo-svg-icons@5.4.0)(@progress/kendo-webspeech-common@1.0.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-indicators': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-inputs': 16.0.0(9d20b3a09e88142455bc19a33fe46ae9)
+      '@progress/kendo-react-intl': 16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-layout': 16.0.0(adcb48a8b1e949790a8daea1104520e4)
+      '@progress/kendo-react-notification': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-popup': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-tooltip': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-upload': 16.0.0(03466a0f2ce05d02c1161bce7e4033ff)
+      prop-types: 15.8.1
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
+
+  '@progress/kendo-react-data-tools@16.0.0(20ee837c8feeacbd8d7ae4c82358bffa)':
     dependencies:
       '@progress/kendo-data-query': 1.7.4
       '@progress/kendo-drawing': 1.25.2
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-animation': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-buttons': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-dateinputs': 9.5.0(1b0060aa6bf76e012556cb0a3e595fe1)
-      '@progress/kendo-react-dropdowns': 9.5.0(4098be1db4bc86f90beaa679b3ea53e7)
-      '@progress/kendo-react-inputs': 9.5.0(649fa4c09586ac1f0cb6528d7ec7a2af)
-      '@progress/kendo-react-intl': 9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-popup': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-svg-icons': 4.9.2
+      '@progress/kendo-react-animation': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react-transition-group@4.4.5(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-buttons': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-smartpaste-common@1.0.0)(@progress/kendo-svg-icons@5.4.0)(@progress/kendo-webspeech-common@1.0.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-dateinputs': 16.0.0(ba1f07a627f1731daf6321400b583a56)
+      '@progress/kendo-react-dropdowns': 16.0.0(e5d856828e7028b2ff9e6fd013d85a0e)
+      '@progress/kendo-react-inputs': 16.0.0(9d20b3a09e88142455bc19a33fe46ae9)
+      '@progress/kendo-react-intl': 16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-popup': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
-  '@progress/kendo-react-dateinputs@9.5.0(1b0060aa6bf76e012556cb0a3e595fe1)':
+  '@progress/kendo-react-dateinputs@16.0.0(ba1f07a627f1731daf6321400b583a56)':
     dependencies:
       '@progress/kendo-date-math': 1.5.17
       '@progress/kendo-dateinputs-common': 0.4.11
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-buttons': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-intl': 9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-labels': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-intl@9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-layout': 9.5.0(1c642dfca8269e1ff249fcd3b30e5cf3)
-      '@progress/kendo-react-popup': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-svg-icons': 4.9.2
+      '@progress/kendo-react-buttons': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-smartpaste-common@1.0.0)(@progress/kendo-svg-icons@5.4.0)(@progress/kendo-webspeech-common@1.0.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-intl': 16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-labels': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-layout': 16.0.0(adcb48a8b1e949790a8daea1104520e4)
+      '@progress/kendo-react-popup': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
-  '@progress/kendo-react-dialogs@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-buttons@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@progress/kendo-react-dialogs@16.0.0(7d6ed7715d28c0e237431ba16b17dc1c)':
     dependencies:
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-buttons': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-svg-icons': 4.9.2
+      '@progress/kendo-react-buttons': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-smartpaste-common@1.0.0)(@progress/kendo-svg-icons@5.4.0)(@progress/kendo-webspeech-common@1.0.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-intl': 16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
-  '@progress/kendo-react-dropdowns@9.5.0(4098be1db4bc86f90beaa679b3ea53e7)':
+  '@progress/kendo-react-dropdowns@16.0.0(e5d856828e7028b2ff9e6fd013d85a0e)':
     dependencies:
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-buttons': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-inputs': 9.5.0(649fa4c09586ac1f0cb6528d7ec7a2af)
-      '@progress/kendo-react-intl': 9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-labels': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-intl@9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-layout': 9.5.0(1c642dfca8269e1ff249fcd3b30e5cf3)
-      '@progress/kendo-react-popup': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-treeview': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-animation@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-svg-icons': 4.9.2
+      '@progress/kendo-react-buttons': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-smartpaste-common@1.0.0)(@progress/kendo-svg-icons@5.4.0)(@progress/kendo-webspeech-common@1.0.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-inputs': 16.0.0(9d20b3a09e88142455bc19a33fe46ae9)
+      '@progress/kendo-react-intl': 16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-labels': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-layout': 16.0.0(adcb48a8b1e949790a8daea1104520e4)
+      '@progress/kendo-react-popup': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-treeview': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-animation@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react-transition-group@4.4.5(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8))(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
-  '@progress/kendo-react-form@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@progress/kendo-react-form@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
 
-  '@progress/kendo-react-gantt@9.5.0(788c08d8d10b6f14466e9c7d101178eb)':
+  '@progress/kendo-react-gantt@16.0.0(da189c641cca45157a74ae9c3721a6eb)':
     dependencies:
       '@progress/kendo-data-query': 1.7.4
       '@progress/kendo-date-math': 1.5.17
       '@progress/kendo-drawing': 1.25.2
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-buttons': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-data-tools': 9.5.0(f893c866c44f23e5e8870d9c96ed83f2)
-      '@progress/kendo-react-dateinputs': 9.5.0(1b0060aa6bf76e012556cb0a3e595fe1)
-      '@progress/kendo-react-dialogs': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-buttons@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-dropdowns': 9.5.0(4098be1db4bc86f90beaa679b3ea53e7)
-      '@progress/kendo-react-form': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-inputs': 9.5.0(649fa4c09586ac1f0cb6528d7ec7a2af)
-      '@progress/kendo-react-intl': 9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-labels': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-intl@9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-treelist': 9.5.0(0636e7bc9b28838c496954cb43140549)
-      '@progress/kendo-svg-icons': 4.9.2
+      '@progress/kendo-react-buttons': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-smartpaste-common@1.0.0)(@progress/kendo-svg-icons@5.4.0)(@progress/kendo-webspeech-common@1.0.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-data-tools': 16.0.0(20ee837c8feeacbd8d7ae4c82358bffa)
+      '@progress/kendo-react-dateinputs': 16.0.0(ba1f07a627f1731daf6321400b583a56)
+      '@progress/kendo-react-dialogs': 16.0.0(7d6ed7715d28c0e237431ba16b17dc1c)
+      '@progress/kendo-react-dropdowns': 16.0.0(e5d856828e7028b2ff9e6fd013d85a0e)
+      '@progress/kendo-react-form': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-grid': 16.0.0(116001f8d1a7c0afb54f4b42b80bf29b)
+      '@progress/kendo-react-inputs': 16.0.0(9d20b3a09e88142455bc19a33fe46ae9)
+      '@progress/kendo-react-intl': 16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-labels': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-treelist': 16.0.0(6c94f1b693f526d5061f92455cc48297)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
-  '@progress/kendo-react-grid@9.5.0(9501b0c293620df874213904dc0893cf)':
+  '@progress/kendo-react-grid@16.0.0(116001f8d1a7c0afb54f4b42b80bf29b)':
     dependencies:
+      '@progress/kendo-csv': 1.0.0
       '@progress/kendo-data-query': 1.7.4
       '@progress/kendo-drawing': 1.25.2
+      '@progress/kendo-file-saver': 1.1.3
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-animation': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-buttons': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-data-tools': 9.5.0(f893c866c44f23e5e8870d9c96ed83f2)
-      '@progress/kendo-react-dateinputs': 9.5.0(1b0060aa6bf76e012556cb0a3e595fe1)
-      '@progress/kendo-react-dropdowns': 9.5.0(4098be1db4bc86f90beaa679b3ea53e7)
-      '@progress/kendo-react-indicators': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-inputs': 9.5.0(649fa4c09586ac1f0cb6528d7ec7a2af)
-      '@progress/kendo-react-intl': 9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-layout': 9.5.0(1c642dfca8269e1ff249fcd3b30e5cf3)
-      '@progress/kendo-react-popup': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-svg-icons': 4.9.2
+      '@progress/kendo-react-animation': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react-transition-group@4.4.5(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-buttons': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-smartpaste-common@1.0.0)(@progress/kendo-svg-icons@5.4.0)(@progress/kendo-webspeech-common@1.0.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-conversational-ui': 16.0.0(4c9121f99e9c5fcf45c1f61bdeb4d6e9)
+      '@progress/kendo-react-data-tools': 16.0.0(20ee837c8feeacbd8d7ae4c82358bffa)
+      '@progress/kendo-react-dateinputs': 16.0.0(ba1f07a627f1731daf6321400b583a56)
+      '@progress/kendo-react-dialogs': 16.0.0(7d6ed7715d28c0e237431ba16b17dc1c)
+      '@progress/kendo-react-dropdowns': 16.0.0(e5d856828e7028b2ff9e6fd013d85a0e)
+      '@progress/kendo-react-form': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-indicators': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-inputs': 16.0.0(9d20b3a09e88142455bc19a33fe46ae9)
+      '@progress/kendo-react-intl': 16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-labels': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-layout': 16.0.0(adcb48a8b1e949790a8daea1104520e4)
+      '@progress/kendo-react-popup': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
-  '@progress/kendo-react-indicators@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@progress/kendo-react-indicators@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
 
-  '@progress/kendo-react-inputs@9.5.0(649fa4c09586ac1f0cb6528d7ec7a2af)':
+  '@progress/kendo-react-inputs@16.0.0(9d20b3a09e88142455bc19a33fe46ae9)':
     dependencies:
       '@progress/kendo-drawing': 1.25.2
       '@progress/kendo-inputs-common': 3.1.3(@progress/kendo-drawing@1.25.2)
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-animation': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-buttons': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-dialogs': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-buttons@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-intl': 9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-labels': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-intl@9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-popup': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-svg-icons': 4.9.2
+      '@progress/kendo-react-animation': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react-transition-group@4.4.5(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-buttons': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-smartpaste-common@1.0.0)(@progress/kendo-svg-icons@5.4.0)(@progress/kendo-webspeech-common@1.0.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-dialogs': 16.0.0(7d6ed7715d28c0e237431ba16b17dc1c)
+      '@progress/kendo-react-intl': 16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-labels': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-layout': 16.0.0(adcb48a8b1e949790a8daea1104520e4)
+      '@progress/kendo-react-popup': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
-  '@progress/kendo-react-intl@9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@progress/kendo-intl': 3.2.1
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
 
-  '@progress/kendo-react-labels@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-intl@9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@progress/kendo-react-labels@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-intl': 9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-intl': 16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
 
-  '@progress/kendo-react-layout@9.5.0(1c642dfca8269e1ff249fcd3b30e5cf3)':
+  '@progress/kendo-react-layout@16.0.0(adcb48a8b1e949790a8daea1104520e4)':
     dependencies:
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-animation': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-buttons': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-intl': 9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-popup': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-progressbars': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-animation@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-svg-icons': 4.9.2
+      '@progress/kendo-react-animation': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react-transition-group@4.4.5(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-buttons': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-smartpaste-common@1.0.0)(@progress/kendo-svg-icons@5.4.0)(@progress/kendo-webspeech-common@1.0.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-intl': 16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-popup': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-progressbars': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-animation@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react-transition-group@4.4.5(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8))(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
-  '@progress/kendo-react-map@9.5.0(@progress/kendo-drawing@1.25.2)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@progress/kendo-react-map@16.0.0(@progress/kendo-drawing@1.25.2)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
-      '@progress/kendo-charts': 2.7.1(@progress/kendo-drawing@1.25.2)
+      '@progress/kendo-charts': 2.13.0(@progress/kendo-drawing@1.25.2)
       '@progress/kendo-drawing': 1.25.2
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-popup': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-svg-icons': 4.9.2
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-popup': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
-  '@progress/kendo-react-notification@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@progress/kendo-react-notification@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-svg-icons': 4.9.2
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
-  '@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@progress/kendo-licensing': 1.11.1
       '@progress/kendo-popup-common': 1.9.5
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
 
-  '@progress/kendo-react-progressbars@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-animation@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@progress/kendo-react-progressbars@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-animation@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react-transition-group@4.4.5(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8))(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-animation': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@progress/kendo-react-animation': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react-transition-group@4.4.5(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
 
-  '@progress/kendo-react-scheduler@9.5.0(0fb583f11755a2e3ae1b163517fe47c1)':
+  '@progress/kendo-react-scheduler@16.0.0(8bc9ccab34f06420456ccb9b6a2dad3f)':
     dependencies:
       '@progress/kendo-data-query': 1.7.4
       '@progress/kendo-date-math': 1.5.17
       '@progress/kendo-draggable': 3.1.0
       '@progress/kendo-drawing': 1.25.2
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-buttons': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-dateinputs': 9.5.0(1b0060aa6bf76e012556cb0a3e595fe1)
-      '@progress/kendo-react-dialogs': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-buttons@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-dropdowns': 9.5.0(4098be1db4bc86f90beaa679b3ea53e7)
-      '@progress/kendo-react-form': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-inputs': 9.5.0(649fa4c09586ac1f0cb6528d7ec7a2af)
-      '@progress/kendo-react-intl': 9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-popup': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@progress/kendo-react-buttons': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-smartpaste-common@1.0.0)(@progress/kendo-svg-icons@5.4.0)(@progress/kendo-webspeech-common@1.0.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-dateinputs': 16.0.0(ba1f07a627f1731daf6321400b583a56)
+      '@progress/kendo-react-dialogs': 16.0.0(7d6ed7715d28c0e237431ba16b17dc1c)
+      '@progress/kendo-react-dropdowns': 16.0.0(e5d856828e7028b2ff9e6fd013d85a0e)
+      '@progress/kendo-react-form': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-inputs': 16.0.0(9d20b3a09e88142455bc19a33fe46ae9)
+      '@progress/kendo-react-intl': 16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-popup': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-tooltip': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@progress/kendo-recurrence': 1.0.5(@progress/kendo-date-math@1.5.17)
-      '@progress/kendo-svg-icons': 4.9.2
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
-  '@progress/kendo-react-treelist@9.5.0(0636e7bc9b28838c496954cb43140549)':
+  '@progress/kendo-react-tooltip@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+    dependencies:
+      '@progress/kendo-licensing': 1.11.1
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-popup': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      prop-types: 15.8.1
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
+
+  '@progress/kendo-react-treelist@16.0.0(6c94f1b693f526d5061f92455cc48297)':
     dependencies:
       '@progress/kendo-data-query': 1.7.4
       '@progress/kendo-date-math': 1.5.17
       '@progress/kendo-drawing': 1.25.2
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-data-tools': 9.5.0(f893c866c44f23e5e8870d9c96ed83f2)
-      '@progress/kendo-react-dateinputs': 9.5.0(1b0060aa6bf76e012556cb0a3e595fe1)
-      '@progress/kendo-react-dialogs': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-buttons@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-popup@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-dropdowns': 9.5.0(4098be1db4bc86f90beaa679b3ea53e7)
-      '@progress/kendo-react-inputs': 9.5.0(649fa4c09586ac1f0cb6528d7ec7a2af)
-      '@progress/kendo-react-intl': 9.5.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-svg-icons': 4.9.2
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-data-tools': 16.0.0(20ee837c8feeacbd8d7ae4c82358bffa)
+      '@progress/kendo-react-dateinputs': 16.0.0(ba1f07a627f1731daf6321400b583a56)
+      '@progress/kendo-react-dialogs': 16.0.0(7d6ed7715d28c0e237431ba16b17dc1c)
+      '@progress/kendo-react-dropdowns': 16.0.0(e5d856828e7028b2ff9e6fd013d85a0e)
+      '@progress/kendo-react-inputs': 16.0.0(9d20b3a09e88142455bc19a33fe46ae9)
+      '@progress/kendo-react-intl': 16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
-  '@progress/kendo-react-treeview@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-animation@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@progress/kendo-react-treeview@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-animation@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react-transition-group@4.4.5(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8))(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@progress/kendo-licensing': 1.11.1
-      '@progress/kendo-react-animation': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-react-common': 9.5.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@4.9.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@progress/kendo-svg-icons': 4.9.2
+      '@progress/kendo-react-animation': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react-transition-group@4.4.5(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
+
+  '@progress/kendo-react-upload@16.0.0(03466a0f2ce05d02c1161bce7e4033ff)':
+    dependencies:
+      '@progress/kendo-licensing': 1.11.1
+      '@progress/kendo-react-buttons': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-intl@16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-react-popup@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-popup-common@1.9.5)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-smartpaste-common@1.0.0)(@progress/kendo-svg-icons@5.4.0)(@progress/kendo-webspeech-common@1.0.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-common': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-intl': 16.0.0(@progress/kendo-intl@3.2.1)(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@progress/kendo-react-progressbars': 16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-animation@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react-transition-group@4.4.5(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8))(@progress/kendo-react-common@16.0.0(@progress/kendo-licensing@1.11.1)(@progress/kendo-svg-icons@5.4.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      prop-types: 15.8.1
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+    optionalDependencies:
+      '@progress/kendo-svg-icons': 5.4.0
 
   '@progress/kendo-recurrence@1.0.5(@progress/kendo-date-math@1.5.17)':
     dependencies:
       '@progress/kendo-date-math': 1.5.17
       '@progress/kendo-intl': 3.2.1
 
-  '@progress/kendo-svg-icons@4.9.2': {}
+  '@progress/kendo-smartpaste-common@1.0.0': {}
 
-  '@progress/kendo-theme-core@11.3.2': {}
+  '@progress/kendo-svg-icons@4.11.0': {}
 
-  '@progress/kendo-theme-default@11.3.2':
+  '@progress/kendo-svg-icons@5.4.0': {}
+
+  '@progress/kendo-theme-core@14.5.0': {}
+
+  '@progress/kendo-theme-default@14.5.0':
     dependencies:
-      '@progress/kendo-svg-icons': 4.9.2
-      '@progress/kendo-theme-core': 11.3.2
-      '@progress/kendo-theme-utils': 11.3.2
+      '@progress/kendo-svg-icons': 4.11.0
+      '@progress/kendo-theme-core': 14.5.0
+      '@progress/kendo-theme-utils': 14.5.0
 
-  '@progress/kendo-theme-utils@11.3.2':
+  '@progress/kendo-theme-utils@14.5.0':
     dependencies:
-      '@progress/kendo-theme-core': 11.3.2
+      '@progress/kendo-theme-core': 14.5.0
+
+  '@progress/kendo-webspeech-common@1.0.1': {}
 
   '@progress/pako-esm@1.0.1': {}
 
@@ -1937,15 +2156,12 @@ snapshots:
 
   '@types/estree@1.0.8': {}
 
-  '@types/prop-types@15.7.15': {}
-
-  '@types/react-dom@18.3.7(@types/react@18.3.29)':
+  '@types/react-dom@19.2.4(@types/react@19.2.18)':
     dependencies:
-      '@types/react': 18.3.29
+      '@types/react': 19.2.18
 
-  '@types/react@18.3.29':
+  '@types/react@19.2.18':
     dependencies:
-      '@types/prop-types': 15.7.15
       csstype: 3.2.3
 
   '@vitejs/plugin-react@4.7.0(vite@5.4.21)':
@@ -2160,40 +2376,37 @@ snapshots:
       object-assign: 4.1.1
       react-is: 16.13.1
 
-  react-dom@18.3.1(react@18.3.1):
+  react-dom@19.2.8(react@19.2.8):
     dependencies:
-      loose-envify: 1.4.0
-      react: 18.3.1
-      scheduler: 0.23.2
+      react: 19.2.8
+      scheduler: 0.27.0
 
   react-is@16.13.1: {}
 
   react-refresh@0.17.0: {}
 
-  react-router-dom@6.30.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-router-dom@6.30.3(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       '@remix-run/router': 1.23.2
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      react-router: 6.30.3(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+      react-router: 6.30.3(react@19.2.8)
 
-  react-router@6.30.3(react@18.3.1):
+  react-router@6.30.3(react@19.2.8):
     dependencies:
       '@remix-run/router': 1.23.2
-      react: 18.3.1
+      react: 19.2.8
 
-  react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-transition-group@4.4.5(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       '@babel/runtime': 7.29.2
       dom-helpers: 5.2.1
       loose-envify: 1.4.0
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
 
-  react@18.3.1:
-    dependencies:
-      loose-envify: 1.4.0
+  react@19.2.8: {}
 
   require-directory@2.1.1: {}
 
@@ -2230,9 +2443,7 @@ snapshots:
 
   safe-buffer@5.2.1: {}
 
-  scheduler@0.23.2:
-    dependencies:
-      loose-envify: 1.4.0
+  scheduler@0.27.0: {}
 
   semver@6.3.1: {}
 

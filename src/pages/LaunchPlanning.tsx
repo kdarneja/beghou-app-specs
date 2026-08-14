@@ -393,7 +393,7 @@ export default function LaunchPlanning() {
   const Row = (props: GanttRowProps) => (
     <GanttRow
       {...props}
-      render={(tr: React.ReactElement, p: GanttRowProps) => {
+      render={(tr: React.ReactElement<{ className?: string }>, p: GanttRowProps) => {
         const di = p.dataItem as GanttTask | undefined;
         const isGroup = di?.isGroup;
         const status = di?.status;

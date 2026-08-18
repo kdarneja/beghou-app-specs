@@ -15,14 +15,29 @@ body,
   width: 100%;
 }
 
+/* App-only design values for the non-Kendo chrome (AppBar, Drawer, cards). The
+   theme owns every brand/semantic/border var (--kendo-*), which the chrome uses
+   directly; these few tints/neutrals the theme doesn't define, so they live here
+   as plain CSS. No JS theme step — drop in beghou-theme.css and this stylesheet. */
+:root {
+  --beghou-surface-card: #edf0fa;
+  --beghou-surface-soft: #f7fbff;
+  --beghou-neutral-50: #f6f6f7;
+  --beghou-neutral-100: #e8e8ec;
+  --beghou-neutral-200: #c5c5cf;
+  --beghou-focus-ring: rgba(2, 4, 52, 0.3);
+  --beghou-border-alt: rgba(2, 4, 52, 0.16);
+  --border-form-input: rgba(2, 4, 52, 0.5);
+}
+
 body {
   /* The Beghou theme sets --kendo-font-family: inherit, so the app supplies the
      font here; Kendo components inherit it (beghou-theme-adoption.md step 4). */
   font-family: 'Inter Variable', Inter, system-ui, sans-serif;
   font-size: 14px;
   line-height: 1.42;
-  color: var(--beghou-navy);
-  background: var(--beghou-surface-app);
+  color: var(--kendo-color-primary);
+  background: var(--kendo-color-surface);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -39,7 +54,7 @@ a {
   right: 0;
   height: 56px;
   background: #ffffff;
-  border-bottom: 1px solid var(--border-container);
+  border-bottom: 1px solid var(--kendo-color-border);
   z-index: 1100;
   display: flex;
   align-items: center;
@@ -73,7 +88,7 @@ a {
   justify-content: center;
   cursor: pointer;
   padding: 0;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   position: relative;
   transition: background-color 120ms ease;
 }
@@ -90,7 +105,7 @@ a {
 .beghou-appbar__icon-btn svg {
   width: 24px;
   height: 24px;
-  fill: var(--beghou-navy);
+  fill: var(--kendo-color-primary);
 }
 
 .beghou-appbar__logo {
@@ -116,7 +131,7 @@ a {
 .beghou-appbar__divider {
   width: 1px;
   height: 32px;
-  background: var(--border-container);
+  background: var(--kendo-color-border);
   margin-left: 24px;
   margin-right: 24px;
   flex-shrink: 0;
@@ -126,7 +141,7 @@ a {
   font-family: var(--kendo-font-family);
   font-size: 14px;
   font-weight: 400;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   max-width: 280px;
   white-space: nowrap;
   overflow: hidden;
@@ -161,8 +176,8 @@ a {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: var(--beghou-navy);
-  color: var(--beghou-on-navy);
+  background: var(--kendo-color-primary);
+  color: var(--kendo-color-on-primary);
   font-family: var(--kendo-font-family);
   font-size: 12px;
   font-weight: 600;
@@ -193,7 +208,7 @@ a {
   right: 0;
   bottom: 0;
   overflow: auto;
-  background: var(--beghou-surface-app);
+  background: var(--kendo-color-surface);
 }
 
 .beghou-drawer-rail {
@@ -203,7 +218,7 @@ a {
   bottom: 0;
   width: 49px;
   background: #ffffff;
-  border-right: 1px solid var(--border-container);
+  border-right: 1px solid var(--kendo-color-border);
   z-index: 900;
   display: flex;
   flex-direction: column;
@@ -216,7 +231,7 @@ a {
   bottom: 0;
   width: 241px;
   background: #ffffff;
-  border-right: 1px solid var(--border-container);
+  border-right: 1px solid var(--kendo-color-border);
   z-index: 1050;
   display: flex;
   flex-direction: column;
@@ -258,7 +273,7 @@ a {
 }
 
 .beghou-drawer__footer {
-  border-top: 1px solid var(--border-container);
+  border-top: 1px solid var(--kendo-color-border);
 }
 
 .beghou-drawer-item {
@@ -267,7 +282,7 @@ a {
   align-items: center;
   padding: 8px 16px;
   background: #ffffff;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   border: 0;
   cursor: pointer;
   font-family: var(--kendo-font-family);
@@ -293,13 +308,13 @@ a {
 
 .beghou-drawer-item--active,
 .beghou-drawer-item--active:hover {
-  background: var(--beghou-navy);
-  color: var(--beghou-on-navy);
+  background: var(--kendo-color-primary);
+  color: var(--kendo-color-on-primary);
 }
 
 .beghou-drawer-item--active:focus-visible {
-  background: var(--beghou-navy);
-  color: var(--beghou-on-navy);
+  background: var(--kendo-color-primary);
+  color: var(--kendo-color-on-primary);
   box-shadow: inset 0 0 0 2px #000000;
 }
 
@@ -359,7 +374,7 @@ a {
   position: relative;
   flex: 1;
   min-height: 0;
-  border: 1px solid var(--border-container);
+  border: 1px solid var(--kendo-color-border);
   border-radius: 4px;
   background: var(--beghou-surface-soft);
   /* overflow intentionally NOT hidden — maximized Windows extend past the
@@ -466,7 +481,7 @@ a {
 .map-toolbar-overlay > .k-toolbar {
   pointer-events: auto;
   background: #ffffff;
-  border: 1px solid var(--border-container);
+  border: 1px solid var(--kendo-color-border);
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(2, 4, 52, 0.06);
 }
@@ -484,7 +499,7 @@ a {
 
 .map-tool-popup {
   background: #ffffff;
-  border: 1px solid var(--border-container);
+  border: 1px solid var(--kendo-color-border);
   border-radius: 4px;
   box-shadow: 0 6px 16px rgba(2, 4, 52, 0.12);
   padding: 4px;
@@ -511,7 +526,7 @@ a {
 
 .beghou-launcher-card {
   background: #ffffff;
-  border: 1px solid var(--border-container);
+  border: 1px solid var(--kendo-color-border);
   border-radius: 4px;
   padding: 16px;
   cursor: pointer;
@@ -519,7 +534,7 @@ a {
   flex-direction: column;
   gap: 8px;
   text-decoration: none;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   box-shadow: var(--kendo-elevation-1);
   transition: box-shadow 150ms ease, transform 150ms ease;
 }
@@ -550,7 +565,7 @@ a {
 .beghou-launcher-card__action {
   font-size: 14px;
   font-weight: 500;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   margin-top: 4px;
 }
 
@@ -586,17 +601,17 @@ a {
    flagged for dialog titlebars), bold navy title, white body. */
 .mv-dialog .k-dialog-titlebar {
   background: var(--beghou-surface-card);
-  border-bottom: 1px solid var(--border-container);
+  border-bottom: 1px solid var(--kendo-color-border);
   padding-block: 14px;
 }
 .mv-dialog .k-dialog-title {
   font-size: 18px;
   font-weight: 700;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 .mv-dialog .k-dialog-actions {
   background: var(--beghou-surface-card);
-  border-top: 1px solid var(--border-container);
+  border-top: 1px solid var(--kendo-color-border);
   padding: 12px 16px;
   margin: 0;
 }
@@ -604,19 +619,19 @@ a {
    into .k-button-outline-primary instead of reading --kendo-color-primary, so
    force the brand navy here to match the design-system secondary button. */
 .mv-dialog .k-button-outline {
-  color: var(--beghou-navy);
-  border-color: var(--beghou-navy);
-  background: var(--beghou-surface-app);
+  color: var(--kendo-color-primary);
+  border-color: var(--kendo-color-primary);
+  background: var(--kendo-color-surface);
 }
 .mv-dialog .k-button-outline:hover {
-  color: var(--beghou-on-navy);
-  background: var(--beghou-navy);
-  border-color: var(--beghou-navy);
+  color: var(--kendo-color-on-primary);
+  background: var(--kendo-color-primary);
+  border-color: var(--kendo-color-primary);
 }
 
 .mv-savebar {
-  background: var(--beghou-surface-app);
-  border-bottom: 1px solid var(--border-container);
+  background: var(--kendo-color-surface);
+  border-bottom: 1px solid var(--kendo-color-border);
   padding: 16px 20px;
   flex-shrink: 0;
 }
@@ -624,13 +639,13 @@ a {
 /* Save input: outline, white fill so it reads as an editable field on the
    white body. */
 .mv-name-input.k-input {
-  background: var(--beghou-surface-app);
+  background: var(--kendo-color-surface);
 }
 
 .mv-section-title {
   font-size: 16px;
   font-weight: 600;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   margin-bottom: 10px;
 }
 
@@ -647,7 +662,7 @@ a {
 .mv-list-header {
   padding: 12px 20px 8px;
   font-size: 13px;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   opacity: 0.7;
   flex-shrink: 0;
 }
@@ -666,7 +681,7 @@ a {
   align-items: center;
   gap: 12px;
   padding: 12px 20px;
-  border-top: 1px solid var(--border-container);
+  border-top: 1px solid var(--kendo-color-border);
 }
 .mv-row:first-child {
   border-top: none;
@@ -688,7 +703,7 @@ a {
   font: inherit;
   font-size: 16px;
   font-weight: 600;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   cursor: text;
   text-align: left;
   border-radius: 2px;
@@ -710,7 +725,7 @@ a {
 
 .mv-saved {
   font-size: 13px;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   opacity: 0.6;
   margin-top: 2px;
 }
@@ -749,7 +764,7 @@ a {
 .mv-confirm-label {
   font-size: 13px;
   font-weight: 600;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 
 .mv-empty {
@@ -759,11 +774,11 @@ a {
 .mv-empty-title {
   font-size: 15px;
   font-weight: 600;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 .mv-empty-sub {
   font-size: 13px;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   opacity: 0.65;
   margin-top: 4px;
 }
@@ -804,7 +819,7 @@ a {
 .cal-field__label {
   font-size: 13px;
   font-weight: 500;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 
 /* Give the controls sensible, consistent widths. */
@@ -819,7 +834,7 @@ a {
 .cal-search-icon {
   display: inline-flex;
   align-items: center;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   opacity: 0.6;
   padding-left: 4px;
 }
@@ -860,19 +875,19 @@ a {
 /* Scheduler toolbar buttons: medium outline. The selected view (Month) stays
    solid navy; everything else reads as a white outline button. */
 .cal-scheduler-wrap .k-scheduler-toolbar .k-button {
-  background: var(--beghou-surface-app);
+  background: var(--kendo-color-surface);
   border: 1px solid var(--border-form-input);
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 .cal-scheduler-wrap .k-scheduler-toolbar .k-button:hover {
   background: var(--beghou-neutral-100);
-  border-color: var(--beghou-navy);
+  border-color: var(--kendo-color-primary);
 }
 .cal-scheduler-wrap .k-scheduler-toolbar .k-button.k-selected,
 .cal-scheduler-wrap .k-scheduler-toolbar .k-button.k-selected:hover {
-  background: var(--beghou-navy);
-  border-color: var(--beghou-navy);
-  color: var(--beghou-on-navy);
+  background: var(--kendo-color-primary);
+  border-color: var(--kendo-color-primary);
+  color: var(--kendo-color-on-primary);
 }
 
 /* Event pills get a 3px gap on the right so adjacent-day events don't meld
@@ -895,7 +910,7 @@ a {
   min-width: 340px;
   max-width: 560px;
   background: #ffffff;
-  border-right: 1px solid var(--border-container);
+  border-right: 1px solid var(--kendo-color-border);
   box-shadow: 6px 0 24px rgba(2, 4, 52, 0.16);
   z-index: 1000;
   display: flex;
@@ -915,7 +930,7 @@ a {
   gap: 12px;
   padding: 20px 16px 16px 24px;
   background: var(--beghou-surface-card);
-  border-bottom: 1px solid var(--border-container);
+  border-bottom: 1px solid var(--kendo-color-border);
   flex-shrink: 0;
 }
 .cal-detail__title {
@@ -924,7 +939,7 @@ a {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.3;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 .cal-detail__close {
   flex-shrink: 0;
@@ -939,7 +954,7 @@ a {
 .cal-detail__date {
   font-size: 14px;
   font-weight: 600;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 .cal-detail__section-label {
   margin-top: 20px;
@@ -947,14 +962,14 @@ a {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   opacity: 0.6;
 }
 .cal-detail__desc {
   margin-top: 6px;
   font-size: 14px;
   line-height: 1.6;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 .cal-detail__desc p {
   margin: 0 0 12px;
@@ -968,38 +983,38 @@ a {
    footer, bold navy title. */
 .cal-add-dialog .k-dialog-titlebar {
   background: var(--beghou-surface-card);
-  border-bottom: 1px solid var(--border-container);
+  border-bottom: 1px solid var(--kendo-color-border);
   padding-block: 14px;
 }
 .cal-add-dialog .k-dialog-title {
   font-size: 18px;
   font-weight: 700;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 .cal-add-dialog .k-dialog-actions {
   background: var(--beghou-surface-card);
-  border-top: 1px solid var(--border-container);
+  border-top: 1px solid var(--kendo-color-border);
   padding: 12px 16px;
   margin: 0;
   align-items: center;
 }
 /* Secondary outline buttons read the brand navy (stock theme bakes a coral). */
 .cal-add-dialog .k-button-outline {
-  color: var(--beghou-navy);
-  border-color: var(--beghou-navy);
-  background: var(--beghou-surface-app);
+  color: var(--kendo-color-primary);
+  border-color: var(--kendo-color-primary);
+  background: var(--kendo-color-surface);
 }
 .cal-add-dialog .k-button-outline:hover {
-  color: var(--beghou-on-navy);
-  background: var(--beghou-navy);
-  border-color: var(--beghou-navy);
+  color: var(--kendo-color-on-primary);
+  background: var(--kendo-color-primary);
+  border-color: var(--kendo-color-primary);
 }
 
 /* "* Required Field" note sits left of the action buttons. */
 .cal-required {
   margin-right: auto;
   font-size: 13px;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 
 .cal-add-chooser {
@@ -1011,12 +1026,12 @@ a {
   min-width: 360px;
   font-size: 14px;
   line-height: 1.5;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 .cal-confirm-text {
   margin: 4px 0 8px;
   font-size: 14px;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 
 .cal-form {
@@ -1035,7 +1050,7 @@ a {
 .cal-form__label {
   font-size: 13px;
   font-weight: 600;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 .cal-form__field .k-input,
 .cal-form__field .k-picker,
@@ -1049,13 +1064,13 @@ a {
 /* Half Day checkbox: outline style to match the outline inputs — white fill
    with a form-input border when unchecked, navy when checked. */
 .cal-add-dialog .k-checkbox {
-  background-color: var(--beghou-surface-app);
+  background-color: var(--kendo-color-surface);
   border-color: var(--border-form-input);
 }
 .cal-add-dialog .k-checkbox:checked,
 .cal-add-dialog .k-checkbox.k-checked {
-  background-color: var(--beghou-navy);
-  border-color: var(--beghou-navy);
+  background-color: var(--kendo-color-primary);
+  border-color: var(--kendo-color-primary);
 }
 
 /* ============================================================================
@@ -1083,7 +1098,7 @@ a {
   margin: 0;
   font-size: 13px;
   line-height: 1.5;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 /* Source sits on its own line below, in design-system light grey. */
 .lp-source {
@@ -1116,7 +1131,7 @@ a {
 .lp-field__label {
   font-size: 13px;
   font-weight: 500;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 .lp-field .k-dropdownlist {
   width: 180px;
@@ -1131,14 +1146,14 @@ a {
 /* Status ButtonGroup: navy-outlined segmented control; selected segment reads
    solid navy (per design system). */
 .lp-filters .k-button-group .k-button {
-  background: var(--beghou-surface-app);
-  border-color: var(--beghou-navy);
-  color: var(--beghou-navy);
+  background: var(--kendo-color-surface);
+  border-color: var(--kendo-color-primary);
+  color: var(--kendo-color-primary);
 }
 .lp-filters .k-button-group .k-button.k-selected {
-  background: var(--beghou-navy);
-  border-color: var(--beghou-navy);
-  color: var(--beghou-on-navy);
+  background: var(--kendo-color-primary);
+  border-color: var(--kendo-color-primary);
+  color: var(--kendo-color-on-primary);
 }
 
 /* Sync status, pushed to the far right. */
@@ -1154,7 +1169,7 @@ a {
   color: rgba(2, 4, 52, 0.55);
 }
 .lp-sync__btn {
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   font-weight: 500;
 }
 
@@ -1175,7 +1190,7 @@ a {
   cursor: default;
   font-size: 14px;
   font-weight: 500;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   height: 32px;
   outline: none;
 }
@@ -1186,8 +1201,8 @@ a {
 
 /* Phase legend, now shown in the hover popover (compact vertical list). */
 .lp-legend-pop {
-  background: var(--beghou-surface-app);
-  border: 1px solid var(--border-container);
+  background: var(--kendo-color-surface);
+  border: 1px solid var(--kendo-color-border);
   border-radius: 4px;
   box-shadow: var(--kendo-elevation-4);
 }
@@ -1197,7 +1212,7 @@ a {
   gap: 8px;
   padding: 12px 14px;
   font-size: 14px;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 .lp-legend__item {
   display: inline-flex;
@@ -1249,13 +1264,13 @@ a {
 .lp-gantt .k-grid-header .k-table-th,
 .lp-gantt .k-grid-header .k-header,
 .lp-gantt .k-grid-header-sticky {
-  background: var(--beghou-navy) !important;
-  color: var(--beghou-on-navy) !important;
+  background: var(--kendo-color-primary) !important;
+  color: var(--kendo-color-on-primary) !important;
   border-color: rgba(255, 255, 255, 0.15) !important;
 }
 .lp-gantt .k-grid-header .k-column-title,
 .lp-gantt .k-grid-header .k-link {
-  color: var(--beghou-on-navy) !important;
+  color: var(--kendo-color-on-primary) !important;
   font-weight: 600;
 }
 /* Centered year label in the timeline header. */
@@ -1316,11 +1331,11 @@ a {
    column is a sticky cell with its own opaque background, so it needs the
    override too (otherwise white label text sits on the light surface). */
 .lp-gantt .lp-group-row {
-  background: var(--beghou-navy);
+  background: var(--kendo-color-primary);
 }
 .lp-gantt .lp-group-row > td,
 .lp-gantt .lp-group-row > td.k-grid-content-sticky {
-  background: var(--beghou-navy) !important;
+  background: var(--kendo-color-primary) !important;
 }
 /* Lift the navy band above the .k-gantt-columns grid (z-index 0) so the
    vertical month lines don't cut through the parent rows. */
@@ -1331,7 +1346,7 @@ a {
 .lp-gantt .lp-group-row td,
 .lp-gantt .lp-group-row .k-link,
 .lp-gantt .lp-group-row .k-cell-inner {
-  color: var(--beghou-on-navy);
+  color: var(--kendo-color-on-primary);
   font-weight: 600;
   font-size: 11px;
   letter-spacing: 0.04em;
@@ -1339,8 +1354,8 @@ a {
 .lp-gantt .lp-group-row .k-icon,
 .lp-gantt .lp-group-row .k-svg-icon,
 .lp-gantt .lp-group-row .k-treelist-toggle {
-  color: var(--beghou-on-navy);
-  fill: var(--beghou-on-navy);
+  color: var(--kendo-color-on-primary);
+  fill: var(--kendo-color-on-primary);
 }
 
 /* System rows: 12px label text. */
@@ -1405,7 +1420,7 @@ a {
   border-left: 2px solid #e60f65;
 }
 .lp-gate--today {
-  border-left: 2px solid var(--beghou-navy);
+  border-left: 2px solid var(--kendo-color-primary);
 }
 .lp-gate__label {
   position: absolute;
@@ -1421,7 +1436,7 @@ a {
   border-radius: 3px;
 }
 .lp-gate--today .lp-gate__label {
-  background: var(--beghou-navy);
+  background: var(--kendo-color-primary);
 }
 
 /* ---------- Small Calendar (portal dashboard) ---------- */
@@ -1461,7 +1476,7 @@ a {
    launcher cards (white, solid border, 4px radius, elevation-1), just no data. */
 .sc-card-placeholder.k-card {
   height: 180px;
-  border: 1px solid var(--border-container);
+  border: 1px solid var(--kendo-color-border);
   background: #ffffff;
   border-radius: 4px;
   box-shadow: var(--kendo-elevation-1);
@@ -1481,7 +1496,7 @@ a {
   flex-direction: column;
   min-height: 0;
   background: #ffffff;
-  border: 1px solid var(--border-container);
+  border: 1px solid var(--kendo-color-border);
   border-radius: 4px;
   padding: 16px;
   box-shadow: var(--kendo-elevation-1);
@@ -1497,20 +1512,20 @@ a {
 .sc-cal-header__icon {
   width: 18px;
   height: 18px;
-  fill: var(--beghou-navy);
+  fill: var(--kendo-color-primary);
   flex-shrink: 0;
 }
 .sc-cal-header__title {
   font-size: 15px;
   font-weight: 700;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   white-space: nowrap;
   margin-right: 2px;
 }
 .sc-cal-header__nav.k-button {
   width: 24px;
   height: 24px;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   flex-shrink: 0;
 }
 .sc-cal-header__add.k-button {
@@ -1575,7 +1590,7 @@ a {
 .sc-calendar .k-calendar-weekdays th,
 .sc-calendar .k-calendar-thead .k-calendar-th {
   font-weight: 700;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   text-transform: uppercase;
 }
 .sc-day {
@@ -1589,24 +1604,24 @@ a {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--beghou-navy);
+  background: var(--kendo-color-primary);
 }
 /* Selected day: navy fill with a white number; its dot (if any) turns white. */
 .sc-calendar .k-calendar-td.k-selected .sc-day,
 .sc-calendar .k-calendar-td.k-selected .sc-day:hover {
-  background: var(--beghou-navy);
-  color: var(--beghou-on-navy);
+  background: var(--kendo-color-primary);
+  color: var(--kendo-color-on-primary);
   box-shadow: none;
 }
 .sc-calendar .k-calendar-td.k-selected .sc-day__dot {
-  background: var(--beghou-on-navy);
+  background: var(--kendo-color-on-primary);
 }
 
 /* --- Events / Updates segmented control --- */
 .sc-tabs.k-button-group {
   display: flex;
   margin: 14px 0 12px;
-  border: 1px solid var(--beghou-navy);
+  border: 1px solid var(--kendo-color-primary);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -1614,7 +1629,7 @@ a {
   flex: 1;
   min-width: 0;
   background: var(--beghou-surface-card);
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   border: 0;
   border-radius: 0;
   font-weight: 600;
@@ -1628,8 +1643,8 @@ a {
   height: 15px;
 }
 .sc-tab.k-button.k-selected {
-  background: var(--beghou-navy);
-  color: var(--beghou-on-navy);
+  background: var(--kendo-color-primary);
+  color: var(--kendo-color-on-primary);
 }
 
 /* --- Feed --- */
@@ -1641,7 +1656,7 @@ a {
 
 .sc-entry {
   padding: 14px 0;
-  border-top: 1px solid var(--border-container);
+  border-top: 1px solid var(--kendo-color-border);
 }
 /* First entry sits directly under the date heading — no divider above it. */
 .sc-feed__date + .sc-entry {
@@ -1654,19 +1669,19 @@ a {
 .sc-feed__date {
   font-size: 15px;
   font-weight: 700;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   margin: 0 0 12px;
 }
 .sc-feed__empty {
   font-size: 14px;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   opacity: 0.55;
   margin: 0;
 }
 .sc-entry__body {
   font-size: 14px;
   line-height: 1.5;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   margin: 0;
 }
 .sc-entry__body--clamp {
@@ -1680,7 +1695,7 @@ a {
   padding: 0;
   border: 0;
   background: transparent;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   font-size: 12px;
   font-weight: 700;
   font-family: inherit;
@@ -1706,7 +1721,7 @@ a {
   );
 }
 .sc-entry__close.k-button {
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   width: 36px;
   height: 36px;
 }
@@ -1717,31 +1732,31 @@ a {
 }
 .sc-add-dialog .k-dialog-titlebar {
   background: var(--beghou-surface-card);
-  border-bottom: 1px solid var(--border-container);
+  border-bottom: 1px solid var(--kendo-color-border);
   padding-block: 14px;
 }
 .sc-add-dialog .k-dialog-title {
   font-size: 18px;
   font-weight: 700;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 .sc-add-dialog .k-dialog-actions {
   background: var(--beghou-surface-card);
-  border-top: 1px solid var(--border-container);
+  border-top: 1px solid var(--kendo-color-border);
   padding: 12px 16px;
   margin: 0;
 }
 /* Match the design-system secondary button (stock theme bakes coral into the
    outline-primary; force brand navy). */
 .sc-add-dialog .k-button-outline {
-  color: var(--beghou-navy);
-  border-color: var(--beghou-navy);
-  background: var(--beghou-surface-app);
+  color: var(--kendo-color-primary);
+  border-color: var(--kendo-color-primary);
+  background: var(--kendo-color-surface);
 }
 .sc-add-dialog .k-button-outline:hover {
-  color: var(--beghou-on-navy);
-  background: var(--beghou-navy);
-  border-color: var(--beghou-navy);
+  color: var(--kendo-color-on-primary);
+  background: var(--kendo-color-primary);
+  border-color: var(--kendo-color-primary);
 }
 
 .sc-form {
@@ -1758,7 +1773,7 @@ a {
 .sc-form__label {
   font-size: 14px;
   font-weight: 600;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 .sc-form .k-datepicker,
 .sc-form .k-textarea {
@@ -1768,7 +1783,7 @@ a {
 /* Design system: unselected radio has a navy border (Kendo defaults to light
    grey). Selected state keeps Kendo's default navy fill + white dot. */
 .sc-form__radios .k-radio {
-  border-color: var(--beghou-navy);
+  border-color: var(--kendo-color-primary);
 }
 
 /* ---------- App Visualizations (chart spec) ---------- */
@@ -1796,33 +1811,33 @@ a {
 .av-viewnav.k-dropdownlist {
   width: 220px;
   flex: 0 0 auto;
-  background: var(--beghou-navy);
-  border-color: var(--beghou-navy);
-  color: var(--beghou-on-navy);
+  background: var(--kendo-color-primary);
+  border-color: var(--kendo-color-primary);
+  color: var(--kendo-color-on-primary);
   font-weight: 600;
 }
 .av-viewnav.k-dropdownlist .k-input-value-text {
-  color: var(--beghou-on-navy);
+  color: var(--kendo-color-on-primary);
 }
 .av-viewnav.k-dropdownlist .k-input-button,
 .av-viewnav.k-dropdownlist .k-button-icon {
-  color: var(--beghou-on-navy);
+  color: var(--kendo-color-on-primary);
 }
 .av-viewnav.k-dropdownlist:hover,
 .av-viewnav.k-dropdownlist.k-focus {
-  background: var(--beghou-navy-hover);
-  border-color: var(--beghou-navy-hover);
+  background: var(--kendo-color-primary-hover);
+  border-color: var(--kendo-color-primary-hover);
 }
 /* Popup: white list, navy full-width highlight on the selected/hovered item. */
 .av-viewnav-popup .k-list-item {
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 .av-viewnav-popup .k-list-item.k-selected {
-  background: var(--beghou-navy);
-  color: var(--beghou-on-navy);
+  background: var(--kendo-color-primary);
+  color: var(--kendo-color-on-primary);
 }
 .av-viewnav-popup .k-list-item.k-selected:hover {
-  background: var(--beghou-navy-hover);
+  background: var(--kendo-color-primary-hover);
 }
 .av-viewnav-popup .k-list-item:hover:not(.k-selected) {
   background: var(--beghou-surface-card);
@@ -1833,7 +1848,7 @@ a {
   z-index: 2;
 }
 .av-notes-btn.k-button {
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   font-weight: 600;
 }
 .av-notes-popup .av-notes {
@@ -1844,7 +1859,7 @@ a {
 .av-notes__title {
   font-size: 14px;
   font-weight: 700;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   margin: 0 0 10px;
 }
 .av-notes__list {
@@ -1857,13 +1872,13 @@ a {
 .av-notes__list li {
   font-size: 13px;
   line-height: 1.45;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 
 /* Card chrome: 1px border + elevation shadow on white. */
 .av-card {
   background: #ffffff;
-  border: 1px solid var(--border-container);
+  border: 1px solid var(--kendo-color-border);
   border-radius: 6px;
   box-shadow: var(--kendo-elevation-4);
   padding: 16px 20px;
@@ -1882,12 +1897,12 @@ a {
 .av-card__title {
   font-size: 16px;
   font-weight: 700;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   margin: 0;
 }
 .av-card__sub {
   font-size: 13px;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   opacity: 0.6;
   margin: 2px 0 0;
 }
@@ -1922,13 +1937,13 @@ a {
 
 /* Segmented control (CRM Engagement / HCP Coverage): navy selected, 30px. */
 .av-seg.k-button-group {
-  border: 1px solid var(--beghou-navy);
+  border: 1px solid var(--kendo-color-primary);
   border-radius: 4px;
   overflow: hidden;
 }
 .av-seg__btn.k-button {
   background: #ffffff;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   border: 0;
   border-radius: 0;
   font-weight: 600;
@@ -1936,8 +1951,8 @@ a {
   padding: 0 14px;
 }
 .av-seg__btn.k-button.k-selected {
-  background: var(--beghou-navy);
-  color: var(--beghou-on-navy);
+  background: var(--kendo-color-primary);
+  color: var(--kendo-color-on-primary);
 }
 /* CRM toggle sits below the title, above the chart. */
 .av-card--crm .av-seg {
@@ -1951,7 +1966,7 @@ a {
 }
 .av-field__label {
   font-size: 13px;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 
 /* Data quality tab: one card, sections divided by 1px borders (header /
@@ -1963,11 +1978,11 @@ a {
 }
 .av-dq__title {
   padding: 16px 20px;
-  border-bottom: 1px solid var(--border-container);
+  border-bottom: 1px solid var(--kendo-color-border);
 }
 .av-dq__filters-row {
   display: flex;
-  border-bottom: 1px solid var(--border-container);
+  border-bottom: 1px solid var(--kendo-color-border);
 }
 .av-dq__filters {
   flex: 1;
@@ -1983,7 +1998,7 @@ a {
   align-items: center;
   gap: 10px;
   padding: 16px 20px;
-  border-left: 1px solid var(--border-container);
+  border-left: 1px solid var(--kendo-color-border);
   min-width: 440px;
 }
 .av-dq__summary .av-pf {
@@ -1992,7 +2007,7 @@ a {
 }
 .av-dq-summary__label {
   font-weight: 700;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 .av-dq__body {
   display: flex;
@@ -2018,7 +2033,7 @@ a {
   flex: 1;
   min-width: 0;
   padding: 16px 20px;
-  border-left: 1px solid var(--border-container);
+  border-left: 1px solid var(--kendo-color-border);
 }
 
 /* Pass / fail ratio bar (styled; Kendo has no labeled two-segment indicator). */
@@ -2058,7 +2073,7 @@ a {
   .av-dq__summary,
   .av-dq__results {
     border-left: 0;
-    border-top: 1px solid var(--border-container);
+    border-top: 1px solid var(--kendo-color-border);
     min-width: 0;
   }
   .av-dq__grid {
@@ -2079,7 +2094,7 @@ a {
 
 .epr-body {
   padding: 20px 24px 8px;
-  background: var(--beghou-surface-app);
+  background: var(--kendo-color-surface);
 }
 
 .epr-block {
@@ -2089,13 +2104,13 @@ a {
 .epr-label {
   font-size: 14px;
   font-weight: 700;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   margin-bottom: 8px;
 }
 
 .epr-users-input.k-input,
 .epr-input.k-input {
-  background: var(--beghou-surface-app);
+  background: var(--kendo-color-surface);
 }
 
 /* Product Roles header: label on the left, Add-role dropdown on the right. */
@@ -2113,14 +2128,14 @@ a {
 }
 .epr-add-role.k-dropdownlist {
   min-width: 220px;
-  background: var(--beghou-surface-app);
+  background: var(--kendo-color-surface);
 }
 
 .epr-help {
   margin: 0 0 14px;
   font-size: 14px;
   line-height: 1.45;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   opacity: 0.6;
 }
 
@@ -2132,20 +2147,20 @@ a {
 
 /* Empty state: no roles assigned yet. */
 .epr-empty {
-  border: 1px dashed var(--border-container);
+  border: 1px dashed var(--kendo-color-border);
   border-radius: 4px;
   padding: 20px 16px;
   text-align: center;
   font-size: 14px;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   opacity: 0.55;
 }
 
 /* Collapsed role row: white card with a subtle border. */
 .epr-role {
-  border: 1px solid var(--border-container);
+  border: 1px solid var(--kendo-color-border);
   border-radius: 4px;
-  background: var(--beghou-surface-app);
+  background: var(--kendo-color-surface);
   overflow: hidden;
 }
 /* Expanded row: signature card tint wraps header + body. */
@@ -2171,7 +2186,7 @@ a {
 .epr-role-name {
   font-size: 16px;
   font-weight: 700;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
 }
 
 .epr-role-head-right {
@@ -2182,7 +2197,7 @@ a {
 
 .epr-role-summary {
   font-size: 14px;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   opacity: 0.55;
 }
 .epr-role-summary--set {
@@ -2190,14 +2205,14 @@ a {
 }
 
 .epr-chevron {
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   width: 14px;
   height: 14px;
 }
 
 /* Flat icon buttons (remove role, clear property) — navy, no chrome. */
 .epr-icon-btn.k-button {
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   padding: 4px;
   min-width: 0;
 }
@@ -2208,8 +2223,8 @@ a {
 
 /* Empty state: white inner card holding the inline Key/Value form. */
 .epr-form-card {
-  background: var(--beghou-surface-app);
-  border: 1px solid var(--border-container);
+  background: var(--kendo-color-surface);
+  border: 1px solid var(--kendo-color-border);
   border-radius: 4px;
   padding: 16px;
 }
@@ -2231,7 +2246,7 @@ a {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   opacity: 0.7;
 }
 .epr-req {
@@ -2261,7 +2276,7 @@ a {
   margin-top: 14px;
 }
 .epr-form-actions .k-button-flat {
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   font-weight: 700;
 }
 /* Disabled "Save property": muted gray fill so the enabled/disabled contrast
@@ -2270,7 +2285,7 @@ a {
 .epr-form-actions .k-button-solid-primary.k-disabled {
   background: var(--beghou-neutral-200);
   border-color: var(--beghou-neutral-200);
-  color: var(--beghou-surface-app);
+  color: var(--kendo-color-surface);
   opacity: 1;
 }
 
@@ -2278,6 +2293,6 @@ a {
   margin: 10px 2px 0;
   font-size: 13px;
   line-height: 1.45;
-  color: var(--beghou-navy);
+  color: var(--kendo-color-primary);
   opacity: 0.55;
 }

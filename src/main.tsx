@@ -6,12 +6,8 @@ import '@fontsource-variable/inter/index.css';
 //    into this file — do NOT also import it. Must load before the app's own CSS.
 import './beghou-theme/dist/css/beghou-theme.css';
 
-// 3. Apply Beghou app tokens (--beghou-* / --border-*) on :root. The theme owns
-//    the --kendo-* vars now; this only supplies the app-namespace tokens index.css uses.
-import { applyBeghouTheme } from './theme/applyBeghouTheme';
-applyBeghouTheme();
-
-// 4. Project-level CSS (chrome + page styles)
+// 3. Project-level CSS (chrome + page styles). Uses the theme's --kendo-* vars
+//    directly; no JS theme step.
 import './index.css';
 
 import React from 'react';

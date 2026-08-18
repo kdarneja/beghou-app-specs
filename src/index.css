@@ -15,17 +15,6 @@ body,
   width: 100%;
 }
 
-/* kendo-svg-icons 5.x ships outline icons whose paths are `fill="none"` and
-   drawn with a stroke. kendo-theme-default supplies the rule that strokes them
-   (`.k-svg-icon>svg [fill=none]{stroke:var(--kendo-icon-color)}`), but the
-   ThemeBuilder export of beghou-theme.css drops it (and the --kendo-icon-color
-   var), so every such icon renders invisible — chrome icons and Kendo component
-   glyphs (dropdown carets, grid arrows) alike. Restore it with currentColor so
-   outline icons paint in the inherited text color, matching filled icons. */
-.k-svg-icon > svg [fill='none'] {
-  stroke: currentColor;
-}
-
 body {
   /* The Beghou theme sets --kendo-font-family: inherit, so the app supplies the
      font here; Kendo components inherit it (beghou-theme-adoption.md step 4). */

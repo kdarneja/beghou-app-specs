@@ -1,0 +1,87 @@
+// Compatible with @progress/kendo-theme-default v.14.1.0
+
+
+  @use 'tokens' as *;
+
+
+@use '@progress/kendo-theme-default/scss/index.scss' as * with (
+
+  $kendo-appbar-gap: $tb-kendo-appbar-gap,
+  $kendo-button-border: $tb-kendo-button-border,
+  $kendo-button-hover-border: $tb-kendo-button-hover-border,
+  $kendo-card-border: $tb-kendo-card-border,
+  $kendo-checkbox-bg: $tb-kendo-checkbox-bg,
+  $kendo-checkbox-border: $tb-kendo-checkbox-border,
+  $kendo-input-border: $tb-kendo-input-border,
+  $kendo-chip-solid-border: $tb-kendo-chip-solid-border,
+  $kendo-color-editor-border: $tb-kendo-color-editor-border,
+  $kendo-color-gradient-border: $tb-kendo-color-gradient-border,
+  $kendo-dock-manager-border: $tb-kendo-dock-manager-border,
+  $kendo-expander-border: $tb-kendo-expander-border,
+  $kendo-input-hover-border: $tb-kendo-input-hover-border,
+  $kendo-listbox-border: $tb-kendo-listbox-border,
+  $kendo-listview-border: $tb-kendo-listview-border,
+  $kendo-menu-popup-border: $tb-kendo-menu-popup-border,
+  $kendo-pager-bg: $tb-kendo-pager-bg,
+  $kendo-pager-border: $tb-kendo-pager-border,
+  $kendo-picker-outline-bg: $tb-kendo-picker-outline-bg,
+  $kendo-progressbar-border: $tb-kendo-progressbar-border,
+  $kendo-progressbar-indeterminate-border: $tb-kendo-progressbar-indeterminate-border,
+  $kendo-scheduler-border: $tb-kendo-scheduler-border,
+  $kendo-scrollview-border: $tb-kendo-scrollview-border,
+  $kendo-splitter-border: $tb-kendo-splitter-border,
+  $kendo-table-header-bg: $tb-kendo-table-header-bg,
+  $kendo-tabstrip-border: $tb-kendo-tabstrip-border,
+  $kendo-tabstrip-item-selected-border: $tb-kendo-tabstrip-item-selected-border,
+  $kendo-tabstrip-content-border: $tb-kendo-tabstrip-content-border,
+  $kendo-toolbar-bg: $tb-kendo-toolbar-bg,
+  $kendo-toolbar-border: $tb-kendo-toolbar-border,
+  $kendo-upload-border: $tb-kendo-upload-border,
+  $kendo-colors: (  
+    primary: $tb-kendo-color-primary,
+    surface: $tb-kendo-color-surface,
+    border: $tb-kendo-color-border,
+    base: $tb-kendo-color-base,
+    on-primary: $tb-kendo-color-on-primary,
+    border-alt: $tb-kendo-color-border-alt,
+    on-app-surface: $tb-kendo-color-on-app-surface,
+    surface-alt: $tb-kendo-color-surface-alt,
+    primary-on-surface: $tb-kendo-color-primary-on-surface,
+    on-base: $tb-kendo-color-on-base,
+    base-hover: $tb-kendo-color-base-hover,
+    base-active: $tb-kendo-color-base-active,
+    subtle: $tb-kendo-color-subtle,
+    primary-hover: $tb-kendo-color-primary-hover,
+    base-subtle: $tb-kendo-color-base-subtle,
+    base-on-subtle: $tb-kendo-color-base-on-subtle,
+    base-subtle-hover: $tb-kendo-color-base-subtle-hover,
+    primary-active: $tb-kendo-color-primary-active,
+    info: $tb-kendo-color-info,
+    success: $tb-kendo-color-success,
+    error: $tb-kendo-color-error,
+    base-subtle-active: $tb-kendo-color-base-subtle-active,
+    primary-subtle: $tb-kendo-color-primary-subtle,
+    primary-subtle-hover: $tb-kendo-color-primary-subtle-hover,
+    primary-subtle-active: $tb-kendo-color-primary-subtle-active,
+    primary-emphasis: $tb-kendo-color-primary-emphasis,
+    primary-on-subtle: $tb-kendo-color-primary-on-subtle,
+    secondary: $tb-kendo-color-secondary,
+    tertiary: $tb-kendo-color-tertiary,
+    warning: $tb-kendo-color-warning,
+    on-warning: $tb-kendo-color-on-warning,
+    series: $tb-kendo-color-series,
+    series-c: $tb-kendo-color-series-c,
+    series-d: $tb-kendo-color-series-d,
+    series-e: $tb-kendo-color-series-e,
+  ),
+    $kendo-font-family: $tb-kendo-font-family,
+  $kendo-font-size: $tb-kendo-font-size,
+  $kendo-font-weight-normal: $tb-kendo-font-weight-normal,
+  $kendo-line-height: $tb-kendo-line-height,
+
+);
+@use '@progress/kendo-theme-utils/scss/all.scss' as *;
+
+@forward '@progress/kendo-theme-default/scss/index.scss';
+
+@include kendo-theme--styles();

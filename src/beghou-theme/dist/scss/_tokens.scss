@@ -1,0 +1,327 @@
+// Compatible with @progress/kendo-theme-default v.14.1.0
+
+$tb-kendo-appbar-gap:
+2rem;
+$tb-kendo-button-border-width:
+1px;
+$tb-kendo-border-radius-base:
+0.25rem;
+$tb-kendo-font-weight-bold:
+700;
+$tb-kendo-color-primary:
+#020434;
+$tb-kendo-color-surface:
+#FFF;
+$tb-kendo-color-border:
+rgba(2, 4, 52, 0.08);
+$tb-kendo-color-base:
+#FFF;
+$tb-kendo-button-border:
+rgba(2, 4, 52, 0.5);
+$tb-beghou-color-grey-2:
+#E8E8EC;
+$tb-kendo-button-hover-border:
+rgba(2, 4, 52, 0.8);
+$tb-beghou-color-grey-3:
+#F6F6F7;
+$tb-kendo-color-on-primary:
+white;
+$tb-beghou-color-deep-blueprint:
+#002889;
+$tb-beghou-component-border:
+rgba(2, 4, 52, 0.5);
+$tb-kendo-color-border-alt:
+rgba(2, 4, 52, 0.16);
+$tb-beghou-component-hover-border:
+rgba(2, 4, 52, 0.8);
+$tb-beghou-kendo-app-surface:
+#EDF0FA;
+$tb-beghou-color-semantic-info:
+#3282FA;
+$tb-beghou-color-semantic-success:
+#11A13C;
+$tb-beghou-color-semantic-error:
+#FF0000;
+$tb-beghou-color-cards:
+#ffffff;
+$tb-beghou-color-light-blue:
+#F7FBFF;
+$tb-beghou-color-dark-grey:
+#C5C5CF;
+$tb-beghou-color-medium-grey:
+#E8E8EC;
+$tb-beghou-color-light-grey:
+#F6F6F7;
+$tb-beghou-color-backgorund:
+#ffffff;
+$tb-beghou-color-appbackground:
+#F1F1F1;
+$tb-beghou-color-charts-1:
+#2F4F4F;
+$tb-beghou-color-charts-2:
+#004D3F;
+$tb-beghou-color-charts-3:
+#008080;
+$tb-beghou-color-charts-4:
+#1F77B4;
+$tb-beghou-color-charts-5:
+#4363D8;
+$tb-beghou-color-charts-6:
+#695ACD;
+$tb-beghou-color-charts-7:
+#E60F65;
+$tb-beghou-color-charts-8:
+#800080;
+$tb-beghou-color-charts-9:
+#000080;
+$tb-beghou-color-charts-10:
+#911EB4;
+$tb-beghou-color-charts-11:
+#AA4488;
+$tb-beghou-color-charts-12:
+#BF01BF;
+$tb-beghou-color-charts-13:
+#C71585;
+$tb-beghou-color-charts-14:
+#B02F60;
+$tb-beghou-color-charts-15:
+#771155;
+$tb-beghou-color-charts-16:
+#993399;
+$tb-beghou-color-charts-17:
+#4B0082;
+$tb-beghou-color-charts-18:
+#D00100;
+$tb-beghou-color-charts-19:
+#B22222;
+$tb-beghou-color-charts-20:
+#800000;
+$tb-beghou-color-charts-21:
+#A64B00;
+$tb-beghou-color-charts-22:
+#8C7501;
+$tb-beghou-color-charts-23:
+#A0522D;
+$tb-beghou-color-charts-24:
+#8B4512;
+$tb-beghou-color-charts-25:
+#9A6324;
+$tb-beghou-color-charts-26:
+#4C531F;
+$tb-beghou-color-charts-27:
+#556B2F;
+$tb-beghou-color-charts-28:
+#008001;
+$tb-beghou-color-charts-29:
+#000000;
+$tb-beghou-color-charts-30:
+#767676;
+$tb-beghou-color-charts-31:
+#124477;
+$tb-beghou-color-charts-32:
+#020434;
+$tb-beghou-color-charts-33:
+#FE7D4E;
+$tb-beghou-color-sky-pulse:
+#008DE7;
+$tb-beghou-color-electric-aqua:
+#0CE6DF;
+$tb-beghou-color-teal-current:
+#00AEA8;
+$tb-beghou-color-green-signal:
+#61CE7D;
+$tb-beghou-color-semantic-error-tint:
+#FFE5E5;
+$tb-beghou-color-semantic-error-hover:
+#CC0000;
+$tb-beghou-color-semantic-success-hover:
+#0B6E29;
+$tb-beghou-color-semantic-success-tint:
+#E2F4E8;
+$tb-beghou-color-semantic-warning:
+#FFA202;
+$tb-beghou-color-semantic-warning-hover:
+#E68A00;
+$tb-beghou-color-semantic-warning-tint:
+#FFF1D6;
+$tb-beghou-color-semantic-info-hover:
+#1852B0;
+$tb-beghou-color-semantic-info-tint:
+#E4EEFE;
+$tb-beghou-color-neutral-1:
+#F7FBFF;
+$tb-beghou-color-neutral-2:
+#EDF0FA;
+$tb-beghou-color-grey-1:
+#C5C5CF;
+$tb-kendo-color-on-app-surface:
+$tb-kendo-color-primary;
+$tb-kendo-color-surface-alt:
+$tb-kendo-color-surface;
+$tb-kendo-color-primary-on-surface:
+$tb-kendo-color-primary;
+$tb-kendo-color-on-base:
+$tb-kendo-color-primary;
+$tb-kendo-color-base-hover:
+$tb-beghou-color-grey-2;
+$tb-kendo-color-base-active:
+$tb-beghou-color-grey-3;
+$tb-kendo-button-selected-bg:
+$tb-kendo-color-primary;
+$tb-kendo-button-selected-text:
+$tb-kendo-color-on-primary;
+$tb-kendo-color-subtle:
+$tb-kendo-color-primary;
+$tb-kendo-color-primary-hover:
+$tb-beghou-color-deep-blueprint;
+$tb-kendo-card-border:
+$tb-beghou-component-border;
+$tb-kendo-checkbox-bg:
+$tb-kendo-color-base;
+$tb-kendo-checkbox-border:
+$tb-beghou-component-border;
+$tb-kendo-color-base-subtle:
+$tb-beghou-color-grey-2;
+$tb-kendo-color-base-on-subtle:
+$tb-kendo-color-primary;
+$tb-kendo-input-border:
+$tb-beghou-component-border;
+$tb-kendo-chip-solid-border:
+$tb-kendo-input-border;
+$tb-kendo-color-base-subtle-hover:
+$tb-beghou-color-grey-3;
+$tb-kendo-color-editor-border:
+$tb-beghou-component-border;
+$tb-kendo-color-gradient-border:
+$tb-beghou-component-border;
+$tb-kendo-dock-manager-border:
+$tb-beghou-component-border;
+$tb-kendo-expander-border:
+$tb-beghou-component-border;
+$tb-kendo-input-bg:
+$tb-kendo-color-surface-alt;
+$tb-kendo-input-hover-border:
+$tb-beghou-component-hover-border;
+$tb-kendo-listbox-border:
+$tb-beghou-component-border;
+$tb-kendo-listview-border:
+$tb-beghou-component-border;
+$tb-kendo-menu-popup-border:
+$tb-beghou-component-border;
+$tb-kendo-pager-bg:
+$tb-beghou-kendo-app-surface;
+$tb-kendo-pager-border:
+$tb-beghou-component-border;
+$tb-kendo-picker-outline-bg:
+$tb-kendo-color-base;
+$tb-kendo-progressbar-border:
+$tb-beghou-component-border;
+$tb-kendo-color-primary-active:
+$tb-kendo-color-primary;
+$tb-kendo-progressbar-indeterminate-border:
+$tb-beghou-component-border;
+$tb-kendo-scheduler-border:
+$tb-beghou-component-border;
+$tb-kendo-scrollview-border:
+$tb-beghou-component-border;
+$tb-kendo-splitter-border:
+$tb-beghou-component-border;
+$tb-kendo-table-header-bg:
+$tb-beghou-kendo-app-surface;
+$tb-kendo-tabstrip-border:
+$tb-beghou-component-border;
+$tb-kendo-tabstrip-item-selected-border:
+$tb-beghou-component-border;
+$tb-kendo-tabstrip-content-border:
+$tb-beghou-component-border;
+$tb-kendo-toolbar-bg:
+$tb-beghou-kendo-app-surface;
+$tb-kendo-toolbar-border:
+$tb-beghou-component-border;
+$tb-kendo-upload-border:
+$tb-beghou-component-border;
+$tb-kendo-color-info:
+$tb-beghou-color-semantic-info;
+$tb-kendo-color-success:
+$tb-beghou-color-semantic-success;
+$tb-kendo-color-error:
+$tb-beghou-color-semantic-error;
+$tb-kendo-color-base-subtle-active:
+$tb-beghou-color-grey-3;
+$tb-kendo-color-primary-subtle:
+$tb-kendo-color-primary;
+$tb-kendo-color-primary-subtle-hover:
+$tb-beghou-color-deep-blueprint;
+$tb-kendo-color-primary-subtle-active:
+$tb-kendo-color-primary;
+$tb-kendo-color-primary-emphasis:
+$tb-kendo-color-primary;
+$tb-kendo-color-primary-on-subtle:
+$tb-kendo-color-primary;
+$tb-kendo-color-secondary:
+$tb-beghou-color-deep-blueprint;
+$tb-kendo-color-tertiary:
+$tb-kendo-color-primary;
+$tb-kendo-color-warning:
+$tb-beghou-color-semantic-warning;
+$tb-kendo-color-on-warning:
+$tb-kendo-color-primary;
+$tb-kendo-color-series:
+$tb-beghou-color-charts-33;
+$tb-kendo-color-series-c:
+$tb-beghou-color-electric-aqua;
+$tb-kendo-color-series-d:
+$tb-beghou-color-charts-6;
+$tb-kendo-color-series-e:
+$tb-beghou-color-charts-12;
+
+$tb-kendo-elevation-1: 0px 2px 3px 0 rgba(0, 0, 0, 0.04);
+
+
+    $tb-kendo-font-family: inherit;
+    $tb-kendo-font-size: 0.875rem;
+    $tb-kendo-font-weight-normal: 400;
+    $tb-kendo-line-height: 1.4285714285714286;
+    $enable-gradients: true;
+
+$tb-typography: (
+  kendo-default-typography: (
+      font-family: (inherit),
+      font-size: 0.875rem,
+      font-weight: 400,
+      line-height: 1.4285714285714286,
+        ),
+);
+
+@mixin typography-classes ($typography) {
+  @each $selector, $property in $typography {
+    &-#{$selector} {
+      @each $propName, $propValue in $property {
+        #{$propName}: $propValue;
+      }
+    } &-#{$selector}-important {
+      @each $propName, $propValue in $property {
+        #{$propName}: $propValue !important;
+      }
+    }
+  }
+}
+
+$tb-effects: (
+  tb-internal-none-effects: (
+      box-shadow: (none), filter: (none), backdrop-filter: (none),  ),
+);
+
+@mixin effects-classes ($effects) {
+  @each $selector, $property in $effects {
+    &-#{$selector} {
+      @each $propName, $propValue in $property {
+        #{$propName}: $propValue;
+      }
+    } &-#{$selector}-important {
+      @each $propName, $propValue in $property {
+        #{$propName}: $propValue !important;
+      }
+    }
+  }
+}

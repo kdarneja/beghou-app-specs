@@ -1,6 +1,8 @@
 node_modules
-dist
-dist-ssr
+# Anchored to repo root so it only ignores the app build output, NOT the
+# committed theme at src/beghou-theme/dist/ (that ships the compiled CSS).
+/dist
+/dist-ssr
 .DS_Store
 *.local
 .vite

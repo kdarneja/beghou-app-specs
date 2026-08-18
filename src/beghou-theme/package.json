@@ -1,0 +1,8 @@
+{
+  "name": "beghou-theme",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@progress/kendo-theme-default": "14.1.0"
+  }
+}

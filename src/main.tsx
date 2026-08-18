@@ -1,13 +1,13 @@
-// 1. Inter font weights
-import '@fontsource/inter/400.css';
-import '@fontsource/inter/500.css';
-import '@fontsource/inter/600.css';
-import '@fontsource/inter/700.css';
+// 1. Inter (variable). The Beghou theme sets `--kendo-font-family: inherit`, so
+//    the app must supply the font itself (see beghou-theme-adoption.md step 4).
+import '@fontsource-variable/inter/index.css';
 
-// 2. Kendo base theme — must load BEFORE applyBeghouTheme so our :root overrides win
-import '@progress/kendo-theme-default/dist/all.css';
+// 2. Beghou Kendo theme (built in ThemeBuilder). kendo-theme-default is baked
+//    into this file — do NOT also import it. Must load before the app's own CSS.
+import './beghou-theme/dist/css/beghou-theme.css';
 
-// 3. Apply Beghou tokens as CSS custom properties on :root
+// 3. Apply Beghou app tokens (--beghou-* / --border-*) on :root. The theme owns
+//    the --kendo-* vars now; this only supplies the app-namespace tokens index.css uses.
 import { applyBeghouTheme } from './theme/applyBeghouTheme';
 applyBeghouTheme();
 

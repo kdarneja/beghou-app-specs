@@ -1,49 +1,18 @@
-import { colors, typography } from './tokens';
+import { colors } from './tokens';
 
 /**
- * Writes Beghou tokens as CSS custom properties on :root.
- * Must run AFTER `@progress/kendo-theme-default/dist/all.css` is imported
- * so our overrides take precedence over Kendo's base theme.
+ * Writes Beghou app tokens as CSS custom properties on :root.
+ *
+ * The Beghou Kendo theme (ThemeBuilder, `beghou-theme/dist/css/beghou-theme.css`)
+ * now owns every `--kendo-*` variable, so this no longer touches those — doing so
+ * via inline :root styles would override the theme. It supplies only the
+ * app-namespace tokens (`--beghou-*`, `--border-*`) that index.css and the chrome
+ * components consume and that the theme does not define.
  */
 export function applyBeghouTheme(): void {
   const root = document.documentElement;
 
-  const fontStack = typography.fontFamily.fallbackStack;
-
   const vars: Record<string, string> = {
-    // Kendo typography
-    '--kendo-font-family': fontStack,
-    '--kendo-font-family-monospace':
-      'ui-monospace, SFMono-Regular, Menlo, monospace',
-    '--kendo-font-size': '14px',
-    '--kendo-letter-spacing': '0',
-
-    // Kendo brand colors (Primary → Navy)
-    '--kendo-color-primary': colors.brand.navy.value,
-    '--kendo-color-primary-hover': colors.brand.navyHover.value,
-    '--kendo-color-primary-active': colors.brand.navyHover.value,
-    '--kendo-color-primary-emphasis': colors.brand.navyHover.value,
-    '--kendo-color-on-primary': colors.brand.onPrimary.value,
-
-    // Kendo surfaces
-    '--kendo-color-base': colors.surface.app.value,
-    '--kendo-color-surface': colors.surface.card.value,
-    '--kendo-color-surface-alt': colors.surface.soft.value,
-
-    // Kendo semantic
-    '--kendo-color-success': colors.semantic.success.main,
-    '--kendo-color-success-hover': colors.semantic.success.hover,
-    '--kendo-color-on-success': colors.semantic.success.onColor,
-    '--kendo-color-warning': colors.semantic.warning.main,
-    '--kendo-color-warning-hover': colors.semantic.warning.hover,
-    '--kendo-color-on-warning': colors.semantic.warning.onColor,
-    '--kendo-color-error': colors.semantic.error.main,
-    '--kendo-color-error-hover': colors.semantic.error.hover,
-    '--kendo-color-on-error': colors.semantic.error.onColor,
-    '--kendo-color-info': colors.semantic.info.main,
-    '--kendo-color-info-hover': colors.semantic.info.hover,
-    '--kendo-color-on-info': colors.semantic.info.onColor,
-
     // Beghou-specific border tokens
     '--border-form-input': colors.border.formInput.value,
     '--border-container': colors.border.container.value,

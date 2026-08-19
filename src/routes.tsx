@@ -1,6 +1,6 @@
 import type { ComponentType } from 'react';
 import type { SVGIcon } from '@progress/kendo-svg-icons';
-import { homeIcon, windowIcon, toolbarFloatIcon, gridLayoutIcon, calendarIcon, chartBarStackedIcon, dashboardIcon, chartColumnClusteredIcon, userIcon } from '@progress/kendo-svg-icons';
+import { homeIcon, windowIcon, toolbarFloatIcon, gridLayoutIcon, calendarIcon, chartBarStackedIcon, dashboardIcon, chartColumnClusteredIcon, userIcon, dollarIcon } from '@progress/kendo-svg-icons';
 
 import Home from './pages/Home';
 import StackedWindows from './pages/StackedWindows';
@@ -11,6 +11,7 @@ import LaunchPlanning from './pages/LaunchPlanning';
 import SmallCalendar from './pages/SmallCalendar';
 import AppVisualizations from './pages/AppVisualizations';
 import EditProductRoles from './pages/EditProductRoles';
+import GoalRefinement from './pages/GoalRefinement';
 
 export type RouteDef = {
   path: string;
@@ -83,6 +84,13 @@ export const routes: RouteDef[] = [
     icon: userIcon,
     description: 'Redesigned single-dialog flow for assigning roles and their inline properties.',
     component: EditProductRoles,
+  },
+  {
+    path: '/goal-refinement',
+    label: 'IC-Goal Refinement',
+    icon: dollarIcon,
+    description: 'District Manager view for adjusting territory goals within guardrails, built on a Kendo grid and charts.',
+    component: GoalRefinement,
   },
 ];
 

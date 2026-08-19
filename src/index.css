@@ -2296,3 +2296,278 @@ a {
   color: var(--kendo-color-primary);
   opacity: 0.55;
 }
+
+/* ============================================================================
+   Goal Refinement (Incentive Compensation) — GoalRefinement.tsx
+   ============================================================================ */
+.gr-page {
+  background: #f1f1f1;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centre the content column */
+  gap: 16px;
+}
+/* Compact, centred content column — the grid fits here without scrolling at the
+   starting view; it only scrolls as a fallback on genuinely narrow screens. */
+.gr-topbar,
+.gr-chart-card,
+.gr-grid-card,
+.gr-footer-actions {
+  width: 100%;
+  max-width: 1500px;
+}
+
+.gr-action-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+.gr-export-btn.k-button,
+.gr-audit-btn.k-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Cards. Same frame as the Portal-Calendar scheduler card: 1px 16%-navy border,
+   4px radius, elevation-4 so the card reads as a raised surface on the grey page. */
+.gr-chart-card,
+.gr-grid-card {
+  background: #ffffff;
+  border: 1px solid var(--beghou-border-alt);
+  border-radius: 4px;
+  box-shadow: var(--kendo-elevation-4);
+}
+.gr-chart-card { padding: 12px 16px; }
+
+/* Grid */
+.gr-grid-card { overflow-x: auto; }
+.gr-grid {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: var(--kendo-color-primary);
+}
+.gr-grid thead th {
+  font-size: 14px;
+  font-weight: 700;
+  text-align: right;
+  padding: 12px 8px;
+  background: var(--beghou-surface-card);
+  border-bottom: 1px solid var(--kendo-color-border);
+  white-space: nowrap;
+}
+.gr-grid th.gr-th-left { text-align: left; }
+.gr-grid th.gr-th-center { text-align: center; }
+.gr-grid tbody td {
+  text-align: right;
+  padding: 8px 8px;
+  border-bottom: 1px solid var(--kendo-color-border);
+  white-space: nowrap;
+}
+.gr-grid:not(.gr-rm-grid) tbody tr:nth-child(even) td { background: var(--beghou-neutral-50); }
+.gr-grid td.gr-td-left { text-align: left; }
+.gr-grid td.gr-td-center { text-align: center; }
+
+.gr-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--kendo-color-primary);
+  text-decoration: underline;
+  cursor: pointer;
+  font: inherit;
+}
+.gr-link:hover { color: var(--kendo-color-primary-hover); }
+
+.gr-neg { color: var(--kendo-color-error, #ff0000); }
+
+/* Adjusted Goal editable cell + guardrail tints */
+.gr-td-adj { padding-top: 4px; padding-bottom: 4px; }
+.gr-adj-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 4px;
+  padding: 2px;
+}
+.gr-adj-wrap .k-numerictextbox { width: 112px; }
+.gr-adj-wrap--ok .k-numerictextbox {
+  background: rgba(17, 161, 60, 0.15);
+  border-color: #11a13c;
+}
+.gr-adj-wrap--ok .k-numerictextbox .k-input-inner { color: #0b6e29; font-weight: 600; }
+.gr-adj-wrap--violation .k-numerictextbox {
+  background: rgba(255, 0, 0, 0.12);
+  border-color: #ff0000;
+}
+.gr-adj-wrap--violation .k-numerictextbox .k-input-inner { color: #cc0000; font-weight: 600; }
+.gr-adj-wrap .k-numerictextbox .k-input-inner { background: transparent; }
+
+.gr-clear-btn,
+.gr-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border: 0;
+  background: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--kendo-color-primary);
+}
+.gr-clear-btn:hover,
+.gr-icon-btn:hover { background: var(--beghou-neutral-100); }
+.gr-icon-btn:disabled { opacity: 0.4; cursor: default; }
+
+/* Summary rows */
+.gr-sum-row td {
+  background: var(--beghou-surface-card);
+  text-align: right;
+  padding: 12px 8px;
+  border-top: 1px solid var(--kendo-color-border);
+}
+.gr-sum-label { text-align: right !important; font-weight: 700; }
+.gr-sum-row--total td { font-weight: 700; }
+.gr-total-adj--bad {
+  background: rgba(255, 0, 0, 0.18) !important;
+  color: #cc0000;
+}
+
+/* Footer actions */
+.gr-footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.gr-resolve {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: #e68a00;
+  font: inherit;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+/* Dialogs */
+.gr-dialog-body { margin: 0; font-size: 14px; line-height: 1.5; }
+
+/* Auto Redistribute mode options — radio beside the title, helper text below the
+   title (aligned under it, no hardcoded indent). */
+.gr-redist-options { display: flex; flex-direction: column; gap: 14px; margin-top: 14px; }
+.gr-redist-opt { display: flex; align-items: flex-start; gap: 8px; cursor: pointer; }
+.gr-redist-text { display: flex; flex-direction: column; gap: 2px; }
+.gr-redist-title { font-size: 14px; line-height: 1.3; }
+.gr-redist-desc { font-size: 12px; color: rgba(2, 4, 52, 0.7); }
+
+/* Validations rendered inside a light semantic (warning) message box —
+   solid warning colour at low opacity per the token file's pale-bg rule. */
+.gr-msgbox {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: rgba(255, 162, 2, 0.12);
+  border: 1px solid rgba(255, 162, 2, 0.5);
+  border-radius: 6px;
+  padding: 12px 14px;
+  color: var(--kendo-color-primary);
+}
+.gr-msgbox__icon { color: #e68a00; flex-shrink: 0; margin-top: 1px; }
+.gr-validations-list { margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.7; }
+
+/* Validations grouped per District (RM view). */
+.gr-val-groups { display: flex; flex-direction: column; gap: 10px; }
+.gr-val-group__label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; color: var(--kendo-color-primary); margin-bottom: 2px; }
+
+/* Territory Number comment marker */
+.gr-link { display: inline-flex; align-items: center; gap: 6px; }
+.gr-comment-flag { color: var(--kendo-color-primary); }
+
+/* Profile dialog comment field */
+.gr-pf-comment { margin-top: 14px; }
+.gr-pf-comment-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.gr-pf-comment-title { font-size: 14px; font-weight: 700; }
+.gr-pf-comment .k-textarea { width: 100%; }
+
+/* Territory Profile dialog */
+.gr-pf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 32px;
+  margin-bottom: 8px;
+}
+.gr-pf-field { display: flex; justify-content: space-between; align-items: center; gap: 12px; border-bottom: 1px solid var(--kendo-color-border); padding-bottom: 8px; }
+.gr-pf-label { font-size: 12px; color: rgba(2, 4, 52, 0.7); display: inline-flex; align-items: center; gap: 6px; }
+.gr-pf-value { font-size: 14px; font-weight: 500; }
+.gr-pf-pencil { color: rgba(2, 4, 52, 0.45); }
+.gr-pf-chart { margin-top: 8px; }
+.gr-pf-chart-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.gr-pf-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
+.gr-pf-pager { display: inline-flex; align-items: center; gap: 8px; }
+.gr-pf-pager-label { font-size: 12px; color: rgba(2, 4, 52, 0.7); }
+
+/* Toast */
+.gr-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--kendo-color-primary);
+  color: var(--kendo-color-on-primary);
+  padding: 10px 20px;
+  border-radius: 6px;
+  box-shadow: var(--kendo-elevation-1);
+  font-size: 14px;
+  z-index: 12000;
+}
+
+/* Top bar: Impersonate scaffold (left) + Export / View Audit Log (right). */
+.gr-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Impersonate role switch — dev scaffolding, NOT production UI (dashed frame). */
+.gr-impersonate {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border: 1px dashed rgba(2, 4, 52, 0.45);
+  border-radius: 6px;
+  background: repeating-linear-gradient(45deg, rgba(2, 4, 52, 0.02), rgba(2, 4, 52, 0.02) 8px, rgba(2, 4, 52, 0.05) 8px, rgba(2, 4, 52, 0.05) 16px);
+}
+.gr-impersonate__label { font-size: 12px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
+.gr-impersonate__dd.k-dropdownlist { width: 200px; background: #ffffff; }
+.gr-impersonate__hint { font-size: 11px; font-style: italic; color: rgba(2, 4, 52, 0.55); }
+
+/* RM (Regional Manager) master-detail grid */
+.gr-rm-master.k-grid { border: 0; }
+/* Right-align numeric cells (data + footer). */
+.gr-rm-master td.gr-num,
+.gr-rm-detail td.gr-num { text-align: right; }
+/* District (master) rows read as bold rollup rows. */
+.gr-rm-master > .k-grid-container .k-master-row > td { font-weight: 700; }
+/* Read-only District Adjusted — band tint via text colour, no input. */
+.gr-rm-dm-adj--ok { color: #0b6e29; }
+.gr-rm-dm-adj--violation { color: #cc0000; }
+/* Region (footer) total row. */
+.gr-rm-master .k-grid-footer,
+.gr-rm-master .k-grid-footer-wrap { background: var(--beghou-surface-card); }
+.gr-rm-master .k-grid-footer td { font-weight: 700; background: var(--beghou-surface-card); }
+.gr-rm-total-label { font-weight: 700; }
+/* Detail = the expanded District's editable territories. */
+.gr-rm-detail { padding: 6px 6px 6px 36px; background: var(--beghou-neutral-50); }
+.gr-rm-detail .k-grid { background: #ffffff; }

@@ -32,7 +32,7 @@ export function AppBar({
 }: AppBarProps) {
   const { pathname } = useLocation();
   const isHome = pathname === '/';
-  const pageLabel = isHome ? 'Beghou App Specs' : findPageLabel(pathname);
+  const pageLabel = isHome ? 'Beghou App/UX Specs' : findPageLabel(pathname);
 
   return (
     <header className="beghou-appbar" role="banner">

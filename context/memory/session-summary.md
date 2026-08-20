@@ -1,46 +1,38 @@
-# Session summary — kendo-ux-playground
+# Session summary — beghou-app-specs (local folder: kendo-ux-playground)
 
-_Last updated: 2026-07-20_
+_Last updated: 2026-08-20_
 
-## Committed & pushed to `main`
+## In progress — UNCOMMITTED
 
-1. **Alignment-Map Windows (StackedWindows.tsx)** — commit `660ccc0`
-   - Zip / HCP / Accounts windows open to a compact ~250px height (~4-5 rows), rest scrolls inside.
-   - Summary window caps its height so its bottom sits above the tallest bottom window (no overlap).
-2. **Alignment-Map Windows** — commit `212583a`
-   - Color swatch merged into the Territory ID column; standalone Color ID column removed.
-   - Summary window made resizable.
-   - Sort + column-menu filtering + column resizing on all four grids.
-3. **Edit Product Roles (new page)** — commit `8d13f9d`
-   - Spec prototype for the PRD. Single dialog, no secondary modal; each role holds at most one inline property via expand/collapse.
-   - Route `/edit-product-roles`, added to smoke test.
-   - Dialog closed by default; starts with no roles assigned (shows full add → expand → set-property workflow). Roles: Configurator, Administrator, User, NonProductionUser (Impersonator removed per KD).
-4. **Grey canvas + DropDownList sub-view nav** — commit `3b00537`
-   - Home and App Visualizations page background = `#F1F1F1` (literal hex stopgap until the ThemeBuilder Kendo theme lands); Home launcher cards = white.
-   - App Visualizations: Example 1/2/3 `TabStrip` replaced with a navy filled `DropDownList` (the set pattern for in-page sub-view navigation); popup highlights the active item navy. Removed unused TabStrip import + `.av-tabs` CSS.
-5. **Polish** — commit `1d0a0bb`
-   - App Visualizations: view-changer bar made transparent so the whole page reads as one `#F1F1F1` canvas (no white strip behind the dropdown).
-   - Home launcher cards: added `--kendo-elevation-1` shadow.
-6. **Small Calendar restyle** — commit `63a5f94`
-   - Page background `#F1F1F1`. Empty card placeholders now match the landing launcher cards (white, solid 1px border, 4px radius, `--kendo-elevation-1`, no data). Calendar widget: white background + `--kendo-elevation-1`.
+**Goal Refinement (`src/pages/GoalRefinement.tsx`) — SME updates batch.** Built + verified (build clean, `pnpm verify` green on all 10 routes, no console errors), but **not yet committed or pushed.** Working tree: `src/pages/GoalRefinement.tsx`, `src/index.css` modified.
 
-**Established pattern:** grey `#F1F1F1` app canvas + white cards with `--kendo-elevation-1` + 1px `--border-container` + 4px radius. Now on Home, App Visualizations, and Small Calendar.
+Applied from `~/Downloads/updates.txt`:
+- **Both views:** added a real **Product** dropdown in the top bar (beside the Impersonate scaffold) + a **Product** column; selecting a product is display-only in the mock.
+- **DM view** columns → Territory ID, Territory Name, Product, Prev Quarter Volume, Prev Quarter Goal, Prev Quarter Attainment, Baseline Volume, Proposed Goal, Adjusted Goal, Volume Adjusted, % Adjusted, % Growth over Prev Quarter, Action. (Renamed Territory Number→ID, Last Quarter→Prev Quarter; new Prev Quarter Attainment + Volume Adjusted.)
+- **RM master** → District ID, District Name, Product, …same measures…, Action. Renamed District→District ID, Calculated Goal→Proposed Goal, Adjusted Goals→Adjusted Goal, % Growth label; removed Current Quarter Sales (kept in data, hidden); added District Name, Action (drills into the district).
+- **RM detail (drill-down)** → same sequence minus Action; Territory→Territory ID + new Territory Name; derived Adjusted stays proportional to the DM change.
+- Profile dialogs (DM + RM) relabeled to match.
 
-## Git authorship fix (this session)
+**Auto Redistribute reworked (both views) → "resolve to all-green".** New `rebalanceWithinBand()` helper: clamps every row/district into its ±10% band, then redistributes the residual (proportionate or equal) so the group total matches Proposed. Verified: DM + RM, both modes, go from red → 0 violations / 0 red cells / total matches / warning gone. (Old version only nudged untouched rows, so violations remained — that was KD's reported issue.)
 
-- 24 commits (from `61f3327` to the old tip `5763b5e`) were authored by `KD <kd@resonata.health>`. Rewrote author + committer on all of them to `kdarneja <kd.singh@beghou.com>` via `git filter-branch`, then force-pushed. Trees byte-identical; only authorship changed. Hashes changed — other clones need `git reset --hard origin/main`.
-- Backup branch `backup-before-author-fix` (old tip `5763b5e`, still resonata) kept locally, not pushed. Delete once no longer needed.
-- **Root cause still open:** global git config is `KD <kd@resonata.health>`. This repo commits correctly only because it has a local override. KD works across both resonata and beghou, so he plans to empty the global identity (`git config --global --unset user.name/email` + `user.useConfigOnly true`) and/or set up `includeIf` per-folder identities. Not yet done.
+## Decided / stable (committed, on `main`)
 
-Working tree clean (aside from the untracked `1alias`).
+- Repo renamed to **beghou-app-specs** (Pages base `/beghou-app-specs/`); local folder still `kendo-ux-playground`. Window title + landing label "Beghou App/UX Specs"; avatar "KD".
+- On the **Beghou ThemeBuilder theme** (`src/beghou-theme`), compiled CSS import only, no JS token step. Pinned to Kendo React 15.1.x + kendo-svg-icons ~5.3.x (theme is built for 5.3 filled icons); React 19; theme-default 14.5.0.
+- Goal Refinement DM + RM views with the Impersonate role toggle, master-detail RM grid, both guardrails, Auto Redistribute, dialogs — all mocked.
 
-## Open items / notes
+## Open items (parked for SME)
 
-- **KD to deliver** a Kendo theme built in ThemeBuilder. Then replace the literal `#F1F1F1` / navy / white values with theme tokens across Home, App Visualizations, and the navy DropDownList sub-view pattern.
-- **Edit Product Roles PRD open questions still unresolved** (flagged to eng): confirm-before-remove when a role has a property set; Key format validation; whether removals save immediately or only on Update.
-- **Mock vs PRD conflict on Edit Product Roles**: mock showed "2 properties" on collapsed rows; PRD says one property max (confirmed with dev). Built to the PRD — collapsed rows show `Key · Value` or "No property set".
-- Stray untracked `1alias` file keeps appearing (captured ssh-add output); excluded from every commit. `rm 1alias` to clean up.
+- Does **Auto Redistribute** belong in the RM view, and should it move goals *between* DMs? (SME to confirm.)
+- Real **% Growth over Prev Quarter** denominator (current mock = (Adjusted−Proposed)/Proposed, equals % Adjusted).
+- **Prev Quarter Attainment** formula assumed = Prev Q Volume / Prev Q Goal.
+- RM district **Action** has no district-level profile in the build → currently drills into (expands) the district.
+- Product dimension is a significant backend/key change per SME (out of scope for the mock).
+
+## Next step
+
+Confirm whether to **commit + push** the SME-updates batch (KD says "commit and push" explicitly per solo-dev-commit-to-main convention).
 
 ## Verify
 
-`pnpm dev` (:5173), then `pnpm verify` (Playwright smoke test across all routes). All routes passing as of last run.
+`pnpm dev` (:5173), then `pnpm verify`. Toggle Impersonate → District/Regional Manager; Product dropdown top-left.

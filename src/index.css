@@ -2346,6 +2346,7 @@ a {
 .gr-grid-card { overflow-x: auto; }
 .gr-grid {
   width: 100%;
+  min-width: 1500px; /* 13 columns — scroll (card overflow-x) rather than squish */
   border-collapse: collapse;
   font-size: 14px;
   color: var(--kendo-color-primary);
@@ -2552,6 +2553,13 @@ a {
 .gr-impersonate__label { font-size: 12px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
 .gr-impersonate__dd.k-dropdownlist { width: 200px; background: #ffffff; }
 .gr-impersonate__hint { font-size: 11px; font-style: italic; color: rgba(2, 4, 52, 0.55); }
+
+/* Top-bar left cluster: Impersonate scaffold + Product selector. */
+.gr-topbar__left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+/* Product selector — real UI (not scaffolding). */
+.gr-product { display: inline-flex; align-items: center; gap: 8px; }
+.gr-product__label { font-size: 12px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
+.gr-product__dd.k-dropdownlist { width: 170px; background: #ffffff; }
 
 /* RM (Regional Manager) master-detail grid */
 .gr-rm-master.k-grid { border: 0; }

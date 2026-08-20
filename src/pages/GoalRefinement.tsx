@@ -133,6 +133,12 @@ const NAT_AVG_VTMG = NATIONAL_AVERAGE.adjustedGoal - NATIONAL_AVERAGE.proposedGo
 
 const GUARDRAIL_BAND = 0.1; // +/-10% per-territory band (PRD §5.1)
 
+// ASSUMPTION (SME updates): Product is a new data-granularity dimension. In this
+// mock the dropdown selects one product and every row shows it in the Product
+// column; changing it is display-only (real backend key change is noted in the
+// SME's memo, out of scope for the mock). Realistic pharma placeholder names.
+const PRODUCTS = ['Dylura', 'Renvexa', 'Cardizol XR'];
+
 // ---- Derivations (computed live, not stored — PRD §7) ----------------------
 const pctAdjusted = (r: TerritoryGoalRow) =>
   r.proposedGoal === 0 ? 0 : (r.adjustedGoal - r.proposedGoal) / r.proposedGoal;
@@ -151,9 +157,14 @@ const rowStatus = (r: TerritoryGoalRow): RowStatus =>
 // Goal, so the two columns are consistent (VtMG absolute, % relative, same base).
 // NOTE: with these definitions % Growth to Meet Goal is numerically identical to
 // % Adjusted — flag for KD if % Growth should use a different denominator.
+// "Volume Adjusted" column (SME) = Adjusted − Proposed (same value the old
+// Volume-to-Meet-Goal computed).
 const volumeToMeetGoal = (r: TerritoryGoalRow) => r.adjustedGoal - r.proposedGoal;
 const pctGrowthToMeetGoal = (r: TerritoryGoalRow) =>
   r.proposedGoal === 0 ? 0 : volumeToMeetGoal(r) / r.proposedGoal;
+// ASSUMPTION (SME): Prev Quarter Attainment = Prev Quarter Volume / Prev Quarter Goal.
+const prevQuarterAttainment = (r: TerritoryGoalRow) =>
+  r.lastQuarterGoal === 0 ? 0 : r.lastQuarterVolume / r.lastQuarterGoal;
 
 const sum = (arr: number[]) => arr.reduce((a, b) => a + b, 0);
 
@@ -183,37 +194,52 @@ const VALIDATION_RULES: ValidationRule[] = [
   },
 ];
 
-// ---- Auto Redistribute (algorithm confirmed by KD) -------------------------
-// The DM's net change on the territories he edited is pushed onto the UNTOUCHED
-// territories so the district total returns to the proposed total. Two modes:
-//   proportionate: recipient change = −(total change) × proposed_i / Σ(recipient
-//     proposed) — weighted by each territory's original share of the district.
-//   equal:         recipient change = −(total change) / (number of recipients)
-// Recipients = rows still at Proposed (adjusted == proposed). The last recipient
-// absorbs the integer rounding remainder so the district nets exactly to proposed.
 type RedistributeMode = 'proportionate' | 'equal';
 
+// ---- Auto Redistribute = "resolve to all-green" ----------------------------
+// Produces a fully valid state: every row within ±10% of its Proposed goal AND
+// the group total back to the Proposed total. Two steps:
+//   1) Clamp each row into its ±10% band (clears individual band violations,
+//      including rows the user pushed too far).
+//   2) The clamp shifts the total; redistribute that residual across the rows
+//      that still have band headroom until the total matches Proposed again.
+// `mode` governs how the residual is spread: proportionate (weighted by each
+// row's Proposed goal) or equal. Feasible because all-at-Proposed is a valid
+// all-green solution, so there is always enough in-band headroom to net out.
+function rebalanceWithinBand(items: { proposed: number; adjusted: number }[], mode: RedistributeMode): number[] {
+  const lo = items.map((it) => Math.ceil(it.proposed * (1 - GUARDRAIL_BAND)));
+  const hi = items.map((it) => Math.floor(it.proposed * (1 + GUARDRAIL_BAND)));
+  const clamped = items.map((it, i) => Math.min(hi[i], Math.max(lo[i], it.adjusted)));
+  const target = sum(items.map((it) => it.proposed));
+  const need = target - sum(clamped); // signed amount still to apply
+  if (need === 0) return clamped;
+  const add = need > 0;
+  const caps = clamped.map((v, i) => (add ? hi[i] - v : v - lo[i])); // capacity in the needed direction
+  const weights = items.map((it) => (mode === 'proportionate' ? it.proposed : 1));
+  const totalW = items.reduce((s, _it, i) => s + (caps[i] > 0 ? weights[i] : 0), 0) || 1;
+  const give = new Array(items.length).fill(0);
+  let remaining = Math.abs(need);
+  // Proportional/equal pass, capped at each row's headroom.
+  for (let i = 0; i < items.length && remaining > 0; i++) {
+    if (caps[i] <= 0) continue;
+    const g = Math.min(caps[i], remaining, Math.round(Math.abs(need) * (weights[i] / totalW)));
+    give[i] = g;
+    remaining -= g;
+  }
+  // Greedy fill any leftover from rounding / capped rows.
+  for (let i = 0; i < items.length && remaining > 0; i++) {
+    const room = caps[i] - give[i];
+    if (room <= 0) continue;
+    const g = Math.min(room, remaining);
+    give[i] += g;
+    remaining -= g;
+  }
+  return clamped.map((v, i) => v + (add ? give[i] : -give[i]));
+}
+
 function redistribute(rows: TerritoryGoalRow[], mode: RedistributeMode): TerritoryGoalRow[] {
-  const totalChange = sum(rows.map((r) => r.adjustedGoal - r.proposedGoal));
-  const recipients = rows.filter((r) => r.adjustedGoal === r.proposedGoal);
-  // No-op when already balanced or nobody to redistribute to (PRD §9).
-  if (totalChange === 0 || recipients.length === 0) return rows.map((r) => ({ ...r }));
-  const recipProposed = sum(recipients.map((r) => r.proposedGoal));
-  const changeByTerr: Record<string, number> = {};
-  let remaining = -totalChange;
-  recipients.forEach((r, i) => {
-    let change: number;
-    if (i === recipients.length - 1) {
-      change = remaining; // last recipient takes the exact remainder
-    } else {
-      change = mode === 'proportionate'
-        ? Math.round(-totalChange * (r.proposedGoal / recipProposed))
-        : Math.round(-totalChange / recipients.length);
-      remaining -= change;
-    }
-    changeByTerr[r.territoryNumber] = change;
-  });
-  return rows.map((r) => ({ ...r, adjustedGoal: r.adjustedGoal + (changeByTerr[r.territoryNumber] ?? 0) }));
+  const next = rebalanceWithinBand(rows.map((r) => ({ proposed: r.proposedGoal, adjusted: r.adjustedGoal })), mode);
+  return rows.map((r, i) => ({ ...r, adjustedGoal: next[i] }));
 }
 
 // Chart colours — mock uses navy (Proposed) + light blue (Adjusted).
@@ -291,10 +317,11 @@ function ProfileField({ label, value, strong }: { label: string; value: React.Re
 }
 
 function TerritoryProfileDialog({
-  rows, index, onIndex, onAdjust, onComment, onClose,
+  rows, index, product, onIndex, onAdjust, onComment, onClose,
 }: {
   rows: TerritoryGoalRow[];
   index: number;
+  product: string;
   onIndex: (i: number) => void;
   onAdjust: (territoryNumber: string, value: number) => void;
   onComment: (territoryNumber: string, comment: string) => void;
@@ -309,12 +336,14 @@ function TerritoryProfileDialog({
   return (
     <Dialog title="Territory Profile" onClose={onClose} width={720} className="gr-dialog gr-profile-dialog">
       <div className="gr-pf-grid">
-        <ProfileField label="Territory Number" value={row.territoryNumber} />
+        <ProfileField label="Territory ID" value={row.territoryNumber} />
         <ProfileField label="Territory Name" value={row.territoryName} />
-        <ProfileField label="Baseline Volume" value={fmt(row.baselineVolume)} />
-        <ProfileField label="Last Quarter Volume" value={fmt(row.lastQuarterVolume)} />
-        <ProfileField label="Last Quarter Goal" value={fmt(row.lastQuarterGoal)} />
+        <ProfileField label="Product" value={product} />
+        <ProfileField label="Prev Quarter Volume" value={fmt(row.lastQuarterVolume)} />
+        <ProfileField label="Prev Quarter Goal" value={fmt(row.lastQuarterGoal)} />
+        <ProfileField label="Prev Quarter Attainment" value={fmtPct(prevQuarterAttainment(row))} />
         <ProfileField label="Last Quarter TRx" value={fmt(row.lastQuarterTRx)} />
+        <ProfileField label="Baseline Volume" value={fmt(row.baselineVolume)} />
         <ProfileField label="Proposed Goal" value={fmt(row.proposedGoal)} />
         <div className="gr-pf-field">
           <span className="gr-pf-label">
@@ -335,6 +364,7 @@ function TerritoryProfileDialog({
             </span>
           </span>
         </div>
+        <ProfileField label="Volume Adjusted" value={fmt(volumeToMeetGoal(row))} />
         <ProfileField label="% Adjusted" value={<span className={status === 'violation' ? 'gr-neg' : undefined}>{fmtPct(pctAdjusted(row))}</span>} />
         <ProfileField label="% Growth over Prev Quarter" value={fmtPct(pctGrowthToMeetGoal(row))} />
       </div>
@@ -414,22 +444,22 @@ function AutoRedistributeDialog({
   return (
     <Dialog title="Auto Redistribute" onClose={onCancel} width={500} className="gr-dialog">
       <p className="gr-dialog-body">
-        This will automatically redistribute the excess goals towards other {unit}.
-        Choose how to spread the change across the untouched {unit}.
+        This will bring every {unitSingular} within 10% of its Proposed goal and
+        rebalance so the {scope} total matches Proposed. Choose how to spread the correction.
       </p>
       <div className="gr-redist-options">
         <label className="gr-redist-opt">
           <RadioButton name="redist-mode" checked={mode === 'proportionate'} onChange={() => onMode('proportionate')} />
           <span className="gr-redist-text">
             <span className="gr-redist-title">Proportionate</span>
-            <span className="gr-redist-desc">Weighted by each {unitSingular}'s original share of the {scope} total.</span>
+            <span className="gr-redist-desc">Weighted by each {unitSingular}'s Proposed goal.</span>
           </span>
         </label>
         <label className="gr-redist-opt">
           <RadioButton name="redist-mode" checked={mode === 'equal'} onChange={() => onMode('equal')} />
           <span className="gr-redist-text">
             <span className="gr-redist-title">Equal</span>
-            <span className="gr-redist-desc">Split evenly across the untouched {unit}.</span>
+            <span className="gr-redist-desc">Split evenly across {unit} with room to change.</span>
           </span>
         </label>
       </div>
@@ -469,7 +499,7 @@ function Toast({ text }: { text: string }) {
 // ============================================================================
 // Main page
 // ============================================================================
-function DmView() {
+function DmView({ product }: { product: string }) {
   const [rows, setRows] = useState<TerritoryGoalRow[]>(() =>
     SEED_ROWS.map((r) => ({ ...r, comment: SEED_COMMENTS[r.territoryNumber] ?? '' })),
   );
@@ -549,13 +579,16 @@ function DmView() {
         <table className="gr-grid">
           <thead>
             <tr>
-              <th className="gr-th-left">Territory Number</th>
+              <th className="gr-th-left">Territory ID</th>
               <th className="gr-th-left">Territory Name</th>
+              <th className="gr-th-left">Product</th>
+              <th>Prev Quarter Volume</th>
+              <th>Prev Quarter Goal</th>
+              <th>Prev Quarter Attainment</th>
               <th>Baseline Volume</th>
-              <th>Last Quarter Volume</th>
-              <th>Last Quarter Goal</th>
               <th>Proposed Goal</th>
               <th>Adjusted Goal</th>
+              <th>Volume Adjusted</th>
               <th>% Adjusted</th>
               <th>% Growth over Prev Quarter</th>
               <th className="gr-th-center">Action</th>
@@ -576,9 +609,11 @@ function DmView() {
                     </button>
                   </td>
                   <td className="gr-td-left">{r.territoryName}</td>
-                  <td>{fmt(r.baselineVolume)}</td>
+                  <td className="gr-td-left">{product}</td>
                   <td>{fmt(r.lastQuarterVolume)}</td>
                   <td>{fmt(r.lastQuarterGoal)}</td>
+                  <td>{fmtPct(prevQuarterAttainment(r))}</td>
+                  <td>{fmt(r.baselineVolume)}</td>
                   <td>{fmt(r.proposedGoal)}</td>
                   <td className="gr-td-adj">
                     <span className={`gr-adj-wrap gr-adj-wrap--${status}`}>
@@ -594,6 +629,7 @@ function DmView() {
                       </button>
                     </span>
                   </td>
+                  <td>{fmt(volumeToMeetGoal(r))}</td>
                   <td className={status === 'violation' ? 'gr-neg' : undefined}>{fmtPct(pa)}</td>
                   <td>{fmtPct(pctGrowthToMeetGoal(r))}</td>
                   <td className="gr-td-center">
@@ -607,23 +643,27 @@ function DmView() {
           </tbody>
           <tfoot>
             <tr className="gr-sum-row">
-              <td className="gr-sum-label" colSpan={2}>National Average</td>
-              <td />
+              <td className="gr-sum-label" colSpan={3}>National Average</td>
               <td>{fmt(NATIONAL_AVERAGE.lastQuarterVolume)}</td>
               <td>{fmt(NATIONAL_AVERAGE.lastQuarterGoal)}</td>
+              <td>{fmtPct(NATIONAL_AVERAGE.lastQuarterGoal === 0 ? 0 : NATIONAL_AVERAGE.lastQuarterVolume / NATIONAL_AVERAGE.lastQuarterGoal)}</td>
+              <td>-</td>
               <td>{fmt(NATIONAL_AVERAGE.proposedGoal)}</td>
               <td>{fmt(NATIONAL_AVERAGE.adjustedGoal)}</td>
+              <td>{fmt(NAT_AVG_VTMG)}</td>
               <td>-</td>
               <td>{fmtPct(NAT_AVG_VTMG / NATIONAL_AVERAGE.proposedGoal)}</td>
               <td />
             </tr>
             <tr className="gr-sum-row gr-sum-row--total">
-              <td className="gr-sum-label" colSpan={2}>District Total</td>
-              <td />
+              <td className="gr-sum-label" colSpan={3}>District Total</td>
               <td>{fmt(totals.lastQuarterVolume)}</td>
               <td>{fmt(totals.lastQuarterGoal)}</td>
+              <td>{fmtPct(totals.lastQuarterGoal === 0 ? 0 : totals.lastQuarterVolume / totals.lastQuarterGoal)}</td>
+              <td>{fmt(totals.baseline)}</td>
               <td>{fmt(totals.proposed)}</td>
               <td className={totals.match ? undefined : 'gr-total-adj--bad'}>{fmt(totals.adjusted)}</td>
+              <td>{fmt(totals.volumeToMeetGoal)}</td>
               <td className={totals.match ? undefined : 'gr-neg'}>{fmtPct(totals.pctAdjusted)}</td>
               <td>{fmtPct(totals.pctGrowth)}</td>
               <td />
@@ -654,6 +694,7 @@ function DmView() {
         <TerritoryProfileDialog
           rows={rows}
           index={profileIndex}
+          product={product}
           onIndex={setProfileIndex}
           onAdjust={setAdjusted}
           onComment={setComment}
@@ -698,10 +739,11 @@ function DmView() {
 // ============================================================================
 interface RmTerritory {
   id: string;
+  name: string;
   prevQuarterSales: number;
   baselineSales: number;
   prevQuarterGoals: number;
-  currentQuarterSales: number;
+  currentQuarterSales: number; // retained in data but hidden per SME ("doesn't make sense")
   calculatedGoals: number;
   comment: string;
 }
@@ -711,19 +753,20 @@ interface RmTerritory {
 // adjustment. A district's adjustedGoals starts at its Calculated total.
 interface RmDistrict {
   id: string;
+  name: string;
   adjustedGoals: number; // editable at the district level
   territories: RmTerritory[];
 }
 type RmSumKey = 'prevQuarterSales' | 'baselineSales' | 'prevQuarterGoals' | 'currentQuarterSales' | 'calculatedGoals';
 
 // v = [prevQSales, baselineSales, prevQGoals, currQSales, calculatedGoals].
-const rt = (id: string, v: number[], comment = ''): RmTerritory => ({
-  id, prevQuarterSales: v[0], baselineSales: v[1], prevQuarterGoals: v[2],
+const rt = (id: string, name: string, v: number[], comment = ''): RmTerritory => ({
+  id, name, prevQuarterSales: v[0], baselineSales: v[1], prevQuarterGoals: v[2],
   currentQuarterSales: v[3], calculatedGoals: v[4], comment,
 });
 // District builder — adjusted defaults to the Calculated total (untouched) unless overridden.
-const mkDm = (id: string, territories: RmTerritory[], adjusted?: number): RmDistrict => ({
-  id, territories, adjustedGoals: adjusted ?? territories.reduce((s, t) => s + t.calculatedGoals, 0),
+const mkDm = (id: string, name: string, territories: RmTerritory[], adjusted?: number): RmDistrict => ({
+  id, name, territories, adjustedGoals: adjusted ?? territories.reduce((s, t) => s + t.calculatedGoals, 0),
 });
 
 // From the SME's RM example CSV (numbers illustrative). DM1 is pre-adjusted
@@ -731,35 +774,35 @@ const mkDm = (id: string, territories: RmTerritory[], adjusted?: number): RmDist
 // DM2/DM3 sit at their Calculated total, so Auto Redistribute has untouched
 // districts to spread the imbalance onto.
 const RM_SEED: RmDistrict[] = [
-  mkDm('DM1', [
-    rt('T1', [270, 302, 339, 190, 388]),
-    rt('T2', [385, 379, 347, 275, 165]),
-    rt('T3', [311, 148, 158, 412, 462], 'Territory lost two key accounts this quarter.'),
-    rt('T4', [159, 255, 408, 221, 165]),
-    rt('T5', [255, 444, 202, 274, 151]),
-    rt('T6', [425, 449, 109, 164, 364]),
-    rt('T7', [371, 405, 474, 480, 245]),
-    rt('T8', [119, 123, 316, 134, 361]),
+  mkDm('DM1', 'Great Lakes', [
+    rt('T1', 'Territory 1', [270, 302, 339, 190, 388]),
+    rt('T2', 'Territory 2', [385, 379, 347, 275, 165]),
+    rt('T3', 'Territory 3', [311, 148, 158, 412, 462], 'Territory lost two key accounts this quarter.'),
+    rt('T4', 'Territory 4', [159, 255, 408, 221, 165]),
+    rt('T5', 'Territory 5', [255, 444, 202, 274, 151]),
+    rt('T6', 'Territory 6', [425, 449, 109, 164, 364]),
+    rt('T7', 'Territory 7', [371, 405, 474, 480, 245]),
+    rt('T8', 'Territory 8', [119, 123, 316, 134, 361]),
   ], 2050),
-  mkDm('DM2', [
-    rt('T9', [172, 444, 389, 426, 347]),
-    rt('T10', [468, 148, 374, 498, 307]),
-    rt('T11', [356, 325, 212, 464, 393]),
-    rt('T12', [392, 445, 474, 452, 222]),
-    rt('T13', [368, 478, 176, 357, 265]),
-    rt('T14', [349, 482, 165, 272, 499]),
-    rt('T15', [249, 407, 328, 350, 338]),
-    rt('T16', [215, 211, 206, 481, 494]),
+  mkDm('DM2', 'Mid-Atlantic', [
+    rt('T9', 'Territory 9', [172, 444, 389, 426, 347]),
+    rt('T10', 'Territory 10', [468, 148, 374, 498, 307]),
+    rt('T11', 'Territory 11', [356, 325, 212, 464, 393]),
+    rt('T12', 'Territory 12', [392, 445, 474, 452, 222]),
+    rt('T13', 'Territory 13', [368, 478, 176, 357, 265]),
+    rt('T14', 'Territory 14', [349, 482, 165, 272, 499]),
+    rt('T15', 'Territory 15', [249, 407, 328, 350, 338]),
+    rt('T16', 'Territory 16', [215, 211, 206, 481, 494]),
   ]),
-  mkDm('DM3', [
-    rt('T17', [478, 295, 365, 382, 449]),
-    rt('T18', [120, 481, 216, 412, 268]),
-    rt('T19', [407, 192, 179, 316, 377]),
-    rt('T20', [149, 359, 469, 237, 342]),
-    rt('T21', [387, 192, 420, 203, 155]),
-    rt('T22', [447, 363, 311, 295, 383]),
-    rt('T23', [464, 152, 380, 408, 247]),
-    rt('T24', [335, 387, 141, 389, 110]),
+  mkDm('DM3', 'Southeast', [
+    rt('T17', 'Territory 17', [478, 295, 365, 382, 449]),
+    rt('T18', 'Territory 18', [120, 481, 216, 412, 268]),
+    rt('T19', 'Territory 19', [407, 192, 179, 316, 377]),
+    rt('T20', 'Territory 20', [149, 359, 469, 237, 342]),
+    rt('T21', 'Territory 21', [387, 192, 420, 203, 155]),
+    rt('T22', 'Territory 22', [447, 363, 311, 295, 383]),
+    rt('T23', 'Territory 23', [464, 152, 380, 408, 247]),
+    rt('T24', 'Territory 24', [335, 387, 141, 389, 110]),
   ]),
 ];
 
@@ -768,8 +811,10 @@ const dCalc = (d: RmDistrict) => dSum(d, 'calculatedGoals');
 const rSum = (data: RmDistrict[], key: RmSumKey) => sum(data.map((d) => dSum(d, key)));
 const rCalc = (data: RmDistrict[]) => sum(data.map(dCalc));
 const rAdj = (data: RmDistrict[]) => sum(data.map((d) => d.adjustedGoals));
-// % Growth over last quarter Goals = (Adjusted − Prev Quarter Goals) / Prev Quarter Goals.
+// % Growth over Prev Quarter = (Adjusted − Prev Quarter Goals) / Prev Quarter Goals.
 const rmGrowth = (adjusted: number, prevQGoals: number) => (prevQGoals === 0 ? 0 : (adjusted - prevQGoals) / prevQGoals);
+// Prev Quarter Attainment = Prev Quarter Volume / Prev Quarter Goal.
+const rmAttainment = (prevQVolume: number, prevQGoals: number) => (prevQGoals === 0 ? 0 : prevQVolume / prevQGoals);
 // ±band status of an adjusted value against its calculated goal.
 const rmStatus = (adjusted: number, calculated: number): RowStatus =>
   adjusted === calculated ? 'default'
@@ -777,29 +822,12 @@ const rmStatus = (adjusted: number, calculated: number): RowStatus =>
 
 const cloneRm = (data: RmDistrict[]) => data.map((d) => ({ ...d, territories: d.territories.map((t) => ({ ...t })) }));
 
-// Auto Redistribute — spread the region's net change across the untouched
-// DISTRICTS (adjusted == calculated), not within one district, so the region
-// nets back to its Calculated total. Two modes, weighted by district Calculated
-// (proportionate) or split evenly (equal).
+// Auto Redistribute (region-wide) — "resolve to all-green": clamp every DISTRICT
+// into its ±10% band and redistribute the residual across districts so the region
+// total matches Proposed again. Spreads across ALL districts (not within one).
 function rmRedistribute(data: RmDistrict[], mode: RedistributeMode): RmDistrict[] {
-  const totalChange = sum(data.map((d) => d.adjustedGoals - dCalc(d)));
-  const recipients = data.filter((d) => d.adjustedGoals === dCalc(d));
-  if (totalChange === 0 || recipients.length === 0) return cloneRm(data);
-  const recipCalc = sum(recipients.map(dCalc));
-  const changeById: Record<string, number> = {};
-  let remaining = -totalChange;
-  recipients.forEach((d, i) => {
-    let ch: number;
-    if (i === recipients.length - 1) ch = remaining;
-    else {
-      ch = mode === 'proportionate'
-        ? Math.round(-totalChange * (dCalc(d) / recipCalc))
-        : Math.round(-totalChange / recipients.length);
-      remaining -= ch;
-    }
-    changeById[d.id] = ch;
-  });
-  return data.map((d) => ({ ...d, adjustedGoals: d.adjustedGoals + (changeById[d.id] ?? 0) }));
+  const next = rebalanceWithinBand(data.map((d) => ({ proposed: dCalc(d), adjusted: d.adjustedGoals })), mode);
+  return data.map((d, i) => ({ ...d, adjustedGoals: next[i] }));
 }
 
 // RM comparison chart — Calculated vs Adjusted per District.
@@ -835,40 +863,47 @@ function RmChart({ data }: { data: RmDistrict[] }) {
 // Read-only territory reference (RM edits at the district level, not here).
 // Comments are still editable — they're notes, not the goal.
 function RmProfileDialog({
-  territories, index, onIndex, onComment, onClose,
+  territories, index, product, adjustedById, onIndex, onComment, onClose,
 }: {
   territories: RmTerritory[];
   index: number;
+  product: string;
+  adjustedById: Record<string, number>; // derived (proportional) adjusted per territory
   onIndex: (i: number) => void;
   onComment: (id: string, comment: string) => void;
   onClose: () => void;
 }) {
   const t = territories[index];
+  const adjusted = adjustedById[t.id] ?? t.calculatedGoals;
   const [draft, setDraft] = useState(t.comment);
   useEffect(() => setDraft(t.comment), [t.id, t.comment]);
   const dirty = draft !== t.comment;
   return (
     <Dialog title="Territory Profile" onClose={onClose} width={640} className="gr-dialog gr-profile-dialog">
       <div className="gr-pf-grid">
-        <ProfileField label="Territory" value={t.id} />
-        <ProfileField label="Prev Quarter Sales" value={fmt(t.prevQuarterSales)} />
-        <ProfileField label="Baseline Sales" value={fmt(t.baselineSales)} />
-        <ProfileField label="Prev Quarter Goals" value={fmt(t.prevQuarterGoals)} />
-        <ProfileField label="Current Quarter Sales" value={fmt(t.currentQuarterSales)} />
-        <ProfileField label="Calculated Goals" value={fmt(t.calculatedGoals)} />
-        <ProfileField label="% Growth over last quarter Goals" value={fmtPct(rmGrowth(t.calculatedGoals, t.prevQuarterGoals))} />
+        <ProfileField label="Territory ID" value={t.id} />
+        <ProfileField label="Territory Name" value={t.name} />
+        <ProfileField label="Product" value={product} />
+        <ProfileField label="Prev Quarter Volume" value={fmt(t.prevQuarterSales)} />
+        <ProfileField label="Prev Quarter Goal" value={fmt(t.prevQuarterGoals)} />
+        <ProfileField label="Prev Quarter Attainment" value={fmtPct(rmAttainment(t.prevQuarterSales, t.prevQuarterGoals))} />
+        <ProfileField label="Baseline Volume" value={fmt(t.baselineSales)} />
+        <ProfileField label="Proposed Goal" value={fmt(t.calculatedGoals)} />
+        <ProfileField label="Adjusted Goal" value={fmt(adjusted)} />
+        <ProfileField label="Volume Adjusted" value={fmt(adjusted - t.calculatedGoals)} />
+        <ProfileField label="% Growth over Prev Quarter" value={fmtPct(rmGrowth(adjusted, t.prevQuarterGoals))} />
       </div>
 
       <div className="gr-pf-chart">
-        <div className="gr-pf-chart-title">Sales & Goals</div>
+        <div className="gr-pf-chart-title">Volume & Goals</div>
         <Chart style={{ height: 220 }} transitions={false}>
           <ChartArea background="#ffffff" />
           <ChartCategoryAxis>
-            <ChartCategoryAxisItem categories={['Prev Q Sales', 'Curr Q Sales', 'Calculated']} />
+            <ChartCategoryAxisItem categories={['Prev Q Volume', 'Proposed', 'Adjusted']} />
           </ChartCategoryAxis>
           <ChartValueAxis><ChartValueAxisItem /></ChartValueAxis>
           <ChartSeries>
-            <ChartSeriesItem type="column" data={[t.prevQuarterSales, t.currentQuarterSales, t.calculatedGoals]} color={PROPOSED_COLOR} />
+            <ChartSeriesItem type="column" data={[t.prevQuarterSales, t.calculatedGoals, adjusted]} color={PROPOSED_COLOR} />
           </ChartSeries>
         </Chart>
       </div>
@@ -896,6 +931,8 @@ function RmProfileDialog({
 // Aggregated master row (a District rolled up from its territories).
 interface RmMasterRow {
   id: string;
+  name: string;
+  product: string;
   prevQuarterSales: number;
   baselineSales: number;
   prevQuarterGoals: number;
@@ -911,12 +948,25 @@ interface RmMasterRow {
 interface RmDetailCtx {
   onDmAdjust: (id: string, v: number) => void;
   onOpenProfile: (id: string) => void;
+  onDistrictAction: (id: string) => void;
 }
 const RmDetailContext = createContext<RmDetailCtx | null>(null);
 
 // Shared right-aligned numeric cell (reads props.field on master row or territory).
 const rmNumCell = (p: GridCustomCellProps) => (
   <td {...p.tdProps} className={`${p.tdProps?.className ?? ''} gr-num`}>{fmt(Number(p.dataItem[p.field ?? ''] ?? 0))}</td>
+);
+// Left-aligned plain text cell (Name, Product).
+const rmTextCell = (p: GridCustomCellProps) => (
+  <td {...p.tdProps}>{String(p.dataItem[p.field ?? ''] ?? '')}</td>
+);
+// Prev Quarter Attainment = Prev Quarter Volume / Prev Quarter Goal.
+const rmAttainmentCell = (p: GridCustomCellProps) => (
+  <td {...p.tdProps} className={`${p.tdProps?.className ?? ''} gr-num`}>{fmtPct(rmAttainment(Number(p.dataItem.prevQuarterSales ?? 0), Number(p.dataItem.prevQuarterGoals ?? 0)))}</td>
+);
+// Volume Adjusted = Adjusted − Proposed (Calculated).
+const rmVolAdjCell = (p: GridCustomCellProps) => (
+  <td {...p.tdProps} className={`${p.tdProps?.className ?? ''} gr-num`}>{fmt(Number(p.dataItem.adjustedGoals ?? 0) - Number(p.dataItem.calculatedGoals ?? 0))}</td>
 );
 // % Adjusted = (Adjusted − Calculated) / Calculated; red text outside the band.
 const rmPctAdjCell = (p: GridCustomCellProps) => {
@@ -929,8 +979,8 @@ const rmPctAdjCell = (p: GridCustomCellProps) => {
 
 // Shared column widths for the master + detail grids — sum exceeds the capped
 // content column, so both grids scroll horizontally (and stay aligned).
-const RM_W = { label: 170, pqs: 160, bs: 150, pqg: 170, cqs: 190, calc: 160, adj: 180, pctAdj: 130, growth: 260 };
-// % Growth over last quarter Goals — computed at any level.
+const RM_W = { id: 150, name: 170, product: 150, pqv: 160, pqg: 160, pqa: 160, base: 150, proposed: 150, adj: 180, voladj: 150, pctAdj: 120, growth: 210, action: 90 };
+// % Growth over Prev Quarter — computed at any level.
 const rmGrowthCell = (p: GridCustomCellProps) => (
   <td {...p.tdProps} className={`${p.tdProps?.className ?? ''} gr-num`}>{fmtPct(rmGrowth(Number(p.dataItem.adjustedGoals ?? 0), Number(p.dataItem.prevQuarterGoals ?? 0)))}</td>
 );
@@ -948,7 +998,31 @@ const rmDmAdjCell = (p: GridCustomCellProps) => {
     </td>
   );
 };
-// Territory (detail) label — link to the read-only profile + comment flag.
+// District ID (master) — link opens/drills the district (comment flag reserved).
+const rmDistrictIdCell = (p: GridCustomCellProps) => {
+  const row = p.dataItem as RmMasterRow;
+  const ctx = useContext(RmDetailContext)!;
+  return (
+    <td {...p.tdProps}>
+      <button className="gr-link" onClick={() => ctx.onDistrictAction(row.id)}>{row.id}</button>
+    </td>
+  );
+};
+// District (master) Action — ASSUMPTION (SME "same as DM view"): there is no
+// district-level profile in this build, so the Action drills into the district
+// (expands/collapses its territories), the natural district-level "callout".
+const rmDistrictActionCell = (p: GridCustomCellProps) => {
+  const row = p.dataItem as RmMasterRow;
+  const ctx = useContext(RmDetailContext)!;
+  return (
+    <td {...p.tdProps} className={`${p.tdProps?.className ?? ''} gr-td-center`}>
+      <button className="gr-icon-btn" onClick={() => ctx.onDistrictAction(row.id)} aria-label="Drill into district">
+        <SvgIcon icon={fileReportIcon} />
+      </button>
+    </td>
+  );
+};
+// Territory (detail) ID — link to the read-only profile callout + comment flag.
 const rmTerrLabelCell = (p: GridCustomCellProps) => {
   const t = p.dataItem as RmTerritory;
   const ctx = useContext(RmDetailContext)!;
@@ -963,23 +1037,29 @@ const rmTerrLabelCell = (p: GridCustomCellProps) => {
 };
 
 // Detail grid — the expanded District's READ-ONLY territories. Each territory's
-// shown Adjusted derives proportionally from the district's adjustment.
+// shown Adjusted derives proportionally from the district's adjustment (SME).
+// No Action column here — the Territory ID link is the callout.
 function RmTerritoryDetail(props: GridDetailRowProps) {
   const row = props.dataItem as RmMasterRow;
   const ratio = row.calculatedGoals === 0 ? 1 : row.adjustedGoals / row.calculatedGoals;
-  const territories = row.district.territories.map((t) => ({ ...t, adjustedGoals: Math.round(t.calculatedGoals * ratio) }));
+  const territories = row.district.territories.map((t) => ({
+    ...t, product: row.product, adjustedGoals: Math.round(t.calculatedGoals * ratio),
+  }));
   return (
     <div className="gr-rm-detail">
       <Grid data={territories}>
-        <GridColumn field="id" title="Territory" cells={{ data: rmTerrLabelCell }} width={RM_W.label} />
-        <GridColumn field="prevQuarterSales" title="Prev Quarter Sales" cells={{ data: rmNumCell }} width={RM_W.pqs} />
-        <GridColumn field="baselineSales" title="Baseline Sales" cells={{ data: rmNumCell }} width={RM_W.bs} />
-        <GridColumn field="prevQuarterGoals" title="Prev Quarter Goals" cells={{ data: rmNumCell }} width={RM_W.pqg} />
-        <GridColumn field="currentQuarterSales" title="Current Quarter Sales" cells={{ data: rmNumCell }} width={RM_W.cqs} />
-        <GridColumn field="calculatedGoals" title="Calculated Goals" cells={{ data: rmNumCell }} width={RM_W.calc} />
-        <GridColumn field="adjustedGoals" title="Adjusted Goals" cells={{ data: rmNumCell }} width={RM_W.adj} />
+        <GridColumn field="id" title="Territory ID" cells={{ data: rmTerrLabelCell }} width={RM_W.id} />
+        <GridColumn field="name" title="Territory Name" cells={{ data: rmTextCell }} width={RM_W.name} />
+        <GridColumn field="product" title="Product" cells={{ data: rmTextCell }} width={RM_W.product} />
+        <GridColumn field="prevQuarterSales" title="Prev Quarter Volume" cells={{ data: rmNumCell }} width={RM_W.pqv} />
+        <GridColumn field="prevQuarterGoals" title="Prev Quarter Goal" cells={{ data: rmNumCell }} width={RM_W.pqg} />
+        <GridColumn title="Prev Quarter Attainment" cells={{ data: rmAttainmentCell }} width={RM_W.pqa} />
+        <GridColumn field="baselineSales" title="Baseline Volume" cells={{ data: rmNumCell }} width={RM_W.base} />
+        <GridColumn field="calculatedGoals" title="Proposed Goal" cells={{ data: rmNumCell }} width={RM_W.proposed} />
+        <GridColumn field="adjustedGoals" title="Adjusted Goal" cells={{ data: rmNumCell }} width={RM_W.adj} />
+        <GridColumn title="Volume Adjusted" cells={{ data: rmVolAdjCell }} width={RM_W.voladj} />
         <GridColumn title="% Adjusted" cells={{ data: rmPctAdjCell }} width={RM_W.pctAdj} />
-        <GridColumn title="% Growth over last quarter Goals" cells={{ data: rmGrowthCell }} width={RM_W.growth} />
+        <GridColumn title="% Growth over Prev Quarter" cells={{ data: rmGrowthCell }} width={RM_W.growth} />
       </Grid>
     </div>
   );
@@ -1009,7 +1089,7 @@ function RmValidationsDialog({ groups, onClose }: { groups: { label: string; mes
   );
 }
 
-function RmView() {
+function RmView({ product }: { product: string }) {
   const [data, setData] = useState<RmDistrict[]>(() => cloneRm(RM_SEED));
   // Start all districts collapsed (empty descriptor).
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
@@ -1052,10 +1132,23 @@ function RmView() {
   const onResetConfirm = () => { setData((prev) => prev.map((d) => ({ ...d, adjustedGoals: dCalc(d) }))); setShowReset(false); };
   const onRedistributeConfirm = () => { setData((prev) => rmRedistribute(prev, redistributeMode)); setShowRedistribute(false); };
   const openProfile = (id: string) => setProfileIndex(flatTerritories.findIndex((t) => t.id === id));
+  const toggleDistrict = (id: string) => setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
+
+  // Derived (proportional) adjusted per territory — for the profile callout.
+  const adjustedById = useMemo(() => {
+    const map: Record<string, number> = {};
+    data.forEach((d) => {
+      const ratio = dCalc(d) === 0 ? 1 : d.adjustedGoals / dCalc(d);
+      d.territories.forEach((t) => { map[t.id] = Math.round(t.calculatedGoals * ratio); });
+    });
+    return map;
+  }, [data]);
 
   // Master rows = Districts (editable Adjusted Goal; other columns roll up).
   const master: RmMasterRow[] = data.map((d) => ({
     id: d.id,
+    name: d.name,
+    product,
     prevQuarterSales: dSum(d, 'prevQuarterSales'),
     baselineSales: dSum(d, 'baselineSales'),
     prevQuarterGoals: dSum(d, 'prevQuarterGoals'),
@@ -1067,13 +1160,14 @@ function RmView() {
   const onDetailExpandChange = (e: GridDetailExpandChangeEvent) =>
     setExpanded(e.detailExpand as Record<string, boolean>);
   const num = (v: number) => <td className="gr-num">{fmt(v)}</td>;
+  const regionVolAdj = regionAdj - regionCalc;
 
   return (
     <>
       {/* Master-detail grid: Districts have the editable Adjusted Goal and
           expand to their read-only territories; RM Total is the grid footer. */}
       <div className="gr-grid-card">
-        <RmDetailContext.Provider value={{ onDmAdjust: setDmAdjusted, onOpenProfile: openProfile }}>
+        <RmDetailContext.Provider value={{ onDmAdjust: setDmAdjusted, onOpenProfile: openProfile, onDistrictAction: toggleDistrict }}>
           <Grid
             data={master}
             detail={RmTerritoryDetail}
@@ -1082,15 +1176,19 @@ function RmView() {
             onDetailExpandChange={onDetailExpandChange}
             className="gr-rm-master"
           >
-            <GridColumn field="id" title="District" width={RM_W.label} cells={{ footerCell: () => <td className="gr-rm-total-label">RM Total</td> }} />
-            <GridColumn field="prevQuarterSales" title="Prev Quarter Sales" width={RM_W.pqs} cells={{ data: rmNumCell, footerCell: () => num(rSum(data, 'prevQuarterSales')) }} />
-            <GridColumn field="baselineSales" title="Baseline Sales" width={RM_W.bs} cells={{ data: rmNumCell, footerCell: () => num(rSum(data, 'baselineSales')) }} />
-            <GridColumn field="prevQuarterGoals" title="Prev Quarter Goals" width={RM_W.pqg} cells={{ data: rmNumCell, footerCell: () => num(rSum(data, 'prevQuarterGoals')) }} />
-            <GridColumn field="currentQuarterSales" title="Current Quarter Sales" width={RM_W.cqs} cells={{ data: rmNumCell, footerCell: () => num(rSum(data, 'currentQuarterSales')) }} />
-            <GridColumn field="calculatedGoals" title="Calculated Goals" width={RM_W.calc} cells={{ data: rmNumCell, footerCell: () => num(regionCalc) }} />
-            <GridColumn title="Adjusted Goals" width={RM_W.adj} cells={{ data: rmDmAdjCell, footerCell: () => <td className={`gr-num${regionMatches ? '' : ' gr-total-adj--bad'}`}>{fmt(regionAdj)}</td> }} />
-            <GridColumn title="% Adjusted" width={RM_W.pctAdj} cells={{ data: rmPctAdjCell, footerCell: () => <td className={`gr-num${regionMatches ? '' : ' gr-neg'}`}>{fmtPct(regionCalc === 0 ? 0 : (regionAdj - regionCalc) / regionCalc)}</td> }} />
-            <GridColumn title="% Growth over last quarter Goals" width={RM_W.growth} cells={{ data: rmGrowthCell, footerCell: () => <td className="gr-num">{fmtPct(rmGrowth(regionAdj, rSum(data, 'prevQuarterGoals')))}</td> }} />
+            <GridColumn field="id" title="District ID" width={RM_W.id} cells={{ data: rmDistrictIdCell, footerCell: () => <td className="gr-rm-total-label">RM Total</td> }} />
+            <GridColumn field="name" title="District Name" width={RM_W.name} cells={{ data: rmTextCell, footerCell: () => <td /> }} />
+            <GridColumn field="product" title="Product" width={RM_W.product} cells={{ data: rmTextCell, footerCell: () => <td /> }} />
+            <GridColumn field="prevQuarterSales" title="Prev Quarter Volume" width={RM_W.pqv} cells={{ data: rmNumCell, footerCell: () => num(rSum(data, 'prevQuarterSales')) }} />
+            <GridColumn field="prevQuarterGoals" title="Prev Quarter Goal" width={RM_W.pqg} cells={{ data: rmNumCell, footerCell: () => num(rSum(data, 'prevQuarterGoals')) }} />
+            <GridColumn title="Prev Quarter Attainment" width={RM_W.pqa} cells={{ data: rmAttainmentCell, footerCell: () => <td className="gr-num">{fmtPct(rmAttainment(rSum(data, 'prevQuarterSales'), rSum(data, 'prevQuarterGoals')))}</td> }} />
+            <GridColumn field="baselineSales" title="Baseline Volume" width={RM_W.base} cells={{ data: rmNumCell, footerCell: () => num(rSum(data, 'baselineSales')) }} />
+            <GridColumn field="calculatedGoals" title="Proposed Goal" width={RM_W.proposed} cells={{ data: rmNumCell, footerCell: () => num(regionCalc) }} />
+            <GridColumn title="Adjusted Goal" width={RM_W.adj} cells={{ data: rmDmAdjCell, footerCell: () => <td className={`gr-num${regionMatches ? '' : ' gr-total-adj--bad'}`}>{fmt(regionAdj)}</td> }} />
+            <GridColumn title="Volume Adjusted" width={RM_W.voladj} cells={{ data: rmVolAdjCell, footerCell: () => num(regionVolAdj) }} />
+            <GridColumn title="% Adjusted" width={RM_W.pctAdj} cells={{ data: rmPctAdjCell, footerCell: () => <td className={`gr-num${regionMatches ? '' : ' gr-neg'}`}>{fmtPct(regionCalc === 0 ? 0 : regionVolAdj / regionCalc)}</td> }} />
+            <GridColumn title="% Growth over Prev Quarter" width={RM_W.growth} cells={{ data: rmGrowthCell, footerCell: () => <td className="gr-num">{fmtPct(rmGrowth(regionAdj, rSum(data, 'prevQuarterGoals')))}</td> }} />
+            <GridColumn title="Action" width={RM_W.action} cells={{ data: rmDistrictActionCell, footerCell: () => <td /> }} />
           </Grid>
         </RmDetailContext.Provider>
       </div>
@@ -1108,7 +1206,7 @@ function RmView() {
       <RmChart data={data} />
 
       {profileIndex !== null && (
-        <RmProfileDialog territories={flatTerritories} index={profileIndex} onIndex={setProfileIndex} onComment={setTerrComment} onClose={() => setProfileIndex(null)} />
+        <RmProfileDialog territories={flatTerritories} index={profileIndex} product={product} adjustedById={adjustedById} onIndex={setProfileIndex} onComment={setTerrComment} onClose={() => setProfileIndex(null)} />
       )}
       {showReset && (
         <ConfirmDialog title="Reset Adjusted Goals" body="This action will reset every district's Adjusted Goal back to its Calculated Goal. Do you want to proceed?" confirmLabel="Yes, Reset" onConfirm={onResetConfirm} onCancel={() => setShowReset(false)} />
@@ -1128,18 +1226,32 @@ function RmView() {
 // production UI — hence the dashed "scaffold" treatment).
 export default function GoalRefinement() {
   const [role, setRole] = useState<'District Manager' | 'Regional Manager'>('District Manager');
+  const [product, setProduct] = useState<string>(PRODUCTS[0]);
   return (
     <div className="beghou-page gr-page">
       <div className="gr-topbar">
-        <div className="gr-impersonate" role="note" aria-label="Spec mechanism, not part of the UI">
-          <span className="gr-impersonate__label">Impersonate</span>
-          <DropDownList
-            className="gr-impersonate__dd"
-            data={['District Manager', 'Regional Manager']}
-            value={role}
-            onChange={(e: DropDownListChangeEvent) => setRole(e.value)}
-          />
-          <span className="gr-impersonate__hint">Spec mechanism — not part of the UI</span>
+        <div className="gr-topbar__left">
+          <div className="gr-impersonate" role="note" aria-label="Spec mechanism, not part of the UI">
+            <span className="gr-impersonate__label">Impersonate</span>
+            <DropDownList
+              className="gr-impersonate__dd"
+              data={['District Manager', 'Regional Manager']}
+              value={role}
+              onChange={(e: DropDownListChangeEvent) => setRole(e.value)}
+            />
+            <span className="gr-impersonate__hint">Spec mechanism — not part of the UI</span>
+          </div>
+          {/* Product selector — real UI. Selecting a product changes the data key
+              (per SME memo); mock is display-only. */}
+          <div className="gr-product">
+            <span className="gr-product__label">Product</span>
+            <DropDownList
+              className="gr-product__dd"
+              data={PRODUCTS}
+              value={product}
+              onChange={(e: DropDownListChangeEvent) => setProduct(e.value)}
+            />
+          </div>
         </div>
         {/* Export exports for the signed-in role (single button, no dropdown);
             both are placeholders — no behavior wired. */}
@@ -1148,7 +1260,7 @@ export default function GoalRefinement() {
           <Button themeColor="primary" className="gr-audit-btn"><SvgIcon icon={eyeIcon} /> View Audit Log</Button>
         </div>
       </div>
-      {role === 'District Manager' ? <DmView /> : <RmView />}
+      {role === 'District Manager' ? <DmView product={product} /> : <RmView product={product} />}
     </div>
   );
 }

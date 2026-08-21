@@ -31,7 +31,8 @@ const SEED_LIMITS: Record<string, { min: number | null; max: number | null }> = 
 
 export default function SettingsIncentiveCompensation() {
   // --- Goal Refinement settings ---
-  const [pctLimit, setPctLimit] = useState<number | null>(null);
+  // Default 10% to match the ±10% guardrail the app demonstrates.
+  const [pctLimit, setPctLimit] = useState<number | null>(10);
   const [negativeGrowth, setNegativeGrowth] = useState(false);
 
   // --- Territory Goal Limits ---

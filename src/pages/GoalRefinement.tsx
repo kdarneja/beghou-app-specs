@@ -1,6 +1,7 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { SvgIcon } from '@progress/kendo-react-common';
 import { Button } from '@progress/kendo-react-buttons';
+import { Popup } from '@progress/kendo-react-popup';
 import { SaveNotification } from '../components/SaveNotification';
 import { NumericTextBox, type NumericTextBoxChangeEvent, TextArea, type TextAreaChangeEvent, RadioButton } from '@progress/kendo-react-inputs';
 import { Dialog, DialogActionsBar } from '@progress/kendo-react-dialogs';
@@ -1188,20 +1189,42 @@ function RmView({ product }: { product: string }) {
 export default function GoalRefinement() {
   const [role, setRole] = useState<'District Manager' | 'Regional Manager'>('District Manager');
   const [product, setProduct] = useState<string>(PRODUCTS[0]);
+  const [notesOpen, setNotesOpen] = useState(false);
+  const notesAnchor = useRef<HTMLSpanElement>(null);
   return (
     <div className="beghou-page gr-page">
+      {/* Spec / dev-handoff scaffold bar (not production UI) — note on the left,
+          the Impersonate role switch, then a Dev Handoff Notes popover. */}
+      <div className="gr-scaffold-bar" role="note">
+        <span className="gr-scaffold-note">This area is meant for describing spec and dev hand off notes</span>
+        <div className="gr-impersonate-inline">
+          <span className="gr-impersonate__label">Impersonate</span>
+          <DropDownList
+            className="gr-impersonate__dd"
+            data={['District Manager', 'Regional Manager']}
+            value={role}
+            onChange={(e: DropDownListChangeEvent) => setRole(e.value)}
+          />
+        </div>
+        <span className="gr-scaffold-divider" aria-hidden="true">|</span>
+        <span ref={notesAnchor}>
+          <Button fillMode="flat" themeColor="primary" onClick={() => setNotesOpen((v) => !v)}>Dev Handoff Notes</Button>
+        </span>
+        <Popup anchor={notesAnchor.current} show={notesOpen} popupClass="gr-notes-popup" animate={false} anchorAlign={{ horizontal: 'left', vertical: 'bottom' }} popupAlign={{ horizontal: 'left', vertical: 'top' }}>
+          <div className="gr-notes-card">
+            <div className="gr-notes-head">
+              <span>Dev Handoff Notes</span>
+              <button type="button" className="gr-icon-btn" aria-label="Close" onClick={() => setNotesOpen(false)}>
+                <SvgIcon icon={xIcon} />
+              </button>
+            </div>
+            <div className="gr-notes-body">Developer notes will be added here.</div>
+          </div>
+        </Popup>
+      </div>
+
       <div className="gr-topbar">
         <div className="gr-topbar__left">
-          <div className="gr-impersonate" role="note" aria-label="Spec mechanism, not part of the UI">
-            <span className="gr-impersonate__label">Impersonate</span>
-            <DropDownList
-              className="gr-impersonate__dd"
-              data={['District Manager', 'Regional Manager']}
-              value={role}
-              onChange={(e: DropDownListChangeEvent) => setRole(e.value)}
-            />
-            <span className="gr-impersonate__hint">Spec mechanism — not part of the UI</span>
-          </div>
           {/* Product selector — real UI. Selecting a product changes the data key
               (per SME memo); mock is display-only. */}
           <div className="gr-product">

@@ -34,11 +34,18 @@ export default function SettingsIncentiveCompensation() {
   // Default 10% to match the ±10% guardrail the app demonstrates.
   const [pctLimit, setPctLimit] = useState<number | null>(10);
   const [negativeGrowth, setNegativeGrowth] = useState(false);
+  // Last-saved snapshot; Save enables only when the current values differ.
+  const [grSaved, setGrSaved] = useState({ pctLimit: 10 as number | null, negativeGrowth: false });
+  const grDirty = pctLimit !== grSaved.pctLimit || negativeGrowth !== grSaved.negativeGrowth;
 
   // --- Territory Goal Limits ---
-  const [rows, setRows] = useState<LimitRow[]>(() =>
-    TERRITORIES.map((t) => ({ id: t.id, name: t.name, min: SEED_LIMITS[t.id]?.min ?? null, max: SEED_LIMITS[t.id]?.max ?? null })),
+  const initialRows = useMemo<LimitRow[]>(
+    () => TERRITORIES.map((t) => ({ id: t.id, name: t.name, min: SEED_LIMITS[t.id]?.min ?? null, max: SEED_LIMITS[t.id]?.max ?? null })),
+    [],
   );
+  const [rows, setRows] = useState<LimitRow[]>(initialRows);
+  const [limitsSaved, setLimitsSaved] = useState(() => JSON.stringify(initialRows));
+  const limitsDirty = JSON.stringify(rows) !== limitsSaved;
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [bulkMin, setBulkMin] = useState<number | null>(null);
   const [bulkMax, setBulkMax] = useState<number | null>(null);
@@ -113,7 +120,7 @@ export default function SettingsIncentiveCompensation() {
               <Switch checked={negativeGrowth} onChange={(e) => setNegativeGrowth(e.value)} onLabel="ON" offLabel="OFF" />
             </div>
             <div className="set-card__actions">
-              <Button themeColor="primary" onClick={() => showToast('Goal Refinement settings saved')}>Save</Button>
+              <Button themeColor="primary" disabled={!grDirty} onClick={() => { setGrSaved({ pctLimit, negativeGrowth }); showToast('Goal Refinement settings saved'); }}>Save</Button>
             </div>
           </section>
         </div>
@@ -166,7 +173,7 @@ export default function SettingsIncentiveCompensation() {
           </table>
 
           <div className="set-card__actions">
-            <Button themeColor="primary" onClick={() => showToast('Territory goal limits saved')}>Save</Button>
+            <Button themeColor="primary" disabled={!limitsDirty} onClick={() => { setLimitsSaved(JSON.stringify(rows)); showToast('Territory goal limits saved'); }}>Save</Button>
           </div>
         </section>
       </div>

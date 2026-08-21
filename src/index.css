@@ -2525,19 +2525,44 @@ a {
   flex-wrap: wrap;
 }
 
-/* Impersonate role switch — dev scaffolding, NOT production UI (dashed frame). */
-.gr-impersonate {
+/* Spec / dev-handoff scaffold bar — dev scaffolding, NOT production UI (dashed,
+   striped frame). Holds the note, the Impersonate switch, and Dev Handoff Notes. */
+.gr-scaffold-bar {
+  align-self: flex-start;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
   padding: 8px 12px;
   border: 1px dashed rgba(2, 4, 52, 0.45);
   border-radius: 6px;
   background: repeating-linear-gradient(45deg, rgba(2, 4, 52, 0.02), rgba(2, 4, 52, 0.02) 8px, rgba(2, 4, 52, 0.05) 8px, rgba(2, 4, 52, 0.05) 16px);
 }
+.gr-scaffold-note { font-size: 11px; font-style: italic; color: rgba(2, 4, 52, 0.6); max-width: 260px; line-height: 1.3; }
+.gr-scaffold-divider { color: rgba(2, 4, 52, 0.3); }
+.gr-impersonate-inline { display: inline-flex; align-items: center; gap: 10px; }
 .gr-impersonate__label { font-size: 12px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
 .gr-impersonate__dd.k-dropdownlist { width: 200px; background: #ffffff; }
-.gr-impersonate__hint { font-size: 11px; font-style: italic; color: rgba(2, 4, 52, 0.55); }
+
+/* Dev Handoff Notes popover */
+.gr-notes-popup .gr-notes-card {
+  width: 320px;
+  background: #ffffff;
+  border: 1px solid var(--beghou-border-alt);
+  border-radius: 6px;
+  box-shadow: var(--kendo-elevation-4);
+  overflow: hidden;
+}
+.gr-notes-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 8px 10px 14px;
+  font-weight: 700;
+  font-size: 14px;
+  background: var(--beghou-surface-card);
+  border-bottom: 1px solid var(--kendo-color-border);
+}
+.gr-notes-body { padding: 14px; font-size: 14px; color: rgba(2, 4, 52, 0.7); line-height: 1.5; }
 
 /* Top-bar left cluster: Impersonate scaffold + Product selector. */
 .gr-topbar__left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }

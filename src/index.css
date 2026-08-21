@@ -2516,21 +2516,6 @@ a {
 .gr-pf-pager { display: inline-flex; align-items: center; gap: 8px; }
 .gr-pf-pager-label { font-size: 12px; color: rgba(2, 4, 52, 0.7); }
 
-/* Toast */
-.gr-toast {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--kendo-color-primary);
-  color: var(--kendo-color-on-primary);
-  padding: 10px 20px;
-  border-radius: 6px;
-  box-shadow: var(--kendo-elevation-1);
-  font-size: 14px;
-  z-index: 12000;
-}
-
 /* Top bar: Impersonate scaffold (left) + Export / View Audit Log (right). */
 .gr-topbar {
   display: flex;
@@ -2579,3 +2564,134 @@ a {
 /* Detail = the expanded District's editable territories. */
 .gr-rm-detail { padding: 6px 6px 6px 36px; background: var(--beghou-neutral-50); }
 .gr-rm-detail .k-grid { background: #ffffff; }
+
+/* ============================================================================
+   Admin / Settings — SettingsHome.tsx + SettingsIncentiveCompensation.tsx
+   ============================================================================ */
+.set-page {
+  background: #f1f1f1;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.set-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--kendo-color-primary);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  width: fit-content;
+}
+.set-back:hover { color: var(--kendo-color-primary-hover); }
+
+/* --- Settings landing card grid --- */
+.set-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+@media (max-width: 1200px) { .set-card-grid { grid-template-columns: repeat(2, 1fr); } }
+.set-card {
+  background: #ffffff;
+  border: 1px solid var(--beghou-border-alt);
+  border-radius: 4px;
+  box-shadow: var(--kendo-elevation-1);
+  padding: 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  min-height: 190px;
+}
+.set-card__head { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.set-card__icon { color: var(--kendo-color-primary); display: inline-flex; }
+.set-card__title { font-size: 16px; font-weight: 700; }
+.set-card__desc { font-size: 14px; color: rgba(2, 4, 52, 0.7); margin: 0 0 auto; line-height: 1.45; }
+.set-card__view.k-button { width: 100%; margin-top: 16px; }
+
+/* --- IC config page --- */
+.set-ic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 1100px) { .set-ic-grid { grid-template-columns: 1fr; } }
+.set-ic-col { display: flex; flex-direction: column; gap: 20px; }
+.set-card--panel {
+  background: #ffffff;
+  border: 1px solid var(--beghou-border-alt);
+  border-radius: 4px;
+  box-shadow: var(--kendo-elevation-1);
+  padding: 20px;
+  min-height: auto;
+}
+.set-panel-title { font-size: 16px; font-weight: 700; margin: 0 0 14px; }
+.set-panel-desc { font-size: 13px; color: rgba(2, 4, 52, 0.7); margin: 0 0 10px; line-height: 1.45; }
+.set-panel-hint { font-size: 13px; color: rgba(2, 4, 52, 0.6); margin: 0 0 12px; }
+.set-upload-hint { font-size: 12px; color: rgba(2, 4, 52, 0.6); margin: 8px 0 0; }
+.set-card__actions { display: flex; justify-content: flex-end; margin-top: 18px; }
+
+/* Goal Refinement settings */
+.set-field-label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.set-pct-input.k-numerictextbox { width: 100%; max-width: 340px; background: #ffffff; }
+.set-toggle-row { margin-top: 18px; }
+.set-toggle-row .set-field-label { margin-bottom: 8px; }
+
+/* Territory Goal Limits grid */
+.set-tgl { display: flex; flex-direction: column; }
+.set-bulk-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--beghou-surface-soft, #f7fbff);
+  border: 1px solid var(--kendo-color-border);
+  border-radius: 4px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+.set-bulk-label { font-size: 14px; font-weight: 700; white-space: nowrap; }
+.set-bulk-input.k-numerictextbox { width: 130px; background: #ffffff; }
+.set-bulk-clear {
+  border: 0; background: none; cursor: pointer; font: inherit;
+  color: var(--kendo-color-primary); text-decoration: underline;
+}
+.set-tgl-grid { width: 100%; border-collapse: collapse; font-size: 14px; }
+.set-tgl-grid thead th {
+  text-align: right;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: rgba(2, 4, 52, 0.7);
+  padding: 10px 12px;
+  background: var(--beghou-surface-card);
+  border-bottom: 1px solid var(--kendo-color-border);
+}
+.set-tgl-grid th.set-tgl-left { text-align: left; }
+.set-tgl-grid th.set-tgl-check { width: 44px; }
+.set-tgl-grid tbody td {
+  padding: 8px 12px;
+  text-align: right;
+  border-bottom: 1px solid var(--kendo-color-border);
+  vertical-align: middle;
+}
+.set-tgl-grid td.set-tgl-left { text-align: left; font-weight: 700; }
+.set-tgl-grid td.set-tgl-id { font-weight: 700; }
+.set-tgl-grid td.set-tgl-check { text-align: center; }
+.set-tgl-row--sel td { background: var(--beghou-surface-card); }
+.set-tgl-input.k-numerictextbox { width: 100%; background: #ffffff; }
+
+/* Save/Submit success notification — Kendo semantic success (green), anchored
+   below the AppBar (positioning set inline on the group). Reinforce the Beghou
+   success green + white text in case the theme's default differs. */
+.bh-notify-group { z-index: 12000; }
+.bh-notify-group .k-notification.k-notification-success {
+  background-color: #11a13c;
+  border-color: #11a13c;
+  color: #ffffff;
+}
+.bh-notify-group .k-notification.k-notification-success .k-notification-content,
+.bh-notify-group .k-notification.k-notification-success .k-icon,
+.bh-notify-group .k-notification.k-notification-success .k-svg-icon { color: #ffffff; }

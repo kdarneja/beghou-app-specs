@@ -17,7 +17,15 @@ type AppBarProps = {
   hasUnreadNotifications?: boolean;
 };
 
+// Admin/Settings pages aren't in `routes` (they're reached via the gear, not the
+// launcher/drawer), so their AppBar breadcrumb is mapped here.
+const SETTINGS_LABELS: Record<string, string> = {
+  '/settings': 'Settings',
+  '/settings/incentive-compensation': 'Settings / Incentive Compensation',
+};
+
 function findPageLabel(pathname: string): string {
+  if (SETTINGS_LABELS[pathname]) return SETTINGS_LABELS[pathname];
   const match = routes.find((r) => r.path === pathname);
   if (match) return match.label;
   const segment = pathname.split('/').filter(Boolean)[0];
@@ -90,9 +98,9 @@ export function AppBar({
           >
             <SvgIcon icon={gridIcon} size="large" />
           </button>
-          <button type="button" className="beghou-appbar__icon-btn" aria-label="Settings">
+          <Link to="/settings" className="beghou-appbar__icon-btn" aria-label="Settings">
             <SvgIcon icon={gearIcon} size="large" />
-          </button>
+          </Link>
         </div>
         <button type="button" className="beghou-appbar__avatar" aria-label="User: KD">
           KD

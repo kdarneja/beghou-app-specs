@@ -95,6 +95,9 @@ importers:
       '@progress/kendo-react-scheduler':
         specifier: 15.1.0
         version: 15.1.0(d846a82a0ab72b8932d9da567ea4a2f8)
+      '@progress/kendo-react-upload':
+        specifier: 15.1.0
+        version: 15.1.0(46ef51dcb44d69c309713d0cbb7ea9d5)
       '@progress/kendo-recurrence':
         specifier: ^1.0.5
         version: 1.0.5(@progress/kendo-date-math@1.5.17)

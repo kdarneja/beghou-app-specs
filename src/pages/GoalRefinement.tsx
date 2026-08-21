@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { SvgIcon } from '@progress/kendo-react-common';
 import { Button } from '@progress/kendo-react-buttons';
+import { SaveNotification } from '../components/SaveNotification';
 import { NumericTextBox, type NumericTextBoxChangeEvent, TextArea, type TextAreaChangeEvent, RadioButton } from '@progress/kendo-react-inputs';
 import { Dialog, DialogActionsBar } from '@progress/kendo-react-dialogs';
 import { DropDownList, type DropDownListChangeEvent } from '@progress/kendo-react-dropdowns';
@@ -60,64 +61,31 @@ const HISTORY_MONTHS = [
   "Jan '26", "Feb '26", "Mar '26", "Apr '26", "May '26", "Jun '26",
 ];
 
-const vh = (nums: number[]): VolumePoint[] =>
-  HISTORY_MONTHS.map((period, i) => ({ period, volume: nums[i] }));
+// Monthly history ramping up to the given prev-quarter volume (profile chart).
+const histTo = (v: number): VolumePoint[] => {
+  const start = Math.round(v * 0.78);
+  return HISTORY_MONTHS.map((period, i) => ({ period, volume: Math.round(start + ((v - start) * i) / 11) }));
+};
 
-// Seed data mirrors the mock (Territories 3–9 for one DM).
-// ASSUMPTION (PRD §7 says adjustedGoal starts == proposedGoal): seeding the
-// adjusted values from the mock instead, so the page opens in the mock's
-// mid-edit state and immediately demonstrates both guardrails' color coding.
-// proposedGoal remains the Reset baseline. Set adjustedGoal = proposedGoal on
-// each row for the clean "no edits" initial state the PRD data-shape describes.
-// One territory seeded with a saved comment so the grid's comment flag is
-// visible on load (see SEED_COMMENTS + the Territory Number cell).
+// DM view = DM1's 8 territories (T1–T8), the same IDs/names/metrics as the RM
+// view's DM1 and the admin Territory Goal Limits grid, so values stay consistent
+// across the app (KD). Metrics mirror RM_SEED DM1: prev-quarter volume, baseline,
+// prev-quarter goal, proposed (= RM "Proposed"/calculated goal). A few adjusted
+// values are pre-seeded off-proposed to demo the guardrail colouring + validations;
+// proposedGoal stays the Reset baseline. T3 carries the shared comment (flag).
 const SEED_COMMENTS: Record<string, string> = {
-  '1000008': 'Adjusted up to cover the new IDN account onboarding this quarter.',
+  '0003': 'Territory lost two key accounts this quarter.',
 };
 
 const SEED_ROWS: Omit<TerritoryGoalRow, 'comment'>[] = [
-  {
-    territoryNumber: '1000004', territoryName: 'Territory 3', baselineVolume: 150,
-    lastQuarterVolume: 168, lastQuarterGoal: 225, lastQuarterTRx: 412,
-    proposedGoal: 289, adjustedGoal: 284,
-    volumeHistory: vh([132, 140, 151, 148, 160, 158, 166, 171, 168, 175, 180, 168]),
-  },
-  {
-    territoryNumber: '1000003', territoryName: 'Territory 4', baselineVolume: 140,
-    lastQuarterVolume: 190, lastQuarterGoal: 250, lastQuarterTRx: 505,
-    proposedGoal: 318, adjustedGoal: 325,
-    volumeHistory: vh([150, 158, 162, 170, 176, 181, 185, 188, 190, 193, 197, 190]),
-  },
-  {
-    territoryNumber: '1000006', territoryName: 'Territory 5', baselineVolume: 150,
-    lastQuarterVolume: 180, lastQuarterGoal: 172, lastQuarterTRx: 388,
-    proposedGoal: 229, adjustedGoal: 251,
-    volumeHistory: vh([140, 145, 152, 158, 163, 168, 172, 176, 180, 178, 182, 180]),
-  },
-  {
-    territoryNumber: '1000005', territoryName: 'Territory 6', baselineVolume: 170,
-    lastQuarterVolume: 185, lastQuarterGoal: 222, lastQuarterTRx: 441,
-    proposedGoal: 229, adjustedGoal: 229,
-    volumeHistory: vh([160, 165, 170, 172, 176, 179, 181, 183, 185, 187, 190, 185]),
-  },
-  {
-    territoryNumber: '1000008', territoryName: 'Territory 7', baselineVolume: 150,
-    lastQuarterVolume: 197, lastQuarterGoal: 211, lastQuarterTRx: 470,
-    proposedGoal: 269, adjustedGoal: 300,
-    volumeHistory: vh([158, 164, 171, 178, 183, 188, 191, 194, 197, 199, 203, 197]),
-  },
-  {
-    territoryNumber: '1000007', territoryName: 'Territory 8', baselineVolume: 160,
-    lastQuarterVolume: 190, lastQuarterGoal: 168, lastQuarterTRx: 399,
-    proposedGoal: 215, adjustedGoal: 250,
-    volumeHistory: vh([165, 170, 174, 178, 181, 184, 186, 188, 190, 192, 195, 190]),
-  },
-  {
-    territoryNumber: '1000009', territoryName: 'Territory 9', baselineVolume: 120,
-    lastQuarterVolume: 187, lastQuarterGoal: 298, lastQuarterTRx: 523,
-    proposedGoal: 372, adjustedGoal: 400,
-    volumeHistory: vh([150, 158, 165, 171, 176, 180, 183, 185, 187, 190, 194, 187]),
-  },
+  { territoryNumber: '0001', territoryName: 'Territory 1', baselineVolume: 302, lastQuarterVolume: 270, lastQuarterGoal: 339, lastQuarterTRx: 512, proposedGoal: 388, adjustedGoal: 400, volumeHistory: histTo(270) },
+  { territoryNumber: '0002', territoryName: 'Territory 2', baselineVolume: 379, lastQuarterVolume: 385, lastQuarterGoal: 347, lastQuarterTRx: 705, proposedGoal: 165, adjustedGoal: 165, volumeHistory: histTo(385) },
+  { territoryNumber: '0003', territoryName: 'Territory 3', baselineVolume: 148, lastQuarterVolume: 311, lastQuarterGoal: 158, lastQuarterTRx: 588, proposedGoal: 462, adjustedGoal: 500, volumeHistory: histTo(311) },
+  { territoryNumber: '0004', territoryName: 'Territory 4', baselineVolume: 255, lastQuarterVolume: 159, lastQuarterGoal: 408, lastQuarterTRx: 333, proposedGoal: 165, adjustedGoal: 165, volumeHistory: histTo(159) },
+  { territoryNumber: '0005', territoryName: 'Territory 5', baselineVolume: 444, lastQuarterVolume: 255, lastQuarterGoal: 202, lastQuarterTRx: 498, proposedGoal: 151, adjustedGoal: 175, volumeHistory: histTo(255) },
+  { territoryNumber: '0006', territoryName: 'Territory 6', baselineVolume: 449, lastQuarterVolume: 425, lastQuarterGoal: 109, lastQuarterTRx: 812, proposedGoal: 364, adjustedGoal: 364, volumeHistory: histTo(425) },
+  { territoryNumber: '0007', territoryName: 'Territory 7', baselineVolume: 405, lastQuarterVolume: 371, lastQuarterGoal: 474, lastQuarterTRx: 704, proposedGoal: 245, adjustedGoal: 300, volumeHistory: histTo(371) },
+  { territoryNumber: '0008', territoryName: 'Territory 8', baselineVolume: 123, lastQuarterVolume: 119, lastQuarterGoal: 316, lastQuarterTRx: 266, proposedGoal: 361, adjustedGoal: 361, volumeHistory: histTo(119) },
 ];
 
 // National Average — static external benchmark, non-editable, not a guardrail
@@ -490,13 +458,6 @@ function ValidationsDialog({ failing, onClose }: { failing: { id: string; messag
 }
 
 // ============================================================================
-// Toast
-// ============================================================================
-function Toast({ text }: { text: string }) {
-  return <div className="gr-toast" role="status">{text}</div>;
-}
-
-// ============================================================================
 // Main page
 // ============================================================================
 function DmView({ product }: { product: string }) {
@@ -722,7 +683,7 @@ function DmView({ product }: { product: string }) {
         <ValidationsDialog failing={failingRules} onClose={() => setShowValidations(false)} />
       )}
 
-      {toast && <Toast text={toast} />}
+      <SaveNotification text={toast} onClose={() => setToast(null)} />
     </>
   );
 }
@@ -775,34 +736,34 @@ const mkDm = (id: string, name: string, territories: RmTerritory[], adjusted?: n
 // districts to spread the imbalance onto.
 const RM_SEED: RmDistrict[] = [
   mkDm('DM1', 'Great Lakes', [
-    rt('T1', 'Territory 1', [270, 302, 339, 190, 388]),
-    rt('T2', 'Territory 2', [385, 379, 347, 275, 165]),
-    rt('T3', 'Territory 3', [311, 148, 158, 412, 462], 'Territory lost two key accounts this quarter.'),
-    rt('T4', 'Territory 4', [159, 255, 408, 221, 165]),
-    rt('T5', 'Territory 5', [255, 444, 202, 274, 151]),
-    rt('T6', 'Territory 6', [425, 449, 109, 164, 364]),
-    rt('T7', 'Territory 7', [371, 405, 474, 480, 245]),
-    rt('T8', 'Territory 8', [119, 123, 316, 134, 361]),
+    rt('0001', 'Territory 1', [270, 302, 339, 190, 388]),
+    rt('0002', 'Territory 2', [385, 379, 347, 275, 165]),
+    rt('0003', 'Territory 3', [311, 148, 158, 412, 462], 'Territory lost two key accounts this quarter.'),
+    rt('0004', 'Territory 4', [159, 255, 408, 221, 165]),
+    rt('0005', 'Territory 5', [255, 444, 202, 274, 151]),
+    rt('0006', 'Territory 6', [425, 449, 109, 164, 364]),
+    rt('0007', 'Territory 7', [371, 405, 474, 480, 245]),
+    rt('0008', 'Territory 8', [119, 123, 316, 134, 361]),
   ], 2050),
   mkDm('DM2', 'Mid-Atlantic', [
-    rt('T9', 'Territory 9', [172, 444, 389, 426, 347]),
-    rt('T10', 'Territory 10', [468, 148, 374, 498, 307]),
-    rt('T11', 'Territory 11', [356, 325, 212, 464, 393]),
-    rt('T12', 'Territory 12', [392, 445, 474, 452, 222]),
-    rt('T13', 'Territory 13', [368, 478, 176, 357, 265]),
-    rt('T14', 'Territory 14', [349, 482, 165, 272, 499]),
-    rt('T15', 'Territory 15', [249, 407, 328, 350, 338]),
-    rt('T16', 'Territory 16', [215, 211, 206, 481, 494]),
+    rt('0009', 'Territory 9', [172, 444, 389, 426, 347]),
+    rt('0010', 'Territory 10', [468, 148, 374, 498, 307]),
+    rt('0011', 'Territory 11', [356, 325, 212, 464, 393]),
+    rt('0012', 'Territory 12', [392, 445, 474, 452, 222]),
+    rt('0013', 'Territory 13', [368, 478, 176, 357, 265]),
+    rt('0014', 'Territory 14', [349, 482, 165, 272, 499]),
+    rt('0015', 'Territory 15', [249, 407, 328, 350, 338]),
+    rt('0016', 'Territory 16', [215, 211, 206, 481, 494]),
   ]),
   mkDm('DM3', 'Southeast', [
-    rt('T17', 'Territory 17', [478, 295, 365, 382, 449]),
-    rt('T18', 'Territory 18', [120, 481, 216, 412, 268]),
-    rt('T19', 'Territory 19', [407, 192, 179, 316, 377]),
-    rt('T20', 'Territory 20', [149, 359, 469, 237, 342]),
-    rt('T21', 'Territory 21', [387, 192, 420, 203, 155]),
-    rt('T22', 'Territory 22', [447, 363, 311, 295, 383]),
-    rt('T23', 'Territory 23', [464, 152, 380, 408, 247]),
-    rt('T24', 'Territory 24', [335, 387, 141, 389, 110]),
+    rt('0017', 'Territory 17', [478, 295, 365, 382, 449]),
+    rt('0018', 'Territory 18', [120, 481, 216, 412, 268]),
+    rt('0019', 'Territory 19', [407, 192, 179, 316, 377]),
+    rt('0020', 'Territory 20', [149, 359, 469, 237, 342]),
+    rt('0021', 'Territory 21', [387, 192, 420, 203, 155]),
+    rt('0022', 'Territory 22', [447, 363, 311, 295, 383]),
+    rt('0023', 'Territory 23', [464, 152, 380, 408, 247]),
+    rt('0024', 'Territory 24', [335, 387, 141, 389, 110]),
   ]),
 ];
 
@@ -1217,7 +1178,7 @@ function RmView({ product }: { product: string }) {
       {showValidations && (
         <RmValidationsDialog groups={validationGroups} onClose={() => setShowValidations(false)} />
       )}
-      {toast && <Toast text={toast} />}
+      <SaveNotification text={toast} onClose={() => setToast(null)} />
     </>
   );
 }

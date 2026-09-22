@@ -1218,7 +1218,27 @@ export default function GoalRefinement() {
                 <SvgIcon icon={xIcon} />
               </button>
             </div>
-            <div className="gr-notes-body">Developer notes will be added here.</div>
+            <div className="gr-notes-body">
+              <p className="gr-notes-intro">These notes are from SME and should be accounted as business logic on top of the functional requirements in this UI spec.</p>
+
+              <h4 className="gr-notes-section">Autodistribute</h4>
+              <ol className="gr-notes-list">
+                <li>We need the manager to fix breaking any guardrail. The autodistribute doesn't fix those.</li>
+                <li>Auto distribute should not touch the manager changes. It should ideally be available if there are no guardrail errors stated in config.</li>
+                <li>The rows that are not changed by the manager manually absorb the change. So you are correct.</li>
+                <li>Yes, the weight of the proposed goal becomes the basis for redistribution, not the baseline. Equal weight is just the total change, divided between the rows not touched by the manager.</li>
+                <li>This could be interesting to solve. I don't have that answer right now. There is a possibility that by redistributing, you extend the other territories beyond their guardrails. Let me think about that and get back to you.</li>
+                <li>RM would follow the same logic as the DM. So auto redistribution should be allowed at RM level. The same math would apply.</li>
+                <li>Sometimes goals will not be rounded. Very rare, but happens. And rounding to two digits after decimal will create a real ~1-2 dollar gap at the DM/RM level. In such cases, we have a call-out to the managers to balance that unit within their hierarchy. For smaller numbers like TRx and Units it would rarely happen after rounding; the after-rounding gap will definitely happen for dollar goals, but managers can adjust a dollar or two on any territory.</li>
+              </ol>
+
+              <h4 className="gr-notes-section">Configuration</h4>
+              <ul className="gr-notes-list">
+                <li>When we add the Brand dropdown, the key to pull data from the backend table changes and now includes Brand too. This reflects in all the backend tables, the audit table, HO config screens, etc. We have added a new level of granularity, and it would be a significant change.</li>
+                <li>We need to add a product hierarchy. All the configurations could be different for different brands.</li>
+                <li>We should also have DM-level configs, again at a product grain.</li>
+              </ul>
+            </div>
           </div>
         </Popup>
       </div>

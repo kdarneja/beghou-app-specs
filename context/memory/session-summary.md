@@ -1,38 +1,53 @@
 # Session summary — beghou-app-specs (local folder: kendo-ux-playground)
 
-_Last updated: 2026-08-20_
+_Last updated: 2026-08-21_
 
-## In progress — UNCOMMITTED
+## Uncommitted right now
 
-**Goal Refinement (`src/pages/GoalRefinement.tsx`) — SME updates batch.** Built + verified (build clean, `pnpm verify` green on all 10 routes, no console errors), but **not yet committed or pushed.** Working tree: `src/pages/GoalRefinement.tsx`, `src/index.css` modified.
+- `src/pages/GoalRefinement.tsx`, `src/index.css` — the **Dev Handoff Notes** popover
+  content (SME business-logic notes). Built + verified, **not committed**.
+  Suggested next: commit + push, tag `0.0.5`.
 
-Applied from `~/Downloads/updates.txt`:
-- **Both views:** added a real **Product** dropdown in the top bar (beside the Impersonate scaffold) + a **Product** column; selecting a product is display-only in the mock.
-- **DM view** columns → Territory ID, Territory Name, Product, Prev Quarter Volume, Prev Quarter Goal, Prev Quarter Attainment, Baseline Volume, Proposed Goal, Adjusted Goal, Volume Adjusted, % Adjusted, % Growth over Prev Quarter, Action. (Renamed Territory Number→ID, Last Quarter→Prev Quarter; new Prev Quarter Attainment + Volume Adjusted.)
-- **RM master** → District ID, District Name, Product, …same measures…, Action. Renamed District→District ID, Calculated Goal→Proposed Goal, Adjusted Goals→Adjusted Goal, % Growth label; removed Current Quarter Sales (kept in data, hidden); added District Name, Action (drills into the district).
-- **RM detail (drill-down)** → same sequence minus Action; Territory→Territory ID + new Territory Name; derived Adjusted stays proportional to the DM change.
-- Profile dialogs (DM + RM) relabeled to match.
+## Shipped this session (committed + tagged, on `main`)
 
-**Auto Redistribute reworked (both views) → "resolve to all-green".** New `rebalanceWithinBand()` helper: clamps every row/district into its ±10% band, then redistributes the residual (proportionate or equal) so the group total matches Proposed. Verified: DM + RM, both modes, go from red → 0 violations / 0 red cells / total matches / warning gone. (Old version only nudged untouched rows, so violations remained — that was KD's reported issue.)
+- **Theme update** to `kendo-beghou-theme` tag 0.0.3 (outline base-role hover + grid
+  selected-row tint fixes). Tag `0.0.1` cut as first release baseline.
+- **Admin / Settings area** (gear → `/settings`): 7-card grid; **Incentive Compensation**
+  config page — Upload plan document (Kendo Upload PDF/DOCX), Goal Refinement settings
+  (% adjusted limit, **default 10%**, Negative Growth switch), **Territory Goal Limits**
+  grid with inline bulk-apply. Settings routes live in `App.tsx` (not launcher/drawer).
+  Tags `0.0.2`, `0.0.3`.
+- **Green success Notifications below the AppBar** on Save/Submit across IC + admin
+  (shared `src/components/SaveNotification.tsx`); replaced the old bottom toast.
+- **Admin Save buttons enable only when their section changed** (re-disable after Save;
+  row selection alone doesn't count). Tag `0.0.4`.
+- **Goal Refinement dev-handoff scaffold bar**: note on the left, Impersonate switch,
+  divider, **Dev Handoff Notes** popover. Tag `0.0.4`.
+- **Territory data unified**: DM view now uses DM1's 8 territories; IDs zero-padded
+  **000N** (0001–0024) across DM view / RM DM1 / admin via `src/data/territories.ts`.
 
-## Decided / stable (committed, on `main`)
+## Open items
 
-- Repo renamed to **beghou-app-specs** (Pages base `/beghou-app-specs/`); local folder still `kendo-ux-playground`. Window title + landing label "Beghou App/UX Specs"; avatar "KD".
-- On the **Beghou ThemeBuilder theme** (`src/beghou-theme`), compiled CSS import only, no JS token step. Pinned to Kendo React 15.1.x + kendo-svg-icons ~5.3.x (theme is built for 5.3 filled icons); React 19; theme-default 14.5.0.
-- Goal Refinement DM + RM views with the Impersonate role toggle, master-detail RM grid, both guardrails, Auto Redistribute, dialogs — all mocked.
+- **Auto Redistribute rework needed.** SME (Dev-Handoff notes) says it must NOT fix
+  guardrail breaches (manager fixes those), NOT touch the manager's edited rows, and only
+  be available when there are no guardrail errors; recipients = untouched rows;
+  proportionate weight = Proposed goal; equal = total change ÷ untouched rows; RM same as
+  DM. **Current code does a "resolve-to-all-green" clamp+redistribute that violates (a)/(b)**
+  — needs reworking to match.
+- SME still owes: can redistributing push recipients past their own guardrails? (open)
+- Config direction (SME): Brand/Product is a real backend-key/granularity change; add a
+  product hierarchy; add DM-level configs at product grain.
+- `% Growth over Prev Quarter` denominator still to confirm; RM column-name reconciliation.
 
-## Open items (parked for SME)
+## Gotchas
 
-- Does **Auto Redistribute** belong in the RM view, and should it move goals *between* DMs? (SME to confirm.)
-- Real **% Growth over Prev Quarter** denominator (current mock = (Adjusted−Proposed)/Proposed, equals % Adjusted).
-- **Prev Quarter Attainment** formula assumed = Prev Q Volume / Prev Q Goal.
-- RM district **Action** has no district-level profile in the build → currently drills into (expands) the district.
-- Product dimension is a significant backend/key change per SME (out of scope for the mock).
-
-## Next step
-
-Confirm whether to **commit + push** the SME-updates batch (KD says "commit and push" explicitly per solo-dev-commit-to-main convention).
+- `pnpm dev` on **:5173 is often grabbed by the sibling repo `kendo-beghou-theme`** (title
+  "scaffold"). Run this app on another port (e.g. `pnpm exec vite --port 5188 --strictPort`)
+  and verify the tab title is "Beghou App/UX Specs".
+- Stack pinned: React 19 + Kendo React 15.1.x + kendo-svg-icons ~5.3.x (theme needs 5.3
+  filled icons) + theme-default 14.5.0. Added kendo-react-upload 15.1.0.
 
 ## Verify
 
-`pnpm dev` (:5173), then `pnpm verify`. Toggle Impersonate → District/Regional Manager; Product dropdown top-left.
+`pnpm exec vite --port 5188 --strictPort`, then `BASE=http://localhost:5188 pnpm verify`
+(12 routes). Build: `pnpm build`.

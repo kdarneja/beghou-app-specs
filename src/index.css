@@ -2545,12 +2545,16 @@ a {
 
 /* Dev Handoff Notes popover */
 .gr-notes-popup .gr-notes-card {
-  width: 320px;
+  width: 460px;
+  max-width: calc(100vw - 32px);
   background: #ffffff;
   border: 1px solid var(--beghou-border-alt);
   border-radius: 6px;
   box-shadow: var(--kendo-elevation-4);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 120px);
 }
 .gr-notes-head {
   display: flex;
@@ -2561,8 +2565,22 @@ a {
   font-size: 14px;
   background: var(--beghou-surface-card);
   border-bottom: 1px solid var(--kendo-color-border);
+  flex-shrink: 0;
 }
-.gr-notes-body { padding: 14px; font-size: 14px; color: rgba(2, 4, 52, 0.7); line-height: 1.5; }
+.gr-notes-body { padding: 14px 16px 16px; font-size: 13px; color: var(--kendo-color-primary); line-height: 1.5; overflow-y: auto; }
+.gr-notes-intro {
+  margin: 0 0 12px;
+  padding: 8px 10px;
+  background: var(--beghou-surface-soft, #f7fbff);
+  border-left: 3px solid var(--kendo-color-primary);
+  border-radius: 4px;
+  font-style: italic;
+  color: rgba(2, 4, 52, 0.75);
+}
+.gr-notes-section { margin: 14px 0 6px; font-size: 14px; font-weight: 700; }
+.gr-notes-section:first-of-type { margin-top: 4px; }
+.gr-notes-list { margin: 0; padding-left: 20px; }
+.gr-notes-list li { margin-bottom: 8px; }
 
 /* Top-bar left cluster: Impersonate scaffold + Product selector. */
 .gr-topbar__left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
